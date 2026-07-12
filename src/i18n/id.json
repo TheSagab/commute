@@ -36,7 +36,9 @@
 
   "mode.mrt-jakarta": "MRT Jakarta",
   "mode.krl-commuter": "KRL Commuter Line",
-  "mode.transjakarta": "Transjakarta",
   "mode.lrt-jabodebek": "LRT Jabodebek",
-  "mode.lrt-jakarta": "LRT Jakarta"
+  "mode.lrt-jakarta": "LRT Jakarta",
+  "operator.transjakarta": "Transjakarta",
+  "sub-service.transjakarta-brt": "BRT",
+  "sub-service.transjakarta-mikrotrans": "Mikrotrans"
 }

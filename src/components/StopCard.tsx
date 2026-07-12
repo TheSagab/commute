@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useTranslate } from "../i18n"
+import { useLocale, useTranslate } from "../i18n"
 import type { NearbyStop } from "../server/get-nearby-stops"
 
 type Props = {
@@ -26,6 +26,7 @@ function formatWalk(seconds: number, t: (k: string, p?: Record<string, string | 
 
 export function StopCard({ stop, nowMs }: Props) {
   const t = useTranslate()
+  const [locale] = useLocale()
   const [expanded, setExpanded] = useState(false)
 
   // Recompute countdown label once per second. The card list receives
@@ -42,17 +43,26 @@ export function StopCard({ stop, nowMs }: Props) {
   // recompute against the latest `nowMs` (parent passes the live one).
   const elapsed = (Date.now() - nowMs) / 1000
 
-  const modeName = t(`mode.${stop.mode}`)
+  const operatorName = stop.operatorName[locale]
+  const subServiceLabels = stop.subServices.map((s) => s.label[locale])
 
   return (
     <article className="rounded-2xl border border-neutral-200 bg-white p-5">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs font-medium uppercase tracking-wide text-neutral-500">
-            {modeName}
+            {operatorName}
+            {subServiceLabels.length > 0 && (
+              <>
+                {" · "}
+                <span className="text-neutral-400 normal-case">
+                  {subServiceLabels.join(" · ")}
+                </span>
+              </>
+            )}
           </p>
           <h2 className="mt-0.5 truncate text-lg font-semibold text-neutral-900">
-            {stop.stopName.en}
+            {stop.stopName[locale]}
           </h2>
         </div>
         {stop.walkSeconds !== null && (

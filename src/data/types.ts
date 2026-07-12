@@ -12,14 +12,16 @@
 export type ModeId =
   | "mrt-jakarta"
   | "krl-commuter"
-  | "transjakarta"
+  | "transjakarta-brt"
+  | "transjakarta-mikrotrans"
   | "lrt-jabodebek"
   | "lrt-jakarta"
 
 export const MODE_IDS: readonly ModeId[] = [
   "mrt-jakarta",
   "krl-commuter",
-  "transjakarta",
+  "transjakarta-brt",
+  "transjakarta-mikrotrans",
   "lrt-jabodebek",
   "lrt-jakarta",
 ] as const
@@ -32,12 +34,16 @@ export type ServiceHours = {
   /** "HH:MM" in 24h Jakarta time. Inclusive. */
   start: string
   /** "HH:MM" in 24h Jakarta time. May exceed 24:00 to model a window that
-   *  rolls past midnight (e.g. 24:30 = 00:30 the next day). Exclusive. */
+   *  rolls past midnight (e.g. 24:30 = 00:30 the next day). A value of
+   *  exactly 24:00 means "24 hours" — the service is always running. */
   end: string
 }
 
 export type Stop = {
-  /** Unique within the mode. Stable across scrapes. */
+  /** Stable across scrapes. Within a single `ModeBundle` this id is
+   *  unique. Stops with the same `id` MAY appear in multiple bundles
+   *  of the same operator (e.g. a BRT shelter that doubles as a
+   *  Mikrotrans stop) — the chain unifies them at query time. */
   id: string
   /** Official name in both languages. */
   name: Localized
@@ -60,6 +66,12 @@ export type Route = {
   headsign: Localized
   /** Optional UI color (line color in operator branding). */
   color?: string
+  /** Optional per-route service window. Overrides the mode-level
+   *  `serviceHours` for this route. Use this for routes that run a
+   *  different window from the rest of the mode (e.g. a 24h BRT
+   *  corridor: `{ start: "00:00", end: "24:00" }`). If omitted, the
+   *  route inherits the mode-level service hours. */
+  serviceHours?: ServiceHours
 }
 
 /** Clock time as "HH:MM" in 24h Jakarta time. May exceed 24:00 to roll
@@ -68,10 +80,18 @@ export type ClockTime = string
 
 export type ModeBundle = {
   mode: ModeId
-  /** Human-readable mode name, in both languages. */
+  /** The operator this sub-service belongs to. Defaults to `mode`
+   *  (i.e. the operator IS the sub-service, as for MRT/LRT/KRL). For
+   *  Transjakarta, multiple sub-services (`transjakarta-brt`,
+   *  `transjakarta-mikrotrans`) share the operator `"transjakarta"`.
+   *  Used by the UI to group sub-services under their operator. */
+  operator?: string
+  /** Human-readable sub-service name, in both languages. */
   name: Localized
-  /** Mode-level daily service window. The static data currently assumes
-   *  the same window every day (no weekday/weekend split). */
+  /** Sub-service-level daily service window. The default for any route
+   *  in this mode that doesn't set its own `serviceHours`. The static
+   *  data currently assumes the same window every day (no weekday/
+   *  weekend split). */
   serviceHours: ServiceHours
   stops: Stop[]
   routes: Route[]

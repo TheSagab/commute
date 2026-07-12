@@ -85,13 +85,30 @@ function getServiceStatus(
   return { kind: "beforeHours", firstTime: hours.start }
 }
 
+function routeServiceHours(bundle: ModeBundle, route: ModeBundle["routes"][number]): ServiceHours {
+  return route.serviceHours ?? bundle.serviceHours
+}
+
 function findUpcomingForStop(
   bundle: ModeBundle,
   stopId: string,
   now: Date,
 ): { status: ServiceStatus; upcoming: UpcomingArrival[] } {
   const nowMinutes = jakartaMinutesAt(now)
-  const status = getServiceStatus(bundle.serviceHours, nowMinutes)
+
+  // Only consider routes that actually serve this stop — every
+  // route's per-route status (mode-level window or route override)
+  // is rolled into the stop's headline via the most-permissive rule.
+  const routesServingStop: { route: ModeBundle["routes"][number]; routeStatus: ServiceStatus }[] = []
+  for (const route of bundle.routes) {
+    const timetableForRoute = bundle.timetables[route.id]
+    if (!timetableForRoute || !timetableForRoute[stopId]) continue
+    routesServingStop.push({
+      route,
+      routeStatus: getServiceStatus(routeServiceHours(bundle, route), nowMinutes),
+    })
+  }
+  const status = combineRouteStatuses(routesServingStop.map((r) => r.routeStatus))
 
   if (status.kind !== "running") {
     return { status, upcoming: [] }
@@ -100,22 +117,26 @@ function findUpcomingForStop(
   // All times in the data are wall-clock minutes-since-midnight, sorted
   // ascending. The service window can wrap past midnight; convert both
   // `now` and each arrival to a service-relative "minutes since window
-  // start" so the comparison is monotonic.
-  const start = parseClock(bundle.serviceHours.start)
-  const end = parseClock(bundle.serviceHours.end)
+  // start" so the comparison is monotonic. Per-route windows differ;
+  // we project `now` and each arrival into the *route's* own window.
   const dayMin = 24 * 60
-  const wraps = end > dayMin
-
-  const toServiceRelative = (wc: number): number => {
-    if (wraps && wc < start) return wc - start + dayMin
-    return wc - start
-  }
-
-  const nowRel = toServiceRelative(nowMinutes)
   const horizonMin = 2 * 60 // next 2 hours
 
   const upcoming: UpcomingArrival[] = []
-  for (const route of bundle.routes) {
+  for (const { route, routeStatus } of routesServingStop) {
+    if (routeStatus.kind !== "running") continue // skip not-yet-started / ended routes
+
+    const hours = routeServiceHours(bundle, route)
+    const start = parseClock(hours.start)
+    const end = parseClock(hours.end)
+    const wraps = end > dayMin
+
+    const toServiceRelative = (wc: number): number => {
+      if (wraps && wc < start) return wc - start + dayMin
+      return wc - start
+    }
+    const nowRel = toServiceRelative(nowMinutes)
+
     const timetableForRoute = bundle.timetables[route.id]
     if (!timetableForRoute) continue
     const timesForStop = timetableForRoute[stopId]
@@ -140,6 +161,25 @@ function findUpcomingForStop(
   return { status, upcoming }
 }
 
+/** Most-permissive combine across the routes serving a stop.
+ *  Mirrors the same rule in `get-nearby-stops.ts` (`_combineStatuses`)
+ *  but operates on the in-provider ServiceStatus shape (no firstTime
+ *  or lastTime fields — those are derived only when the stop is the
+ *  only result and the parent server function needs to render a
+ *  "Starts at" / "Service ended" headline). */
+function combineRouteStatuses(
+  statuses: ServiceStatus[],
+): ServiceStatus {
+  if (statuses.length === 0) {
+    return { kind: "afterHours", lastTime: "23:59", firstTimeTomorrow: "00:00" }
+  }
+  if (statuses.some((s) => s.kind === "running")) return { kind: "running" }
+  if (statuses.every((s) => s.kind === "beforeHours")) {
+    return { kind: "beforeHours", firstTime: "00:00" }
+  }
+  return { kind: "afterHours", lastTime: "23:59", firstTimeTomorrow: "00:00" }
+}
+
 function getUpcoming(
   bundle: ModeBundle,
   stopId: string,
@@ -162,7 +202,7 @@ function getUpcoming(
 export function createStaticJsonProvider(): Provider {
   return {
     id: "static-json",
-    modes: ["mrt-jakarta", "krl-commuter", "transjakarta", "lrt-jabodebek", "lrt-jakarta"],
+    modes: ["mrt-jakarta", "krl-commuter", "transjakarta-brt", "transjakarta-mikrotrans", "lrt-jabodebek", "lrt-jakarta"],
 
     async isActive() {
       // The static-JSON provider is always "active" if a bundle exists.

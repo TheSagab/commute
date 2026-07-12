@@ -3,6 +3,7 @@ import { _findUpcomingForStop, _getServiceStatus } from "./static-json"
 import { loadModeBundle } from "../../data/load"
 
 const mrt = loadModeBundle("mrt-jakarta")
+const brt = loadModeBundle("transjakarta-brt")
 
 function jakartaInstant(clock: string): Date {
   // Build a Date for the given Jakarta wall-clock time on 2026-07-12.
@@ -84,6 +85,42 @@ describe("static-json provider — next arrival at Lebak Bulus", () => {
     // 00:35 is past the 00:30 end of the wrapped window.
     const result = _findUpcomingForStop(mrt, "mrt-ldb", jakartaInstant("00:35"))
     expect(result.upcoming).toEqual([])
+    expect(result.status.kind).toBe("beforeHours")
+  })
+})
+
+describe("static-json provider — per-route service hours (24h corridor)", () => {
+  // Corridor 9 has `serviceHours: { start: "00:00", end: "24:00" }`,
+  // overriding the mode-level 05:00–22:00 default. A stop on Corridor
+  // 9 (e.g. Sudirman) should be "running" at 03:00 even though the
+  // mode-level window hasn't started.
+
+  it("keeps a 24h-route stop running at 03:00", () => {
+    const result = _findUpcomingForStop(brt, "c9-sdb", jakartaInstant("03:00"))
+    expect(result.status.kind).toBe("running")
+    expect(result.upcoming.length).toBeGreaterThan(0)
+  })
+
+  it("keeps the same stop running across the day", () => {
+    // 23:30 — a 5-22 route has ended, but Corridor 9 is 24h.
+    const result = _findUpcomingForStop(brt, "c9-sdb", jakartaInstant("23:30"))
+    expect(result.status.kind).toBe("running")
+  })
+
+  it("non-24h stops on the same mode are still afterHours at 23:30", () => {
+    // Corridor 1 doesn't have per-route service hours, so it uses
+    // the mode-level 05:00–22:00. Blok M is a Corridor 1 stop.
+    const result = _findUpcomingForStop(brt, "c1-blm", jakartaInstant("23:30"))
+    expect(result.status.kind).toBe("afterHours")
+  })
+
+  it("non-24h stops are beforeHours at 03:00", () => {
+    // Blok M on Corridor 1 (mode-level 05:00–22:00) is beforeHours
+    // at 03:00 — even though Corridor 9 (a different route serving
+    // the same operator) is running, the stop's status is per-route
+    // and each stop's status is the most-permissive across its own
+    // serving routes.
+    const result = _findUpcomingForStop(brt, "c1-blm", jakartaInstant("03:00"))
     expect(result.status.kind).toBe("beforeHours")
   })
 })

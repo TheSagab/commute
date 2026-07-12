@@ -4,27 +4,38 @@
   "sources": [
     {
       "mode": "mrt-jakarta",
-      "operator": "PT MRT Jakarta",
+      "operator": "mrt-jakarta",
+      "operatorName": "PT MRT Jakarta",
       "sourceUrl": "https://www.jakartamrt.co.id/id/jadwal-operasi"
     },
     {
       "mode": "krl-commuter",
-      "operator": "PT KAI Commuter",
+      "operator": "krl-commuter",
+      "operatorName": "PT KAI Commuter",
       "sourceUrl": "https://commuterline.id/perjalanan-krl/jadwal"
     },
     {
-      "mode": "transjakarta",
-      "operator": "PT Transportasi Jakarta",
+      "mode": "transjakarta-brt",
+      "operator": "transjakarta",
+      "operatorName": "PT Transportasi Jakarta",
+      "sourceUrl": "https://www.transjakarta.co.id/shelter"
+    },
+    {
+      "mode": "transjakarta-mikrotrans",
+      "operator": "transjakarta",
+      "operatorName": "PT Transportasi Jakarta",
       "sourceUrl": "https://www.transjakarta.co.id/shelter"
     },
     {
       "mode": "lrt-jabodebek",
-      "operator": "PT KAI Divisi LRT Jabodebek",
+      "operator": "lrt-jabodebek",
+      "operatorName": "PT KAI Divisi LRT Jabodebek",
       "sourceUrl": "https://lrtjabodebek.kai.id/"
     },
     {
       "mode": "lrt-jakarta",
-      "operator": "PT LRT Jakarta",
+      "operator": "lrt-jakarta",
+      "operatorName": "PT LRT Jakarta",
       "sourceUrl": "https://www.lrtjakarta.co.id/jadwal.html"
     }
   ]

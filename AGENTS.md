@@ -30,11 +30,15 @@ The MVP is wired end-to-end:
   see ADR-0002.
 - Static-JSON provider with 8 passing tests covering service-status
   classification and "next arrival" lookup.
-- Per-mode data generators under `scripts/gen-*-data.ts` for all five
-  modes. **MRT and LRT are full datasets** (every station, every
-  departure, every direction). **KRL and Transjakarta are samples**
-  (5 stations / 1 corridor respectively) — the CI scraper will fill
-  in the rest.
+- Per-mode data generators under `scripts/gen-*-data.ts` for all six
+  sub-services (MRT, KRL, Transjakarta BRT, Transjakarta Mikrotrans,
+  LRT Jabodebek, LRT Jakarta). **MRT, LRT, and Transjakarta BRT are
+  full datasets** (every station / every corridor / every departure /
+  every direction — BRT has all 14 corridors; Corridor 9 is 24h, the
+  rest use the mode-level 05:00–22:00 default). **KRL is a sample**
+  (5 stations) and **Transjakarta Mikrotrans is a curated set of 25
+  representative routes** — the CI scraper will fill in the rest.
+  See ADR-0004 for the Transjakarta sub-service shape.
 - `index` route: GPS prompt → text-search fallback → OSRM call → card
   list with live countdowns. Footer shows the "data last updated"
   timestamp and a language toggle.
@@ -271,8 +275,15 @@ AGENTS.md                       # this file
 
 ## Data layer
 
-- `src/data/<mode>.json` — one file per mode, shape documented in
-  `docs/data-format.md`.
+- `src/data/<mode>.json` — one file per sub-service, shape documented
+  in `docs/data-format.md`. For Transjakarta the modes are
+  `transjakarta-brt` and `transjakarta-mikrotrans`; both share
+  `operator: "transjakarta"`. Stops with the same `id` MAY appear in
+  both bundles (a physical shelter served by a BRT corridor and a
+  Mikrotrans route) — Mikrotrans uses BRT stop ids for the shared
+  locations so the chain unifies them at query time (see ADR-0004).
+  Per-route `serviceHours` overrides the sub-service-level default
+  (used for 24h BRT corridors, currently Corridor 9).
 - `src/data/_meta.json` — bundle metadata including the
   `dataLastUpdated` timestamp the footer shows.
 - `src/server/providers/static-json.ts` — the default provider;
