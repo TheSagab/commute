@@ -1,0 +1,35 @@
+name: scrape-data
+
+on:
+  schedule:
+    # Weekly: Monday 02:00 UTC = 09:00 WIB (Jakarta)
+    - cron: "0 2 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: jdx/mise-action@v2
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Scrape + regenerate data
+        run: pnpm scrape-data
+
+      - name: Commit updated bundles
+        run: |
+          git config user.name "commute-bot"
+          git config user.email "commute-bot@users.noreply.github.com"
+          git add src/data
+          if git diff --staged --quiet; then
+            echo "No data changes"
+          else
+            git commit -m "chore(data): refresh bundled timetables"
+            git push
+          fi

@@ -1,0 +1,26 @@
+# Production override for docker-compose.yml.
+#
+# Applied automatically by `docker compose up` because it lives next
+# to the base file. Use it to:
+#   - bind OSRM to localhost only (Caddy reverse-proxies over 127.0.0.1)
+#   - pin the restart policy
+#   - set the resource limits
+#
+# Documented in docs/deploy-vps.md.
+
+services:
+  osrm:
+    ports:
+      # Bind to localhost only — the public hostname (e.g.
+      # osrm.yourdomain.com) terminates HTTPS at Caddy or
+      # Cloudflare's edge and forwards to 127.0.0.1:5000.
+      # Do NOT expose 5000 to the public internet.
+      - "127.0.0.1:5000:5000"
+    restart: unless-stopped
+    # OSRM preprocesses the Java extract to ~3 GB and serves
+    # /table queries with peaks around 1 GB. The image defaults
+    # are fine; uncomment to enforce on hosts with cgroups v2.
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 4G

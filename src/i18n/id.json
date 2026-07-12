@@ -1,0 +1,42 @@
+{
+  "app.title": "Commute",
+  "app.tagline": "Keberangkatan terdekat di sekitar Anda",
+  "app.data_last_updated": "Data diperbarui {date}",
+  "language.label": "Bahasa",
+  "language.en": "Inggris",
+  "language.id": "Bahasa Indonesia",
+
+  "location.prompt_title": "Di mana Anda?",
+  "location.prompt_body": "Kami menggunakan lokasi Anda untuk menemukan halte terdekat. Lokasi tidak disimpan.",
+  "location.use_current": "Gunakan lokasi saya saat ini",
+  "location.search_label": "Cari tempat",
+  "location.search_placeholder": "mis. Sudirman, Blok M",
+  "location.search": "Cari",
+  "location.searching": "Mencari…",
+  "location.search_error": "Tempat tidak ditemukan. Coba nama yang lebih spesifik.",
+  "location.permission_denied_title": "Akses lokasi ditolak",
+  "location.permission_denied_body": "Ketik nama tempat di bawah untuk menemukan halte terdekat.",
+  "location.geolocation_unsupported": "Browser tidak mendukung layanan lokasi. Ketik nama tempat di bawah.",
+
+  "stops.loading": "Mencari halte terdekat…",
+  "stops.empty_title": "Tidak ada halte terdekat",
+  "stops.empty_body": "Coba lokasi lain, atau perluas area pencarian.",
+  "stops.fallback_notice": "Menggunakan jarak garis lurus — layanan routing offline.",
+
+  "card.next_minutes_one": "{n} menit lagi",
+  "card.next_minutes_other": "{n} menit lagi",
+  "card.next_seconds": "{n} detik lagi",
+  "card.next_arriving": "tiba sekarang",
+  "card.starts_at": "Mulai pukul {time}",
+  "card.service_ended": "Layanan berakhir",
+  "card.walk_minutes_one": "{n} menit jalan kaki",
+  "card.walk_minutes_other": "{n} menit jalan kaki",
+  "card.expand": "Tampilkan semua kedatangan",
+  "card.collapse": "Sembunyikan kedatangan",
+
+  "mode.mrt-jakarta": "MRT Jakarta",
+  "mode.krl-commuter": "KRL Commuter Line",
+  "mode.transjakarta": "Transjakarta",
+  "mode.lrt-jabodebek": "LRT Jabodebek",
+  "mode.lrt-jakarta": "LRT Jakarta"
+}

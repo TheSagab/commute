@@ -1,0 +1,42 @@
+{
+  "app.title": "Commute",
+  "app.tagline": "Next arrivals near you",
+  "app.data_last_updated": "Data last updated {date}",
+  "language.label": "Language",
+  "language.en": "English",
+  "language.id": "Bahasa Indonesia",
+
+  "location.prompt_title": "Where are you?",
+  "location.prompt_body": "We use your location to find the nearest stops. Your location is not stored.",
+  "location.use_current": "Use my current location",
+  "location.search_label": "Search a place",
+  "location.search_placeholder": "e.g. Sudirman, Blok M",
+  "location.search": "Search",
+  "location.searching": "Searching…",
+  "location.search_error": "Couldn't find that place. Try a more specific name.",
+  "location.permission_denied_title": "Location access denied",
+  "location.permission_denied_body": "Type a place name below to find nearby stops.",
+  "location.geolocation_unsupported": "Your browser doesn't support location services. Type a place name below.",
+
+  "stops.loading": "Finding nearby stops…",
+  "stops.empty_title": "No stops nearby",
+  "stops.empty_body": "Try a different location, or widen the search area.",
+  "stops.fallback_notice": "Using straight-line distance — routing service is offline.",
+
+  "card.next_minutes_one": "in {n} min",
+  "card.next_minutes_other": "in {n} min",
+  "card.next_seconds": "in {n} sec",
+  "card.next_arriving": "arriving now",
+  "card.starts_at": "Starts at {time}",
+  "card.service_ended": "Service ended",
+  "card.walk_minutes_one": "{n} min walk",
+  "card.walk_minutes_other": "{n} min walk",
+  "card.expand": "Show all arrivals",
+  "card.collapse": "Hide arrivals",
+
+  "mode.mrt-jakarta": "MRT Jakarta",
+  "mode.krl-commuter": "KRL Commuter Line",
+  "mode.transjakarta": "Transjakarta",
+  "mode.lrt-jabodebek": "LRT Jabodebek",
+  "mode.lrt-jakarta": "LRT Jakarta"
+}

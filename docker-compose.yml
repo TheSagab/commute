@@ -1,0 +1,35 @@
+# Docker Compose for local development services.
+#
+# Usage:
+#   docker compose up osrm           # start OSRM
+#   docker compose down              # stop and remove
+#   docker compose down -v           # also remove the preprocessed graph
+#
+# OSRM (self-hosted per ADR-0002) reads `OSRM_BASE_URL` (default
+# `http://localhost:5000`). On first start it downloads the Java
+# OSM extract from Geofabrik (~850 MB — Jakarta is not a separate
+# sub-region), runs the foot-profile extract / partition / customize
+# pipeline, and serves /route and /table over HTTP. The preprocessed
+# graph is cached in the named volume so subsequent starts are seconds.
+
+services:
+  osrm:
+    # The official images moved off Docker Hub to GitHub Container
+    # Registry. The `latest` tag tracks `master`; pin to a version
+    # (`26.7.3-debian`) for reproducibility.
+    image: ghcr.io/project-osrm/osrm-backend:26.7.3-debian
+    container_name: commute-osrm
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - osrm-data:/data
+      # The init script lives outside the data volume so the volume
+      # only contains the OSM extract + the preprocessed graph.
+      # Mounted read-only.
+      - ./scripts/osrm-init.sh:/usr/local/bin/osrm-init.sh:ro
+    entrypoint: ["sh", "/usr/local/bin/osrm-init.sh"]
+
+volumes:
+  osrm-data:
+    name: commute-osrm-data
