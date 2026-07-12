@@ -17,6 +17,7 @@ import { MODE_IDS, type ModeBundle, type ModeId } from "./types"
 import mrtJakarta from "./mrt-jakarta.json"
 import krlCommuter from "./krl-commuter.json"
 import transjakartaBrt from "./transjakarta-brt.json"
+import transjakartaNonBrt from "./transjakarta-non-brt.json"
 import transjakartaMikrotrans from "./transjakarta-mikrotrans.json"
 import lrtJabodebek from "./lrt-jabodebek.json"
 import lrtJakarta from "./lrt-jakarta.json"
@@ -28,6 +29,7 @@ const BUNDLES: Record<ModeId, ModeBundle> = {
   "mrt-jakarta": mrtJakarta as ModeBundle,
   "krl-commuter": krlCommuter as ModeBundle,
   "transjakarta-brt": transjakartaBrt as ModeBundle,
+  "transjakarta-non-brt": transjakartaNonBrt as ModeBundle,
   "transjakarta-mikrotrans": transjakartaMikrotrans as ModeBundle,
   "lrt-jabodebek": lrtJabodebek as ModeBundle,
   "lrt-jakarta": lrtJakarta as ModeBundle,

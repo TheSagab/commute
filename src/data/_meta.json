@@ -21,6 +21,12 @@
       "sourceUrl": "https://www.transjakarta.co.id/shelter"
     },
     {
+      "mode": "transjakarta-non-brt",
+      "operator": "transjakarta",
+      "operatorName": "PT Transportasi Jakarta",
+      "sourceUrl": "https://www.transjakarta.co.id/rute"
+    },
+    {
       "mode": "transjakarta-mikrotrans",
       "operator": "transjakarta",
       "operatorName": "PT Transportasi Jakarta",

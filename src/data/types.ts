@@ -13,6 +13,7 @@ export type ModeId =
   | "mrt-jakarta"
   | "krl-commuter"
   | "transjakarta-brt"
+  | "transjakarta-non-brt"
   | "transjakarta-mikrotrans"
   | "lrt-jabodebek"
   | "lrt-jakarta"
@@ -21,6 +22,7 @@ export const MODE_IDS: readonly ModeId[] = [
   "mrt-jakarta",
   "krl-commuter",
   "transjakarta-brt",
+  "transjakarta-non-brt",
   "transjakarta-mikrotrans",
   "lrt-jabodebek",
   "lrt-jakarta",

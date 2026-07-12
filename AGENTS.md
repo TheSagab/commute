@@ -30,15 +30,18 @@ The MVP is wired end-to-end:
   see ADR-0002.
 - Static-JSON provider with 8 passing tests covering service-status
   classification and "next arrival" lookup.
-- Per-mode data generators under `scripts/gen-*-data.ts` for all six
-  sub-services (MRT, KRL, Transjakarta BRT, Transjakarta Mikrotrans,
-  LRT Jabodebek, LRT Jakarta). **MRT, LRT, and Transjakarta BRT are
-  full datasets** (every station / every corridor / every departure /
-  every direction — BRT has all 14 corridors; Corridor 9 is 24h, the
-  rest use the mode-level 05:00–22:00 default). **KRL is a sample**
-  (5 stations) and **Transjakarta Mikrotrans is a curated set of 25
-  representative routes** — the CI scraper will fill in the rest.
-  See ADR-0004 for the Transjakarta sub-service shape.
+- Per-mode data generators under `scripts/gen-*-data.ts` for all seven
+  sub-services (MRT, KRL, Transjakarta BRT, Transjakarta Non-BRT,
+  Transjakarta Mikrotrans, LRT Jabodebek, LRT Jakarta). **MRT, LRT,
+  and Transjakarta BRT are full datasets** (every station / every
+  corridor / every departure / every direction — BRT has all 14
+  corridors; Corridor 9 is 24h, the rest use the mode-level
+  05:00–22:00 default). **Transjakarta Non-BRT** ("Angkutan
+  Pengumpan") has ~60 routes with the BRT stop ids reused for
+  shared halte. **KRL is a sample** (5 stations) and **Transjakarta
+  Mikrotrans is a curated set of 25 representative routes** — the CI
+  scraper will fill in the rest. See ADR-0004 for the Transjakarta
+  sub-service shape.
 - `index` route: GPS prompt → text-search fallback → OSRM call → card
   list with live countdowns. Footer shows the "data last updated"
   timestamp and a language toggle.
@@ -277,13 +280,15 @@ AGENTS.md                       # this file
 
 - `src/data/<mode>.json` — one file per sub-service, shape documented
   in `docs/data-format.md`. For Transjakarta the modes are
-  `transjakarta-brt` and `transjakarta-mikrotrans`; both share
-  `operator: "transjakarta"`. Stops with the same `id` MAY appear in
-  both bundles (a physical shelter served by a BRT corridor and a
-  Mikrotrans route) — Mikrotrans uses BRT stop ids for the shared
-  locations so the chain unifies them at query time (see ADR-0004).
-  Per-route `serviceHours` overrides the sub-service-level default
-  (used for 24h BRT corridors, currently Corridor 9).
+  `transjakarta-brt`, `transjakarta-non-brt`, and
+  `transjakarta-mikrotrans`; all three share `operator: "transjakarta"`.
+  Stops with the same `id` MAY appear in multiple Transjakarta bundles
+  (a physical shelter served by a BRT corridor, a Non-BRT route, and
+  a Mikrotrans route) — the Non-BRT and Mikrotrans bundles use BRT
+  stop ids for the shared locations so the chain unifies them at query
+  time (see ADR-0004). Per-route `serviceHours` overrides the
+  sub-service-level default (used for 24h BRT corridors, currently
+  Corridor 9).
 - `src/data/_meta.json` — bundle metadata including the
   `dataLastUpdated` timestamp the footer shows.
 - `src/server/providers/static-json.ts` — the default provider;

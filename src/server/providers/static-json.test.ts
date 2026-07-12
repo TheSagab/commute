@@ -4,6 +4,7 @@ import { loadModeBundle } from "../../data/load"
 
 const mrt = loadModeBundle("mrt-jakarta")
 const brt = loadModeBundle("transjakarta-brt")
+const np = loadModeBundle("transjakarta-non-brt")
 
 function jakartaInstant(clock: string): Date {
   // Build a Date for the given Jakarta wall-clock time on 2026-07-12.
@@ -122,5 +123,50 @@ describe("static-json provider — per-route service hours (24h corridor)", () =
     // serving routes.
     const result = _findUpcomingForStop(brt, "c1-blm", jakartaInstant("03:00"))
     expect(result.status.kind).toBe("beforeHours")
+  })
+})
+
+describe("static-json provider — Non-BRT sub-service", () => {
+  // The Non-BRT bundle uses BRT stop ids for shared halte (e.g.
+  // `c1-blm` is Blok M, served by BRT Corridor 1 and several Non-BRT
+  // routes like 1C, 1M, 1P, 1Q, 6M, 6U, 7B, 7Q, 8D, 8E, 1W) plus
+  // Non-BRT-only stops with the `np-` prefix. Tests below check both.
+
+  it("an Non-BRT-only stop is running mid-day", () => {
+    // np-pantai-maju is a Non-BRT-only stop (route 1A's headsign).
+    // The bundle's mode-level service hours are 05:00–22:00, so
+    // mid-day should be "running".
+    const result = _findUpcomingForStop(np, "np-pantai-maju", jakartaInstant("12:00"))
+    expect(result.status.kind).toBe("running")
+    expect(result.upcoming.length).toBeGreaterThan(0)
+  })
+
+  it("an Non-BRT-only stop is beforeHours early morning", () => {
+    const result = _findUpcomingForStop(np, "np-pantai-maju", jakartaInstant("04:30"))
+    expect(result.status.kind).toBe("beforeHours")
+    expect(result.upcoming).toEqual([])
+  })
+
+  it("a BRT+Non-BRT shared halte (Blok M) is running mid-day with arrivals from both", () => {
+    // c1-blm (Blok M) is shared by BRT Corridor 1 (BRT) and a dozen
+    // Non-BRT routes. The chain unifies them — the test loads each
+    // bundle and checks that BOTH report running arrivals.
+    const brtResult = _findUpcomingForStop(brt, "c1-blm", jakartaInstant("12:00"))
+    const npResult = _findUpcomingForStop(np, "c1-blm", jakartaInstant("12:00"))
+    expect(brtResult.status.kind).toBe("running")
+    expect(npResult.status.kind).toBe("running")
+    expect(brtResult.upcoming.length).toBeGreaterThan(0)
+    expect(npResult.upcoming.length).toBeGreaterThan(0)
+    // At least one upcoming in each bundle should be from a
+    // different route (BRT vs Non-BRT routes). The most-permissive
+    // combine in getNearbyStops would surface the soonest of all
+    // these in a single card.
+    const brtRouteIds = new Set(brtResult.upcoming.map((u) => u.routeId))
+    const npRouteIds = new Set(npResult.upcoming.map((u) => u.routeId))
+    // Some overlap is possible (None here, but be defensive) —
+    // the strong claim is that BOTH bundles report arrivals, so
+    // the chain has something to unify.
+    expect(brtRouteIds.size).toBeGreaterThan(0)
+    expect(npRouteIds.size).toBeGreaterThan(0)
   })
 })

@@ -202,7 +202,7 @@ function getUpcoming(
 export function createStaticJsonProvider(): Provider {
   return {
     id: "static-json",
-    modes: ["mrt-jakarta", "krl-commuter", "transjakarta-brt", "transjakarta-mikrotrans", "lrt-jabodebek", "lrt-jakarta"],
+    modes: ["mrt-jakarta", "krl-commuter", "transjakarta-brt", "transjakarta-non-brt", "transjakarta-mikrotrans", "lrt-jabodebek", "lrt-jakarta"],
 
     async isActive() {
       // The static-JSON provider is always "active" if a bundle exists.

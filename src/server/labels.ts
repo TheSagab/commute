@@ -21,5 +21,6 @@ export const OPERATOR_LABELS: Record<string, Localized> = {
 
 export const SUB_SERVICE_LABELS: Record<string, Localized> = {
   "transjakarta-brt": { en: "BRT", id: "BRT" },
+  "transjakarta-non-brt": { en: "Non-BRT", id: "Non-BRT" },
   "transjakarta-mikrotrans": { en: "Mikrotrans", id: "Mikrotrans" },
 }
