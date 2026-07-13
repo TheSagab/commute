@@ -15,7 +15,11 @@ export function Footer({ dataLastUpdatedIso }: Props) {
       data-testid="app-footer"
     >
       <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-3 px-4 py-3 text-sm text-fg-muted">
-        <span>{t("app.data_last_updated", { date: formatDate(dataLastUpdatedIso) })}</span>
+        <span>
+          {dataLastUpdatedIso
+            ? t("app.data_last_updated", { date: formatDate(dataLastUpdatedIso) })
+            : t("stops.loading")}
+        </span>
         <div className="flex items-center gap-3">
           <LanguageToggle />
           <ThemeToggle />
