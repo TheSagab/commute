@@ -20,8 +20,12 @@
 
   "stops.loading": "Mencari halte terdekat…",
   "stops.empty_title": "Tidak ada halte terdekat",
-  "stops.empty_body": "Coba lokasi lain, atau perluas area pencarian.",
+  "stops.empty_body": "Kami tidak menemukan halte dalam jarak jalan kaki 10 menit. Coba lokasi lain, atau perluas area pencarian.",
+  "stops.empty_cta": "Coba lokasi lain",
   "stops.fallback_notice": "Menggunakan jarak garis lurus — layanan routing offline.",
+  "stops.error_title": "Terjadi kesalahan",
+  "stops.error_body": "Kami tidak dapat memuat halte terdekat. Periksa koneksi Anda dan coba lagi.",
+  "stops.error_cta": "Coba lagi",
 
   "card.next_minutes_one": "{n} menit lagi",
   "card.next_minutes_other": "{n} menit lagi",
@@ -33,6 +37,12 @@
   "card.walk_minutes_other": "{n} menit jalan kaki",
   "card.expand": "Tampilkan semua kedatangan",
   "card.collapse": "Sembunyikan kedatangan",
+  "card.headsign_to": "→ {headsign}",
+
+  "theme.label": "Tema",
+  "theme.auto": "Otomatis",
+  "theme.light": "Terang",
+  "theme.dark": "Gelap",
 
   "mode.mrt-jakarta": "MRT Jakarta",
   "mode.krl-commuter": "KRL Commuter Line",

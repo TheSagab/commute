@@ -4,6 +4,12 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
 
+// Inline script: apply the dark class to <html> before the first
+// paint, so the user doesn't see a flash of the wrong theme. Mirrors
+// the localStorage key + system-pref fallback used by i18n's
+// `getTheme` / `applyTheme`.
+const THEME_INIT_SCRIPT = `(function(){try{var stored=localStorage.getItem('commute.theme');var mode=(stored==='light'||stored==='dark')?stored:null;var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode?mode:(prefersDark?'dark':'light');document.documentElement.classList.toggle('dark',resolved==='dark');}catch(e){}})();`
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -35,11 +41,12 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
       </head>
-      <body className="min-h-dvh bg-neutral-50 text-neutral-900 antialiased">
+      <body className="min-h-dvh bg-bg text-fg antialiased">
         {children}
         <TanStackDevtools
           config={{

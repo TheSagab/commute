@@ -6,17 +6,30 @@ type Props = {
   stops: NearbyStop[]
   osrmFallback: boolean
   nowMs: number
+  onTryDifferentLocation?: () => void
 }
 
-export function StopList({ stops, osrmFallback, nowMs }: Props) {
+export function StopList({ stops, osrmFallback, nowMs, onTryDifferentLocation }: Props) {
   const t = useTranslate()
   const [locale] = useLocale()
 
   if (stops.length === 0) {
     return (
-      <div className="rounded-2xl border border-neutral-200 bg-white p-6 text-center">
-        <h2 className="text-lg font-semibold text-neutral-900">{t("stops.empty_title")}</h2>
-        <p className="mt-2 text-sm text-neutral-600">{t("stops.empty_body")}</p>
+      <div
+        className="rounded-2xl border border-card-border bg-card p-8 text-center"
+        data-testid="empty-state"
+      >
+        <h2 className="text-lg font-semibold text-fg">{t("stops.empty_title")}</h2>
+        <p className="mt-2 text-sm text-fg-muted">{t("stops.empty_body")}</p>
+        {onTryDifferentLocation && (
+          <button
+            type="button"
+            onClick={onTryDifferentLocation}
+            className="mt-4 rounded-full border border-card-border bg-card-soft px-4 py-2 text-sm font-medium text-fg hover:bg-card"
+          >
+            {t("stops.empty_cta")}
+          </button>
+        )}
       </div>
     )
   }
@@ -33,9 +46,12 @@ export function StopList({ stops, osrmFallback, nowMs }: Props) {
   }
 
   return (
-    <div>
+    <div data-testid="stop-list">
       {osrmFallback && (
-        <p className="mb-3 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-800">
+        <p
+          className="mb-3 rounded-md bg-status-warning/10 px-3 py-2 text-sm text-status-warning"
+          data-testid="fallback-notice"
+        >
           {t("stops.fallback_notice")}
         </p>
       )}
@@ -43,7 +59,7 @@ export function StopList({ stops, osrmFallback, nowMs }: Props) {
         {[...groups.entries()].map(([operator, groupStops]) => (
           <section key={operator}>
             {groups.size > 1 && (
-              <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-500">
+              <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-fg-muted">
                 {groupStops[0]?.operatorName[locale] ?? operator}
               </h2>
             )}

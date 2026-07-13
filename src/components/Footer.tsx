@@ -1,5 +1,7 @@
-import { useTranslate, useLocale } from "../i18n"
+import { useTranslate } from "../i18n"
 import { formatDate } from "../lib/format"
+import { LanguageToggle } from "./LanguageToggle"
+import { ThemeToggle } from "./ThemeToggle"
 
 type Props = {
   dataLastUpdatedIso: string
@@ -7,18 +9,17 @@ type Props = {
 
 export function Footer({ dataLastUpdatedIso }: Props) {
   const t = useTranslate()
-  const [locale, setLocale] = useLocale()
   return (
-    <footer className="mt-12 border-t border-neutral-200 bg-white">
-      <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-3 px-4 py-4 text-sm text-neutral-500">
+    <footer
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-card-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80"
+      data-testid="app-footer"
+    >
+      <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-3 px-4 py-3 text-sm text-fg-muted">
         <span>{t("app.data_last_updated", { date: formatDate(dataLastUpdatedIso) })}</span>
-        <button
-          type="button"
-          className="text-neutral-500 underline-offset-2 hover:underline"
-          onClick={() => setLocale(locale === "en" ? "id" : "en")}
-        >
-          {t("language.label")}
-        </button>
+        <div className="flex items-center gap-3">
+          <LanguageToggle />
+          <ThemeToggle />
+        </div>
       </div>
     </footer>
   )

@@ -1,8 +1,72 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* ---------------------------------------------------------------------
+ * Design tokens
+ *
+ * Semantic colors used throughout the app. They map to Tailwind v4
+ * utility classes (`bg-bg`, `text-fg`, `border-card-border`, etc.) so
+ * components don't have to hardcode palette values, and the same
+ * classes work in both light and dark themes.
+ *
+ * The .dark class on the <html> element overrides the variables —
+ * we do not use the `dark:` variant for the semantic tokens.
+ * ------------------------------------------------------------------- */
+
 @theme {
   --font-sans:
     ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif;
+
+  /* Semantic surface tokens (light) */
+  --color-bg:           #fafafa;   /* page background */
+  --color-card:         #ffffff;   /* card surface */
+  --color-card-soft:    #f5f5f5;   /* nested/inset surface */
+  --color-border:       #e5e5e5;   /* hairline border */
+  --color-border-soft:  #f0f0f0;   /* dividers inside cards */
+
+  /* Semantic text tokens (light) */
+  --color-fg:           #171717;   /* primary text */
+  --color-fg-muted:     #525252;   /* secondary text */
+  --color-fg-subtle:    #a3a3a3;   /* tertiary / hint text */
+  --color-fg-inverse:   #ffffff;   /* text on a dark surface */
+
+  /* Status colors (light) */
+  --color-status-arriving:  #047857;  /* next arrival imminent */
+  --color-status-warning:   #b45309;  /* fallback / amber notice */
+  --color-status-error:     #b91c1c;  /* error states */
+  --color-strip-fallback:  #737373;  /* route has no brand color (subtle grey) */
+}
+
+/* Dark mode: applied via the .dark class on <html>. The tokens above
+ * are CSS variables, so every component using `bg-bg` / `text-fg` /
+ * `border-border` (etc.) re-resolves automatically. */
+:root.dark {
+  --color-bg:           #0a0a0a;
+  --color-card:         #171717;
+  --color-card-soft:    #262626;
+  --color-border:       #2e2e2e;
+  --color-border-soft:  #262626;
+
+  --color-fg:           #fafafa;
+  --color-fg-muted:     #a3a3a3;
+  --color-fg-subtle:    #737373;
+  --color-fg-inverse:   #0a0a0a;
+
+  --color-status-arriving:  #34d399;
+  --color-status-warning:   #fbbf24;
+  --color-status-error:     #f87171;
+  --color-strip-fallback:  #737373;
+}
+
+/* Route color strip: a vertical stripe on the left edge of each
+ * stop card, coloured by the route's brand color. The colour comes
+ * from the data (Route.color) and is set inline by the component —
+ * this rule just gives it a thin gap so it doesn't bleed into the
+ * card content. */
+.color-strip {
+  width: 6px;
+  align-self: stretch;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }

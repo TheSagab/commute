@@ -69,14 +69,17 @@ export function LocationGate({ onResolved }: LocationGateProps) {
   }
 
   return (
-    <section className="rounded-2xl border border-neutral-200 bg-white p-6">
-      <h1 className="text-xl font-semibold text-neutral-900">
+    <section
+      className="rounded-2xl border border-card-border bg-card p-6"
+      data-testid="location-gate"
+    >
+      <h1 className="text-xl font-semibold text-fg">
         {t("location.prompt_title")}
       </h1>
-      <p className="mt-2 text-sm text-neutral-600">{t("location.prompt_body")}</p>
+      <p className="mt-2 text-sm text-fg-muted">{t("location.prompt_body")}</p>
 
       {state.kind === "asking" || state.kind === "prompting" ? (
-        <p className="mt-4 text-sm text-neutral-500">{t("location.searching")}</p>
+        <p className="mt-4 text-sm text-fg-muted">{t("location.searching")}</p>
       ) : null}
 
       {(state.kind === "denied" ||
@@ -86,20 +89,20 @@ export function LocationGate({ onResolved }: LocationGateProps) {
         <form onSubmit={handleSearch} className="mt-4 flex flex-col gap-2">
           {state.kind === "denied" && (
             <div>
-              <p className="text-sm font-medium text-neutral-800">
+              <p className="text-sm font-medium text-fg">
                 {t("location.permission_denied_title")}
               </p>
-              <p className="text-sm text-neutral-600">
+              <p className="text-sm text-fg-muted">
                 {t("location.permission_denied_body")}
               </p>
             </div>
           )}
           {state.kind === "unsupported" && (
-            <p className="text-sm text-neutral-600">
+            <p className="text-sm text-fg-muted">
               {t("location.geolocation_unsupported")}
             </p>
           )}
-          <label className="text-sm font-medium text-neutral-800" htmlFor="place-search">
+          <label className="text-sm font-medium text-fg" htmlFor="place-search">
             {t("location.search_label")}
           </label>
           <div className="flex gap-2">
@@ -109,12 +112,12 @@ export function LocationGate({ onResolved }: LocationGateProps) {
               value={state.kind === "searching" ? state.query : query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t("location.search_placeholder")}
-              className="flex-1 rounded-md border border-neutral-300 px-3 py-2 text-sm"
+              className="flex-1 rounded-md border border-card-border bg-card px-3 py-2 text-sm text-fg placeholder:text-fg-subtle"
               disabled={state.kind === "searching"}
             />
             <button
               type="submit"
-              className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white disabled:opacity-50"
+              className="rounded-md bg-fg px-4 py-2 text-sm font-medium text-fg-inverse disabled:opacity-50"
               disabled={state.kind === "searching"}
             >
               {state.kind === "searching" ? t("location.searching") : t("location.search")}
@@ -124,13 +127,13 @@ export function LocationGate({ onResolved }: LocationGateProps) {
             <button
               type="button"
               onClick={requestGeolocation}
-              className="self-start text-sm text-neutral-700 underline-offset-2 hover:underline"
+              className="self-start text-sm text-fg-muted underline-offset-2 hover:underline"
             >
               {t("location.use_current")}
             </button>
           )}
           {state.kind === "search-error" && (
-            <p className="text-sm text-red-600">{t("location.search_error")}</p>
+            <p className="text-sm text-status-error">{t("location.search_error")}</p>
           )}
         </form>
       )}

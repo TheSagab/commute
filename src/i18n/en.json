@@ -20,8 +20,12 @@
 
   "stops.loading": "Finding nearby stops…",
   "stops.empty_title": "No stops nearby",
-  "stops.empty_body": "Try a different location, or widen the search area.",
+  "stops.empty_body": "We couldn't find any stops within a 10-minute walk. Try a different location, or widen the search area.",
+  "stops.empty_cta": "Try a different location",
   "stops.fallback_notice": "Using straight-line distance — routing service is offline.",
+  "stops.error_title": "Something went wrong",
+  "stops.error_body": "We couldn't load the nearby stops. Check your connection and try again.",
+  "stops.error_cta": "Try again",
 
   "card.next_minutes_one": "in {n} min",
   "card.next_minutes_other": "in {n} min",
@@ -33,6 +37,12 @@
   "card.walk_minutes_other": "{n} min walk",
   "card.expand": "Show all arrivals",
   "card.collapse": "Hide arrivals",
+  "card.headsign_to": "→ {headsign}",
+
+  "theme.label": "Theme",
+  "theme.auto": "Auto",
+  "theme.light": "Light",
+  "theme.dark": "Dark",
 
   "mode.mrt-jakarta": "MRT Jakarta",
   "mode.krl-commuter": "KRL Commuter Line",
