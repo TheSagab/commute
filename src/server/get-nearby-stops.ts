@@ -58,12 +58,14 @@ export type NearbyStop = {
     color?: string
     secondsUntil: number
     clockTime: string
+    source?: "static" | "live"
   } | null
   upcoming: {
     routeId: string
     subService: string
     clockTime: string
     secondsUntil: number
+    source?: "static" | "live"
   }[]
   subServices: {
     id: string
@@ -143,6 +145,7 @@ export const getNearbyStops = createServerFn({ method: "GET" })
         color?: string
         secondsUntil: number
         clockTime: string
+        source?: "static" | "live"
       }
       const allUpcoming: MergedArrival[] = []
 
@@ -166,6 +169,7 @@ export const getNearbyStops = createServerFn({ method: "GET" })
             color: u.route.color,
             secondsUntil: u.secondsUntil,
             clockTime: u.clockTime,
+            source: u.source ?? "static",
           })
         }
       }
@@ -183,6 +187,7 @@ export const getNearbyStops = createServerFn({ method: "GET" })
             color: upcoming[0].color,
             secondsUntil: upcoming[0].secondsUntil,
             clockTime: upcoming[0].clockTime,
+            source: upcoming[0].source,
           }
         : null
 
@@ -201,6 +206,7 @@ export const getNearbyStops = createServerFn({ method: "GET" })
           subService: u.subService,
           clockTime: u.clockTime,
           secondsUntil: u.secondsUntil,
+          source: u.source,
         })),
         subServices,
       })

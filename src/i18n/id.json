@@ -38,5 +38,6 @@
   "theme.label": "Tema",
   "theme.auto": "Otomatis",
   "theme.light": "Terang",
-  "theme.dark": "Gelap"
+  "theme.dark": "Gelap",
+  "card.live": "Live"
 }

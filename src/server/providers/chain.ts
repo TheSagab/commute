@@ -2,16 +2,18 @@
  * Provider chain.
  *
  * The chain resolves the active provider per mode and routes queries to
- * it. The static-JSON provider is the default; live providers (GTFS,
- * third-party) can be added later and will take precedence per mode
- * when active. See `docs/adr/0001-pluggable-provider-chain.md`.
+ * it. The static-JSON provider is the default; live providers take
+ * precedence per mode when active. See
+ * `docs/adr/0001-pluggable-provider-chain.md`.
  *
- * For "for now" only the static-JSON provider is wired up — the chain
- * is a single-element list. The interface is what matters: callers ask
- * the chain for data, not the provider directly.
+ * Order matters: earlier providers win. The Tije live provider (when
+ * `TIJE_LIVE=1`) sits in front of the static one and falls back to it
+ * per stop when it has no live data. See
+ * `docs/adr/0006-tije-live-prototype.md`.
  */
 
 import { createStaticJsonProvider } from "./static-json"
+import { createTijeLiveProvider } from "./tije-live"
 import type { Provider, StopWithArrivals } from "./types"
 import type { ModeId } from "../../data/types"
 
@@ -71,4 +73,13 @@ export function createChain(providers: Provider[]): Chain {
   }
 }
 
-export const defaultChain: Chain = createChain([createStaticJsonProvider()])
+const staticProvider = createStaticJsonProvider()
+
+// The live provider wraps the static one: it overlays real-time
+// arrivals when enabled, and delegates to the static schedule when it
+// has no live data or the API is unreachable. It's a no-op (always
+// inactive) unless `TIJE_LIVE` is set.
+export const defaultChain: Chain = createChain([
+  createTijeLiveProvider(staticProvider),
+  staticProvider,
+])

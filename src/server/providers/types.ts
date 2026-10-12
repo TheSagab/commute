@@ -22,6 +22,9 @@ export type UpcomingArrival = {
   clockTime: string
   /** Seconds from `now` until the arrival. */
   secondsUntil: number
+  /** Where the estimate came from. `"live"` means it's derived from a
+   *  real vehicle position; `"static"` (the default) from the schedule. */
+  source?: "static" | "live"
 }
 
 export type StopWithArrivals = {

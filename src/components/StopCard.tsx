@@ -123,6 +123,14 @@ export function StopCard({ stop, nowMs }: Props) {
               const { label, urgent } = formatCountdown(seconds, t)
               return (
                 <p className={`text-2xl font-semibold ${urgent ? "text-status-arriving" : "text-fg"}`}>
+                  {stop.next.source === "live" && (
+                    <span
+                      className="mr-2 align-middle text-[0.6rem] font-semibold uppercase tracking-wide text-status-arriving"
+                      title={t("card.live")}
+                    >
+                      ● {t("card.live")}
+                    </span>
+                  )}
                   {label}
                   <span className="ml-2 text-sm font-normal text-fg-muted">
                     {stop.next.clockTime}

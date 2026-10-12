@@ -38,5 +38,6 @@
   "theme.label": "Theme",
   "theme.auto": "Auto",
   "theme.light": "Light",
-  "theme.dark": "Dark"
+  "theme.dark": "Dark",
+  "card.live": "Live"
 }

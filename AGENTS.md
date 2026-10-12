@@ -47,9 +47,13 @@ The MVP is wired end-to-end:
   `localStorage`.
 - Weekly CI workflow that re-runs `pnpm scrape-data` (GTFS import +
   rail generators) and bumps `_meta.json`.
+- **Prototype live provider** (`src/server/providers/tije-live.ts`) that
+  overlays real-time bus ETAs from the unofficial Tije backend, gated
+  on `TIJE_LIVE=1` and falling back to the static schedule. See
+  ADR-0006. Off by default.
 
-Next: pick a deployment target, add realtime (GTFS-RT) when a feed
-appears, and refine the KRL sample.
+Next: pick a deployment target, decide whether to keep or retire the
+live prototype, and refine the KRL sample.
 
 ## Toolchain (mise)
 
@@ -196,12 +200,19 @@ use; add integrations only when a feature requires them.
 
 ## Environment variables
 
-| Name              | Server/Client | Required at | Purpose                          | Local dev default       |
-|-------------------|---------------|-------------|----------------------------------|-------------------------|
-| `OSRM_BASE_URL`   | server        | runtime     | Base URL of the OSRM HTTP API    | `http://localhost:5000` |
+| Name              | Server/Client | Required at | Purpose                                          | Local dev default                     |
+|-------------------|---------------|-------------|--------------------------------------------------|---------------------------------------|
+| `OSRM_BASE_URL`   | server        | runtime     | Base URL of the OSRM HTTP API                    | `http://localhost:5000`               |
+| `TIJE_LIVE`       | server        | runtime     | `1`/`true` enables the (unofficial) live provider | unset (off)                          |
+| `TIJE_API_BASE`   | server        | runtime     | Override the Tije API base URL                   | `https://tijeapi.transjakarta.co.id`  |
 
 Only `VITE_*`-prefixed variables are exposed to the client. New
 variables added later must be documented here with the same columns.
+
+`TIJE_LIVE` gates the **prototype** live provider (ADR-0006). It's off
+by default because the Tije API is unofficial and requires spoofed
+Android-app headers. When on, the provider overlays real-time arrivals
+from live bus positions and falls back to the static schedule per stop.
 
 ## Scripts
 
@@ -212,7 +223,7 @@ pnpm preview           # vite preview
 pnpm generate-routes   # tsr generate — regenerate src/routeTree.gen.ts
 pnpm gen-data          # re-run the rail scripts/gen-*-data.ts (writes src/data/*.json)
 pnpm scrape-data       # the CI entry point — GTFS import + gen-data + bump _meta.json
-pnpm test              # vitest run (35 tests, all green)
+pnpm test              # vitest run (42 tests, all green)
 pnpm tsc --noEmit      # type-check only (no script in package.json)
 ```
 
@@ -363,6 +374,9 @@ policy). The base `docker-compose.yml` stays portable.
   `docs/adr/0005-gtfs-as-transjakarta-data-source.md`. Headway-based
   schedules (frequency windows + stop offsets), day-of-week
   calendars, one Route per GTFS trip, sub-services from `route_desc`.
+- **Realtime is an unofficial prototype** — the Tije live provider
+  (ADR-0006) overlays live bus ETAs behind the static schedule, off by
+  default. No public GTFS-RT feed exists.
 - **List-only UI** — no map renderer. The location is shown as
   a text label; manual fallback is text search via Nominatim.
 - **Three-state cards** — countdown / "Starts at HH:MM" / "Service
