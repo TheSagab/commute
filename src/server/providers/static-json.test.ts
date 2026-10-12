@@ -1,172 +1,156 @@
 import { describe, expect, it } from "vitest"
-import { _findUpcomingForStop, _getServiceStatus } from "./static-json"
+import { _findUpcomingForStop, _nextArrivalSeconds } from "./static-json"
 import { loadModeBundle } from "../../data/load"
+import type { Schedule } from "../../data/types"
 
 const mrt = loadModeBundle("mrt-jakarta")
-const brt = loadModeBundle("transjakarta-brt")
-const np = loadModeBundle("transjakarta-non-brt")
+const nb = mrt.schedules["ns.northbound"]
+const sb = mrt.schedules["ns.southbound"]
+const ALL_DAYS = [0, 1, 2, 3, 4, 5, 6]
 
-function jakartaInstant(clock: string): Date {
-  // Build a Date for the given Jakarta wall-clock time on 2026-07-12.
+function at(clock: string): number {
   const [h, m] = clock.split(":").map(Number)
-  const utc = new Date(Date.UTC(2026, 6, 12, h - 7, m, 0))
-  return utc
+  return h * 3600 + m * 60
 }
 
-describe("static-json provider — service status", () => {
-  it("is running mid-day", () => {
-    const status = _getServiceStatus(mrt.serviceHours, 12 * 60)
-    expect(status.kind).toBe("running")
+function jakartaInstant(clock: string): Date {
+  const [h, m] = clock.split(":").map(Number)
+  return new Date(Date.UTC(2026, 6, 12, h - 7, m, 0))
+}
+
+describe("_nextArrivalSeconds — headway windows + offsets", () => {
+  it("uses the 5-minute morning-peak window at Lebak Bulus (offset 0)", () => {
+    // 06:00–07:00 is a 5-min window; at 06:02 the next northbound is 06:05.
+    const arrival = _nextArrivalSeconds(nb, "mrt-ldb", at("06:02"), 0, ALL_DAYS)
+    expect(arrival).toBe(at("06:05"))
   })
 
-  it("is beforeHours early morning", () => {
-    const status = _getServiceStatus(mrt.serviceHours, 3 * 60)
-    expect(status.kind).toBe("beforeHours")
-    if (status.kind === "beforeHours") {
-      expect(status.firstTime).toBe("05:00")
-    }
+  it("applies the per-stop offset for the far end of the line", () => {
+    // Bundaran HI is 12 * 180 s = 36 min from Lebak Bulus on the
+    // northbound. At 06:02 the train that departed 05:30 is already en
+    // route and arrives 06:06 — sooner than the 06:05 departure's 06:41.
+    const arrival = _nextArrivalSeconds(nb, "mrt-hi", at("06:02"), 0, ALL_DAYS)
+    expect(arrival).toBe(at("06:06"))
   })
 
-  it("is beforeHours right after midnight (wrapping window)", () => {
-    // MRT service wraps: 05:00 → 00:30 next day. 00:35 is in the gap.
-    // For wrapping ends the gap is shown as "beforeHours" — the next
-    // service is at 05:00 today.
-    const status = _getServiceStatus(mrt.serviceHours, 35)
-    expect(status.kind).toBe("beforeHours")
+  it("uses the southbound offset at Lebak Bulus (the far end southbound)", () => {
+    // Lebak Bulus is 36 min from the southbound start (Bundaran HI).
+    // At 06:02 the train that departed 05:30 arrives 06:06.
+    const arrival = _nextArrivalSeconds(sb, "mrt-ldb", at("06:02"), 0, ALL_DAYS)
+    expect(arrival).toBe(at("06:06"))
   })
 
-  it("is afterHours for a non-wrapping mode that has ended", () => {
-    // LRT Jakarta runs 05:30 → 23:00 (no wrap). 23:30 is past end.
-    const status = _getServiceStatus(
-      { start: "05:30", end: "23:00" },
-      23 * 60 + 30,
-    )
-    expect(status.kind).toBe("afterHours")
-    if (status.kind === "afterHours") {
-      expect(status.firstTimeTomorrow).toBe("05:30")
-    }
-  })
-})
-
-describe("static-json provider — next arrival at Lebak Bulus", () => {
-  it("returns no upcoming and beforeHours before service starts", () => {
-    const result = _findUpcomingForStop(mrt, "mrt-ldb", jakartaInstant("04:59"))
-    expect(result.upcoming).toEqual([])
-    expect(result.status.kind).toBe("beforeHours")
+  it("switches to the 7-minute mid-day window", () => {
+    // 07:00–17:00 is a 7-min window starting at 07:00, so departures are
+    // 07:00, 07:07, …, 08:03. At 08:00 the next is 08:03.
+    const arrival = _nextArrivalSeconds(nb, "mrt-ldb", at("08:00"), 0, ALL_DAYS)
+    expect(arrival).toBe(at("08:03"))
   })
 
-  it("returns the next southbound during the morning peak", () => {
-    const result = _findUpcomingForStop(mrt, "mrt-ldb", jakartaInstant("07:30"))
-    expect(result.upcoming.length).toBeGreaterThan(0)
-    const first = result.upcoming[0]
-    // Southbound (Bundaran HI → Lebak Bulus) leaves Lebak Bulus
-    // last; arrivals at LDB on the southbound are trains
-    // originating from the opposite end. At 07:30 the first one
-    // already passed — the next southbound ARRIVAL at LDB is the
-    // one that started northbound at 07:00 and arrived at LDB
-    // ~30 min later.
-    expect(first.routeId).toMatch(/ns\./)
-  })
-
-  it("returns the next northbound at 18:15", () => {
-    // Northbound leaves Lebak Bulus heading to Bundaran HI. 5-min
-    // peak headway, so at 18:15 the next northbound is the 18:15
-    // departure (or 18:20 if 18:15 just left).
-    const result = _findUpcomingForStop(mrt, "mrt-ldb", jakartaInstant("18:15"))
-    expect(result.upcoming.length).toBeGreaterThan(0)
-    const first = result.upcoming[0]
-    expect(first.routeId).toBe("ns.northbound")
-    // The exact time depends on the generated schedule; just
-    // assert it's in a sensible window.
-    expect(first.clockTime >= "18:15").toBe(true)
-    expect(first.clockTime <= "18:20").toBe(true)
-  })
-
-  it("returns no upcoming after the service window closes", () => {
-    // 00:35 is past the 00:30 end of the wrapped window.
-    const result = _findUpcomingForStop(mrt, "mrt-ldb", jakartaInstant("00:35"))
-    expect(result.upcoming).toEqual([])
-    expect(result.status.kind).toBe("beforeHours")
+  it("returns null when the route does not serve the stop", () => {
+    expect(_nextArrivalSeconds(nb, "does-not-exist", at("08:00"), 0, ALL_DAYS)).toBeNull()
   })
 })
 
-describe("static-json provider — per-route service hours (24h corridor)", () => {
-  // Corridor 9 has `serviceHours: { start: "00:00", end: "24:00" }`,
-  // overriding the mode-level 05:00–22:00 default. A stop on Corridor
-  // 9 (e.g. Sudirman) should be "running" at 03:00 even though the
-  // mode-level window hasn't started.
+describe("_nextArrivalSeconds — service days", () => {
+  const weekdayOnly: Schedule = {
+    windows: [{ start: "05:00", end: "23:00", headwaySeconds: 10 * 60 }],
+    stopOffsets: { s1: 0 },
+  }
 
-  it("keeps a 24h-route stop running at 03:00", () => {
-    const result = _findUpcomingForStop(brt, "c9-sdb", jakartaInstant("03:00"))
+  it("produces an arrival on a day the route runs", () => {
+    // Monday (dow 0) is in [0..4].
+    const arrival = _nextArrivalSeconds(weekdayOnly, "s1", at("08:00"), 0, [0, 1, 2, 3, 4])
+    expect(arrival).toBe(at("08:00"))
+  })
+
+  it("returns null on a day the route does not run", () => {
+    // Sunday (dow 6) is not in [0..4].
+    expect(_nextArrivalSeconds(weekdayOnly, "s1", at("08:00"), 6, [0, 1, 2, 3, 4])).toBeNull()
+  })
+})
+
+describe("_nextArrivalSeconds — windows that wrap past midnight", () => {
+  const lateNight: Schedule = {
+    windows: [{ start: "22:00", end: "24:30", headwaySeconds: 15 * 60 }],
+    stopOffsets: { s1: 0 },
+  }
+
+  it("returns the late-night departure before midnight", () => {
+    // 23:01 → next 15-min departure is 23:15 (23:00 is already gone).
+    expect(_nextArrivalSeconds(lateNight, "s1", at("23:01"), 0, ALL_DAYS)).toBe(at("23:15"))
+  })
+
+  it("still serves after midnight from the previous day's window", () => {
+    // 00:10 (dow 1) → the window that started 22:00 the previous day
+    // (dow 0) is still running until 00:30. The next departure is 00:15.
+    const arrival = _nextArrivalSeconds(lateNight, "s1", at("00:10"), 1, ALL_DAYS)
+    expect(arrival).toBe(at("00:15"))
+  })
+})
+
+describe("_findUpcomingForStop — service days", () => {
+  // A weekday-only route should NOT report "running" on a Sunday.
+  const weekdayBundle = {
+    mode: "mrt-jakarta" as const,
+    name: { en: "Test", id: "Test" },
+    stops: [
+      { id: "s1", name: { en: "S1", id: "S1" }, lat: 0, lon: 0 },
+    ],
+    routes: [
+      {
+        id: "r1",
+        shortName: "T",
+        name: { en: "Test", id: "Test" },
+        headsign: { en: "End", id: "End" },
+        serviceDays: [0, 1, 2, 3, 4], // weekdays only
+      },
+    ],
+    schedules: {
+      r1: { windows: [{ start: "05:00", end: "22:00", headwaySeconds: 600 }], stopOffsets: { s1: 0 } },
+    },
+  }
+
+  it("reports running on a weekday", () => {
+    // 2026-07-13 is a Monday.
+    const monday = new Date(Date.UTC(2026, 6, 13, 4, 0, 0)) // 11:00 Jakarta
+    const result = _findUpcomingForStop(weekdayBundle, "s1", monday)
     expect(result.status.kind).toBe("running")
     expect(result.upcoming.length).toBeGreaterThan(0)
   })
 
-  it("keeps the same stop running across the day", () => {
-    // 23:30 — a 5-22 route has ended, but Corridor 9 is 24h.
-    const result = _findUpcomingForStop(brt, "c9-sdb", jakartaInstant("23:30"))
-    expect(result.status.kind).toBe("running")
-  })
-
-  it("non-24h stops on the same mode are still afterHours at 23:30", () => {
-    // Corridor 1 doesn't have per-route service hours, so it uses
-    // the mode-level 05:00–22:00. Blok M is a Corridor 1 stop.
-    const result = _findUpcomingForStop(brt, "c1-blm", jakartaInstant("23:30"))
+  it("reports afterHours on a Sunday", () => {
+    // 2026-07-12 is a Sunday.
+    const sunday = new Date(Date.UTC(2026, 6, 12, 4, 0, 0)) // 11:00 Jakarta
+    const result = _findUpcomingForStop(weekdayBundle, "s1", sunday)
     expect(result.status.kind).toBe("afterHours")
-  })
-
-  it("non-24h stops are beforeHours at 03:00", () => {
-    // Blok M on Corridor 1 (mode-level 05:00–22:00) is beforeHours
-    // at 03:00 — even though Corridor 9 (a different route serving
-    // the same operator) is running, the stop's status is per-route
-    // and each stop's status is the most-permissive across its own
-    // serving routes.
-    const result = _findUpcomingForStop(brt, "c1-blm", jakartaInstant("03:00"))
-    expect(result.status.kind).toBe("beforeHours")
-  })
-})
-
-describe("static-json provider — Non-BRT sub-service", () => {
-  // The Non-BRT bundle uses BRT stop ids for shared halte (e.g.
-  // `c1-blm` is Blok M, served by BRT Corridor 1 and several Non-BRT
-  // routes like 1C, 1M, 1P, 1Q, 6M, 6U, 7B, 7Q, 8D, 8E, 1W) plus
-  // Non-BRT-only stops with the `np-` prefix. Tests below check both.
-
-  it("an Non-BRT-only stop is running mid-day", () => {
-    // np-pantai-maju is a Non-BRT-only stop (route 1A's headsign).
-    // The bundle's mode-level service hours are 05:00–22:00, so
-    // mid-day should be "running".
-    const result = _findUpcomingForStop(np, "np-pantai-maju", jakartaInstant("12:00"))
-    expect(result.status.kind).toBe("running")
-    expect(result.upcoming.length).toBeGreaterThan(0)
-  })
-
-  it("an Non-BRT-only stop is beforeHours early morning", () => {
-    const result = _findUpcomingForStop(np, "np-pantai-maju", jakartaInstant("04:30"))
-    expect(result.status.kind).toBe("beforeHours")
     expect(result.upcoming).toEqual([])
   })
 
-  it("a BRT+Non-BRT shared halte (Blok M) is running mid-day with arrivals from both", () => {
-    // c1-blm (Blok M) is shared by BRT Corridor 1 (BRT) and a dozen
-    // Non-BRT routes. The chain unifies them — the test loads each
-    // bundle and checks that BOTH report running arrivals.
-    const brtResult = _findUpcomingForStop(brt, "c1-blm", jakartaInstant("12:00"))
-    const npResult = _findUpcomingForStop(np, "c1-blm", jakartaInstant("12:00"))
-    expect(brtResult.status.kind).toBe("running")
-    expect(npResult.status.kind).toBe("running")
-    expect(brtResult.upcoming.length).toBeGreaterThan(0)
-    expect(npResult.upcoming.length).toBeGreaterThan(0)
-    // At least one upcoming in each bundle should be from a
-    // different route (BRT vs Non-BRT routes). The most-permissive
-    // combine in getNearbyStops would surface the soonest of all
-    // these in a single card.
-    const brtRouteIds = new Set(brtResult.upcoming.map((u) => u.routeId))
-    const npRouteIds = new Set(npResult.upcoming.map((u) => u.routeId))
-    // Some overlap is possible (None here, but be defensive) —
-    // the strong claim is that BOTH bundles report arrivals, so
-    // the chain has something to unify.
-    expect(brtRouteIds.size).toBeGreaterThan(0)
-    expect(npRouteIds.size).toBeGreaterThan(0)
+  it("preserves the real first time in the combined status", () => {
+    // Monday 03:00 Jakarta (before the 05:00 first window).
+    const mondayEarly = new Date(Date.UTC(2026, 6, 12, 20, 0, 0))
+    const before = _findUpcomingForStop(weekdayBundle, "s1", mondayEarly)
+    expect(before.status.kind).toBe("beforeHours")
+    if (before.status.kind === "beforeHours") {
+      expect(before.status.firstTime).toBe("05:00")
+    }
+  })
+})
+
+describe("_findUpcomingForStop — MRT", () => {
+  it("reports running and an upcoming list during service hours", () => {
+    const result = _findUpcomingForStop(mrt, "mrt-ldb", jakartaInstant("06:02"))
+    expect(result.status.kind).toBe("running")
+    expect(result.upcoming.length).toBeGreaterThan(0)
+    // Soonest across both directions at Lebak Bulus is the northbound
+    // 06:05 (offset 0), before the southbound 06:41 (offset 36 min).
+    expect(result.upcoming[0]?.routeId).toBe("ns.northbound")
+  })
+
+  it("reports beforeHours at 03:00", () => {
+    const result = _findUpcomingForStop(mrt, "mrt-ldb", jakartaInstant("03:00"))
+    expect(result.status.kind).toBe("beforeHours")
+    expect(result.upcoming).toEqual([])
   })
 })

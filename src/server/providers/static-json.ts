@@ -1,21 +1,28 @@
 /**
  * Static-JSON provider.
  *
- * Reads the bundled `src/data/<mode>.json` files, parses the timetable,
- * and answers `Provider` queries. The default provider for every mode;
- * a live provider (GTFS, third-party) overrides it per mode when
- * active. See `docs/adr/0001-pluggable-provider-chain.md`.
+ * Reads the bundled `src/data/<mode>.json` files and answers `Provider`
+ * queries. The default provider for every mode; a live provider (GTFS-RT,
+ * third-party) overrides it per mode when active. See
+ * `docs/adr/0001-pluggable-provider-chain.md`.
  *
- * All times in the JSON are Jakarta wall-clock ("HH:MM", may exceed
- * 24:00 to roll past midnight). The provider takes a `Date` (`now`) and
- * projects to Jakarta-local "minutes since midnight" before comparing.
- * This means the user's clock is assumed to be on Jakarta time — see
- * the `Known gotchas` section of `AGENTS.md` for the future timezone
- * story.
+ * Schedules are headway-based: each route has a list of frequency
+ * windows (`start`, `end`, `headwaySeconds`) plus a per-stop travel
+ * offset (`stopOffsets[stopId]`). "Next arrival at stop X" is the
+ * soonest `window.start + n * headway + offset[X]` in the future, on a
+ * service day the route runs. This is the shape GTFS `frequencies.txt`
+ * gives us, and it keeps the Transjakarta feed at ~1 MB rather than the
+ * ~30 MB an explicit-times conversion would produce.
+ *
+ * Times are Jakarta wall-clock. Clock values may exceed 24:00 to roll
+ * past midnight (e.g. "24:30" = 00:30 the next day). The provider
+ * projects `now` to Jakarta seconds-since-midnight and day-of-week
+ * before comparing. The user's clock is assumed to be on Jakarta time —
+ * see the `Known gotchas` section of `AGENTS.md`.
  */
 
 import { loadAllBundles, loadModeBundle } from "../../data/load"
-import type { ClockTime, ModeBundle, ModeId, ServiceHours, Stop } from "../../data/types"
+import type { ModeBundle, ModeId, Route, Schedule, ServiceDays, Stop } from "../../data/types"
 import type {
   Provider,
   ServiceStatus,
@@ -23,161 +30,188 @@ import type {
   UpcomingArrival,
 } from "./types"
 
-const JAKARTA_OFFSET_MIN = 7 * 60
+const DAY_SECONDS = 24 * 60 * 60
+const JAKARTA_OFFSET_SECONDS = 7 * 60 * 60
 
-/** Jakarta-local wall-clock minutes-since-midnight at the given instant.
- *  Normalized to `[0, 24*60)`. */
-function jakartaMinutesAt(now: Date): number {
-  const utcMin = now.getUTCHours() * 60 + now.getUTCMinutes()
-  let result = utcMin + JAKARTA_OFFSET_MIN
-  if (result >= 24 * 60) result -= 24 * 60
-  if (result < 0) result += 24 * 60
-  return result
+/** Jakarta-local wall-clock seconds-since-midnight and day-of-week
+ *  (0 = Monday … 6 = Sunday) at the given instant. */
+function jakartaPartsAt(now: Date): { sec: number; dow: number } {
+  const jakartaMs = now.getTime() + JAKARTA_OFFSET_SECONDS * 1000
+  const d = new Date(jakartaMs)
+  const sec = d.getUTCHours() * 3600 + d.getUTCMinutes() * 60 + d.getUTCSeconds()
+  // getUTCDay: 0 = Sunday … 6 = Saturday. Shift to 0 = Monday.
+  const dow = (d.getUTCDay() + 6) % 7
+  return { sec, dow }
 }
 
-function parseClock(clock: ClockTime): number {
+function clockToSeconds(clock: string): number {
   const [h, m] = clock.split(":").map(Number)
-  return h * 60 + m
+  return h * 3600 + m * 60
 }
 
-function formatClock(minutes: number): string {
-  const h = Math.floor(minutes / 60)
-  const m = minutes % 60
+function formatClock(seconds: number): string {
+  const h = Math.floor(seconds / 3600)
+  const m = Math.floor((seconds % 3600) / 60)
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`
 }
 
-function getServiceStatus(
-  hours: ServiceHours,
-  nowMinutes: number,
+/** Per-route service status from its frequency windows, on a day the
+ *  route runs. */
+function routeStatus(
+  schedule: Schedule,
+  stopOffset: number,
+  nowSec: number,
+  serviceDays: ServiceDays,
+  todayDow: number,
 ): ServiceStatus {
-  const start = parseClock(hours.start)
-  const end = parseClock(hours.end)
-  const dayMin = 24 * 60
+  if (schedule.windows.length === 0) {
+    return { kind: "afterHours", lastTime: "23:59", firstTimeTomorrow: "00:00" }
+  }
+  const firstStart = Math.min(...schedule.windows.map((w) => clockToSeconds(w.start)))
+  // Effective service ends after the last window's last departure plus
+  // the travel time to this stop.
+  const lastEnd = Math.max(...schedule.windows.map((w) => clockToSeconds(w.end))) + stopOffset
 
-  // "running" if `nowMinutes` is inside the service window. The window
-  // is `[start, end)`; if `end > 24*60` it wraps past midnight, and the
-  // window is `[start, 24*60)` ∪ `[0, end - 24*60)`.
-  const wraps = end > dayMin
-  const endMod = wraps ? end - dayMin : end
-
-  const isRunning = wraps
-    ? nowMinutes >= start || nowMinutes < endMod
-    : nowMinutes >= start && nowMinutes < end
-
-  if (isRunning) return { kind: "running" }
-
-  // Not running. The two messages:
-  //   - "beforeHours": we're in the gap between midnight and `start`
-  //     (e.g. 03:00 for a 05:00 start). Next service is at `start`.
-  //   - "afterHours":  we're in the gap between `end` and midnight
-  //     (only possible when `end <= 24*60` — a non-wrapping end).
-  //     Next service is `start` tomorrow.
-  // For wrapping ends, the gap `[endMod, start)` shows up as
-  // "beforeHours" — the next service is at `start` (same calendar day,
-  // just earlier in wall-clock terms).
-  if (!wraps && nowMinutes >= end) {
+  if (!serviceDays.includes(todayDow)) {
+    // Not a service day. Only relevant if yesterday's window is still
+    // running past midnight (a late-night trip on the previous day).
+    const runsYesterday = serviceDays.includes((todayDow + 6) % 7)
+    if (runsYesterday && lastEnd > DAY_SECONDS && nowSec < lastEnd - DAY_SECONDS) {
+      return { kind: "running" }
+    }
     return {
       kind: "afterHours",
-      lastTime: formatClock(end - 1),
-      firstTimeTomorrow: hours.start,
+      lastTime: formatClock(lastEnd),
+      firstTimeTomorrow: formatClock(firstStart),
     }
   }
-  return { kind: "beforeHours", firstTime: hours.start }
+
+  if (nowSec < firstStart) {
+    return { kind: "beforeHours", firstTime: formatClock(firstStart) }
+  }
+  if (nowSec >= lastEnd) {
+    return {
+      kind: "afterHours",
+      lastTime: formatClock(lastEnd),
+      firstTimeTomorrow: formatClock(firstStart),
+    }
+  }
+  return { kind: "running" }
 }
 
-function routeServiceHours(bundle: ModeBundle, route: ModeBundle["routes"][number]): ServiceHours {
-  return route.serviceHours ?? bundle.serviceHours
+/** Soonest future arrival (seconds since midnight, may exceed 24:00) for
+ *  a route at a stop, or `null` if none today. */
+function nextArrivalSeconds(
+  schedule: Schedule,
+  stopId: string,
+  nowSec: number,
+  todayDow: number,
+  serviceDays: ServiceDays,
+): number | null {
+  const offset = schedule.stopOffsets[stopId]
+  if (offset === undefined) return null
+
+  let best = Infinity
+  for (const w of schedule.windows) {
+    const headway = w.headwaySeconds
+    if (headway <= 0) continue
+    const wStart = clockToSeconds(w.start)
+    const wEnd = clockToSeconds(w.end)
+
+    // Two instances: today's (service day = today) and yesterday's
+    // (service day = yesterday — only meaningful for windows that wrap
+    // past midnight, but harmless otherwise because arrivals land in
+    // the past and get filtered).
+    for (const [dayShift, serviceDay] of [
+      [0, todayDow],
+      [-DAY_SECONDS, (todayDow + 6) % 7],
+    ] as const) {
+      if (!serviceDays.includes(serviceDay)) continue
+      const start = wStart + dayShift
+      const end = wEnd + dayShift
+      // First departure at or after the moment the stop needs to be
+      // served: nowSec - offset.
+      const n = Math.max(0, Math.ceil((nowSec - offset - start) / headway))
+      const departure = start + n * headway
+      if (departure > end) continue
+      const arrival = departure + offset
+      if (arrival >= nowSec && arrival < best) best = arrival
+    }
+  }
+  return best === Infinity ? null : best
 }
+
+function routeServesStop(schedule: Schedule | undefined, stopId: string): schedule is Schedule {
+  return Boolean(schedule && schedule.stopOffsets[stopId] !== undefined)
+}
+
+const HORIZON_SECONDS = 2 * 60 * 60 // next 2 hours
 
 function findUpcomingForStop(
   bundle: ModeBundle,
   stopId: string,
   now: Date,
 ): { status: ServiceStatus; upcoming: UpcomingArrival[] } {
-  const nowMinutes = jakartaMinutesAt(now)
+  const { sec: nowSec, dow: todayDow } = jakartaPartsAt(now)
 
-  // Only consider routes that actually serve this stop — every
-  // route's per-route status (mode-level window or route override)
-  // is rolled into the stop's headline via the most-permissive rule.
-  const routesServingStop: { route: ModeBundle["routes"][number]; routeStatus: ServiceStatus }[] = []
+  const routesServing: { route: Route; schedule: Schedule; offset: number }[] = []
   for (const route of bundle.routes) {
-    const timetableForRoute = bundle.timetables[route.id]
-    if (!timetableForRoute || !timetableForRoute[stopId]) continue
-    routesServingStop.push({
-      route,
-      routeStatus: getServiceStatus(routeServiceHours(bundle, route), nowMinutes),
-    })
+    const schedule = bundle.schedules[route.id]
+    if (!routeServesStop(schedule, stopId)) continue
+    routesServing.push({ route, schedule, offset: schedule.stopOffsets[stopId] })
   }
-  const status = combineRouteStatuses(routesServingStop.map((r) => r.routeStatus))
+
+  const statuses = routesServing.map(({ route, schedule, offset }) =>
+    routeStatus(schedule, offset, nowSec, route.serviceDays, todayDow),
+  )
+  const status = combineRouteStatuses(statuses)
 
   if (status.kind !== "running") {
     return { status, upcoming: [] }
   }
 
-  // All times in the data are wall-clock minutes-since-midnight, sorted
-  // ascending. The service window can wrap past midnight; convert both
-  // `now` and each arrival to a service-relative "minutes since window
-  // start" so the comparison is monotonic. Per-route windows differ;
-  // we project `now` and each arrival into the *route's* own window.
-  const dayMin = 24 * 60
-  const horizonMin = 2 * 60 // next 2 hours
-
   const upcoming: UpcomingArrival[] = []
-  for (const { route, routeStatus } of routesServingStop) {
-    if (routeStatus.kind !== "running") continue // skip not-yet-started / ended routes
-
-    const hours = routeServiceHours(bundle, route)
-    const start = parseClock(hours.start)
-    const end = parseClock(hours.end)
-    const wraps = end > dayMin
-
-    const toServiceRelative = (wc: number): number => {
-      if (wraps && wc < start) return wc - start + dayMin
-      return wc - start
-    }
-    const nowRel = toServiceRelative(nowMinutes)
-
-    const timetableForRoute = bundle.timetables[route.id]
-    if (!timetableForRoute) continue
-    const timesForStop = timetableForRoute[stopId]
-    if (!timesForStop) continue
-
-    for (const t of timesForStop) {
-      const tm = parseClock(t)
-      const arrivalRel = toServiceRelative(tm)
-      const minutesUntil = arrivalRel - nowRel
-      if (minutesUntil < 0) continue
-      if (minutesUntil > horizonMin) break // sorted ascending
-      upcoming.push({
-        routeId: route.id,
-        route,
-        clockTime: t,
-        secondsUntil: minutesUntil * 60,
-      })
-    }
+  for (const { route, schedule } of routesServing) {
+    const arrival = nextArrivalSeconds(schedule, stopId, nowSec, todayDow, route.serviceDays)
+    if (arrival === null) continue
+    const secondsUntil = arrival - nowSec
+    if (secondsUntil > HORIZON_SECONDS) continue
+    upcoming.push({
+      routeId: route.id,
+      route,
+      clockTime: formatClock(arrival),
+      secondsUntil,
+    })
   }
 
   upcoming.sort((a, b) => a.secondsUntil - b.secondsUntil)
   return { status, upcoming }
 }
 
-/** Most-permissive combine across the routes serving a stop.
- *  Mirrors the same rule in `get-nearby-stops.ts` (`_combineStatuses`)
- *  but operates on the in-provider ServiceStatus shape (no firstTime
- *  or lastTime fields — those are derived only when the stop is the
- *  only result and the parent server function needs to render a
- *  "Starts at" / "Service ended" headline). */
-function combineRouteStatuses(
-  statuses: ServiceStatus[],
-): ServiceStatus {
+/** Most-permissive combine across the routes serving a stop. Mirrors the
+ *  same rule in `get-nearby-stops.ts` (`_combineStatuses`), preserving
+ *  the real start/end times so the card can render "Starts at 05:00" /
+ *  "Service ended at 23:00" rather than a placeholder. */
+function combineRouteStatuses(statuses: ServiceStatus[]): ServiceStatus {
   if (statuses.length === 0) {
     return { kind: "afterHours", lastTime: "23:59", firstTimeTomorrow: "00:00" }
   }
   if (statuses.some((s) => s.kind === "running")) return { kind: "running" }
+
   if (statuses.every((s) => s.kind === "beforeHours")) {
-    return { kind: "beforeHours", firstTime: "00:00" }
+    const starts = statuses.flatMap((s) => (s.kind === "beforeHours" ? [s.firstTime] : []))
+    return { kind: "beforeHours", firstTime: starts.sort()[0] ?? "00:00" }
   }
-  return { kind: "afterHours", lastTime: "23:59", firstTimeTomorrow: "00:00" }
+
+  // All (or mostly) afterHours: earliest "first service tomorrow",
+  // latest "last service today".
+  const lastTimes = statuses.flatMap((s) => (s.kind === "afterHours" ? [s.lastTime] : []))
+  const firstTomorrow = statuses.flatMap((s) => (s.kind === "afterHours" ? [s.firstTimeTomorrow] : []))
+  return {
+    kind: "afterHours",
+    lastTime: lastTimes.sort().at(-1) ?? "23:59",
+    firstTimeTomorrow: firstTomorrow.sort()[0] ?? "00:00",
+  }
 }
 
 function getUpcoming(
@@ -202,10 +236,21 @@ function getUpcoming(
 export function createStaticJsonProvider(): Provider {
   return {
     id: "static-json",
-    modes: ["mrt-jakarta", "krl-commuter", "transjakarta-brt", "transjakarta-non-brt", "transjakarta-mikrotrans", "lrt-jabodebek", "lrt-jakarta"],
+    modes: [
+      "mrt-jakarta",
+      "krl-commuter",
+      "transjakarta-brt",
+      "transjakarta-angkutan-umum-integrasi",
+      "transjakarta-mikrotrans",
+      "transjakarta-transjabodetabek",
+      "transjakarta-rusun",
+      "transjakarta-royaltrans",
+      "transjakarta-bus-wisata",
+      "lrt-jabodebek",
+      "lrt-jakarta",
+    ],
 
     async isActive() {
-      // The static-JSON provider is always "active" if a bundle exists.
       try {
         loadAllBundles()
         return true
@@ -232,4 +277,5 @@ export function createStaticJsonProvider(): Provider {
 }
 
 export { findUpcomingForStop as _findUpcomingForStop }
-export { getServiceStatus as _getServiceStatus }
+export { nextArrivalSeconds as _nextArrivalSeconds }
+export { jakartaPartsAt as _jakartaPartsAt }

@@ -5,7 +5,6 @@
   "language.label": "Bahasa",
   "language.en": "Inggris",
   "language.id": "Bahasa Indonesia",
-
   "location.prompt_title": "Di mana Anda?",
   "location.prompt_body": "Kami menggunakan lokasi Anda untuk menemukan halte terdekat. Lokasi tidak disimpan.",
   "location.use_current": "Gunakan lokasi saya saat ini",
@@ -17,7 +16,6 @@
   "location.permission_denied_title": "Akses lokasi ditolak",
   "location.permission_denied_body": "Ketik nama tempat di bawah untuk menemukan halte terdekat.",
   "location.geolocation_unsupported": "Browser tidak mendukung layanan lokasi. Ketik nama tempat di bawah.",
-
   "stops.loading": "Mencari halte terdekat…",
   "stops.empty_title": "Tidak ada halte terdekat",
   "stops.empty_body": "Kami tidak menemukan halte dalam jarak jalan kaki 10 menit. Coba lokasi lain, atau perluas area pencarian.",
@@ -26,7 +24,6 @@
   "stops.error_title": "Terjadi kesalahan",
   "stops.error_body": "Kami tidak dapat memuat halte terdekat. Periksa koneksi Anda dan coba lagi.",
   "stops.error_cta": "Coba lagi",
-
   "card.next_minutes_one": "{n} menit lagi",
   "card.next_minutes_other": "{n} menit lagi",
   "card.next_seconds": "{n} detik lagi",
@@ -38,18 +35,8 @@
   "card.expand": "Tampilkan semua kedatangan",
   "card.collapse": "Sembunyikan kedatangan",
   "card.headsign_to": "→ {headsign}",
-
   "theme.label": "Tema",
   "theme.auto": "Otomatis",
   "theme.light": "Terang",
-  "theme.dark": "Gelap",
-
-  "mode.mrt-jakarta": "MRT Jakarta",
-  "mode.krl-commuter": "KRL Commuter Line",
-  "mode.lrt-jabodebek": "LRT Jabodebek",
-  "mode.lrt-jakarta": "LRT Jakarta",
-  "operator.transjakarta": "Transjakarta",
-  "sub-service.transjakarta-brt": "BRT",
-  "sub-service.transjakarta-non-brt": "Non-BRT",
-  "sub-service.transjakarta-mikrotrans": "Mikrotrans"
+  "theme.dark": "Gelap"
 }

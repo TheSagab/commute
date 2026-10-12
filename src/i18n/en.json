@@ -5,7 +5,6 @@
   "language.label": "Language",
   "language.en": "English",
   "language.id": "Bahasa Indonesia",
-
   "location.prompt_title": "Where are you?",
   "location.prompt_body": "We use your location to find the nearest stops. Your location is not stored.",
   "location.use_current": "Use my current location",
@@ -17,7 +16,6 @@
   "location.permission_denied_title": "Location access denied",
   "location.permission_denied_body": "Type a place name below to find nearby stops.",
   "location.geolocation_unsupported": "Your browser doesn't support location services. Type a place name below.",
-
   "stops.loading": "Finding nearby stops…",
   "stops.empty_title": "No stops nearby",
   "stops.empty_body": "We couldn't find any stops within a 10-minute walk. Try a different location, or widen the search area.",
@@ -26,7 +24,6 @@
   "stops.error_title": "Something went wrong",
   "stops.error_body": "We couldn't load the nearby stops. Check your connection and try again.",
   "stops.error_cta": "Try again",
-
   "card.next_minutes_one": "in {n} min",
   "card.next_minutes_other": "in {n} min",
   "card.next_seconds": "in {n} sec",
@@ -38,18 +35,8 @@
   "card.expand": "Show all arrivals",
   "card.collapse": "Hide arrivals",
   "card.headsign_to": "→ {headsign}",
-
   "theme.label": "Theme",
   "theme.auto": "Auto",
   "theme.light": "Light",
-  "theme.dark": "Dark",
-
-  "mode.mrt-jakarta": "MRT Jakarta",
-  "mode.krl-commuter": "KRL Commuter Line",
-  "mode.lrt-jabodebek": "LRT Jabodebek",
-  "mode.lrt-jakarta": "LRT Jakarta",
-  "operator.transjakarta": "Transjakarta",
-  "sub-service.transjakarta-brt": "BRT",
-  "sub-service.transjakarta-non-brt": "Non-BRT",
-  "sub-service.transjakarta-mikrotrans": "Mikrotrans"
+  "theme.dark": "Dark"
 }

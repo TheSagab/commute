@@ -7,17 +7,18 @@
 import { spawnSync } from "node:child_process"
 import { readdirSync } from "node:fs"
 import { fileURLToPath } from "node:url"
-import { dirname } from "node:path"
+import { dirname, resolve } from "node:path"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
+const repoRoot = resolve(__dirname, "..")
 
 const scripts = readdirSync(__dirname)
   .filter((f) => /^gen-.*-data\.ts$/.test(f) && f !== "gen-all.ts")
 
 for (const script of scripts.sort()) {
   console.log(`\n=== ${script} ===`)
-  const result = spawnSync("pnpm", ["tsx", script], {
-    cwd: __dirname,
+  const result = spawnSync("pnpm", ["exec", "tsx", resolve(__dirname, script)], {
+    cwd: repoRoot,
     stdio: "inherit",
   })
   if (result.status !== 0) {

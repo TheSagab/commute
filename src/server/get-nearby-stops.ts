@@ -28,7 +28,7 @@ import { getWalkingDurations } from "./osrm"
 import { loadModeBundle, operatorOf } from "../data/load"
 import type { Localized, ModeId } from "../data/types"
 import type { LatLon } from "../lib/geo"
-import { OPERATOR_LABELS, SUB_SERVICE_LABELS } from "./labels"
+import { OPERATOR_LABELS } from "./labels"
 
 const WALKING_THRESHOLD_S = 10 * 60 // 10 min per ADR-0002
 const UPCOMING_HORIZON_MIN = 2 * 60 // 2 h
@@ -97,7 +97,7 @@ export const getNearbyStops = createServerFn({ method: "GET" })
       stopId: string
       stopName: Localized
       walkSeconds: number
-      modes: { mode: ModeId }[]
+      modes: { mode: ModeId; label: Localized }[]
     }
     const groups = new Map<string, PendingGroup>()
 
@@ -125,7 +125,9 @@ export const getNearbyStops = createServerFn({ method: "GET" })
       // physical stop — should be identical, but be defensive.
       if (walkSeconds < group.walkSeconds) group.walkSeconds = walkSeconds
       if (!group.modes.some((m) => m.mode === mode)) {
-        group.modes.push({ mode })
+        // The sub-service label is the operator's own `route_desc`
+        // (`bundle.name`), captured here so we don't reload the bundle.
+        group.modes.push({ mode, label: bundle.name })
       }
     }
 
@@ -147,12 +149,12 @@ export const getNearbyStops = createServerFn({ method: "GET" })
       const subServiceStatuses: { kind: "running" | "beforeHours" | "afterHours"; firstTime?: string; lastTime?: string; firstTimeTomorrow?: string }[] = []
       const subServices: { id: string; label: Localized; color?: string }[] = []
 
-      for (const { mode } of group.modes) {
+      for (const { mode, label } of group.modes) {
         const arrival = await defaultChain.getUpcoming(mode, group.stopId, now)
         subServiceStatuses.push(arrival.serviceStatus)
         subServices.push({
           id: mode,
-          label: SUB_SERVICE_LABELS[mode] ?? { en: mode, id: mode },
+          label,
           color: arrival.next?.route.color,
         })
         for (const u of arrival.upcoming) {

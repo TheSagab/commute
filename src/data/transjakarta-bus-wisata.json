@@ -1,0 +1,429 @@
+{
+  "mode": "transjakarta-bus-wisata",
+  "operator": "transjakarta",
+  "name": {
+    "en": "Bus Wisata",
+    "id": "Bus Wisata"
+  },
+  "stops": [
+    {
+      "id": "B01791P",
+      "name": {
+        "en": "Juanda Istiqlal",
+        "id": "Juanda Istiqlal"
+      },
+      "lat": -6.168147,
+      "lon": 106.83112
+    },
+    {
+      "id": "B02499P",
+      "name": {
+        "en": "Museum Bank Indonesia",
+        "id": "Museum Bank Indonesia"
+      },
+      "lat": -6.137242,
+      "lon": 106.81332
+    },
+    {
+      "id": "B01793P",
+      "name": {
+        "en": "Kali Besar Barat",
+        "id": "Kali Besar Barat"
+      },
+      "lat": -6.135487,
+      "lon": 106.81131
+    },
+    {
+      "id": "B00806P",
+      "name": {
+        "en": "IRTI",
+        "id": "IRTI"
+      },
+      "lat": -6.1803,
+      "lon": 106.82618
+    },
+    {
+      "id": "B00102P",
+      "name": {
+        "en": "Balai Kota",
+        "id": "Balai Kota"
+      },
+      "lat": -6.180598,
+      "lon": 106.82847
+    },
+    {
+      "id": "B03313P",
+      "name": {
+        "en": "MH Thamrin",
+        "id": "MH Thamrin"
+      },
+      "lat": -6.188238,
+      "lon": 106.82277
+    },
+    {
+      "id": "B05892P",
+      "name": {
+        "en": "Wisma Nusantara",
+        "id": "Wisma Nusantara"
+      },
+      "lat": -6.193425,
+      "lon": 106.82319
+    },
+    {
+      "id": "B05773P",
+      "name": {
+        "en": "Tosari",
+        "id": "Tosari"
+      },
+      "lat": -6.198915,
+      "lon": 106.82295
+    },
+    {
+      "id": "B01836P",
+      "name": {
+        "en": "Karet Sudirman",
+        "id": "Karet Sudirman"
+      },
+      "lat": -6.212197,
+      "lon": 106.81995
+    },
+    {
+      "id": "B00611P",
+      "name": {
+        "en": "Gelora Bung Karno",
+        "id": "Gelora Bung Karno"
+      },
+      "lat": -6.224126,
+      "lon": 106.80558
+    },
+    {
+      "id": "H00023P",
+      "name": {
+        "en": "Bundaran Senayan",
+        "id": "Bundaran Senayan"
+      },
+      "lat": -6.227869,
+      "lon": 106.80094
+    },
+    {
+      "id": "B00378P",
+      "name": {
+        "en": "FX Sudirman",
+        "id": "FX Sudirman"
+      },
+      "lat": -6.225532,
+      "lon": 106.8037
+    },
+    {
+      "id": "B00589P",
+      "name": {
+        "en": "GBK Pintu",
+        "id": "GBK Pintu"
+      },
+      "lat": -6.222095,
+      "lon": 106.80861
+    },
+    {
+      "id": "B02863P",
+      "name": {
+        "en": "Plaza Indonesia",
+        "id": "Plaza Indonesia"
+      },
+      "lat": -6.193733,
+      "lon": 106.8228
+    },
+    {
+      "id": "B02501P",
+      "name": {
+        "en": "Museum Nasional",
+        "id": "Museum Nasional"
+      },
+      "lat": -6.176403,
+      "lon": 106.82263
+    },
+    {
+      "id": "B02701P",
+      "name": {
+        "en": "Pecenongan",
+        "id": "Pecenongan"
+      },
+      "lat": -6.16695,
+      "lon": 106.82572
+    },
+    {
+      "id": "B02581P",
+      "name": {
+        "en": "Pasar Baru Gedung Kesenian Jakarta",
+        "id": "Pasar Baru Gedung Kesenian Jakarta"
+      },
+      "lat": -6.166751,
+      "lon": 106.83524
+    },
+    {
+      "id": "B02475P",
+      "name": {
+        "en": "Monas",
+        "id": "Monas"
+      },
+      "lat": -6.172531,
+      "lon": 106.82315
+    },
+    {
+      "id": "B02477P",
+      "name": {
+        "en": "Monas",
+        "id": "Monas"
+      },
+      "lat": -6.178787,
+      "lon": 106.82304
+    },
+    {
+      "id": "B02755P",
+      "name": {
+        "en": "Perpustakaan Nasional",
+        "id": "Perpustakaan Nasional"
+      },
+      "lat": -6.180673,
+      "lon": 106.82643
+    },
+    {
+      "id": "B00323P",
+      "name": {
+        "en": "DPRD DKI Jakarta",
+        "id": "DPRD DKI Jakarta"
+      },
+      "lat": -6.182886,
+      "lon": 106.82851
+    },
+    {
+      "id": "B05815P",
+      "name": {
+        "en": "Tugu Tani",
+        "id": "Tugu Tani"
+      },
+      "lat": -6.183129,
+      "lon": 106.83496
+    },
+    {
+      "id": "B05442P",
+      "name": {
+        "en": "St. Gambir",
+        "id": "St. Gambir"
+      },
+      "lat": -6.175681,
+      "lon": 106.830729
+    },
+    {
+      "id": "B02476P",
+      "name": {
+        "en": "Monas",
+        "id": "Monas"
+      },
+      "lat": -6.175999,
+      "lon": 106.82311
+    }
+  ],
+  "routes": [
+    {
+      "id": "BW1-R01",
+      "shortName": "BW1",
+      "name": {
+        "en": "Sejarah Jakarta",
+        "id": "Sejarah Jakarta"
+      },
+      "headsign": {
+        "en": "Kali Besar",
+        "id": "Kali Besar"
+      },
+      "color": "#FFB6DB",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "BW1-R02",
+      "shortName": "BW1",
+      "name": {
+        "en": "Sejarah Jakarta",
+        "id": "Sejarah Jakarta"
+      },
+      "headsign": {
+        "en": "Juanda",
+        "id": "Juanda"
+      },
+      "color": "#FFB6DB",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "BW4-L01",
+      "shortName": "BW4",
+      "name": {
+        "en": "Pencakar Langit",
+        "id": "Pencakar Langit"
+      },
+      "headsign": {
+        "en": "Pencakar Langit",
+        "id": "Pencakar Langit"
+      },
+      "color": "#FFB6DB",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "BW1-L02",
+      "shortName": "BW1",
+      "name": {
+        "en": "Sejarah Jakarta",
+        "id": "Sejarah Jakarta"
+      },
+      "headsign": {
+        "en": "Sejarah Jakarta",
+        "id": "Sejarah Jakarta"
+      },
+      "color": "#FFB6DB",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "BW2-L02",
+      "shortName": "BW2",
+      "name": {
+        "en": "Monas Explorer",
+        "id": "Monas Explorer"
+      },
+      "headsign": {
+        "en": "Monas Explorer",
+        "id": "Monas Explorer"
+      },
+      "color": "#FFB6DB",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "schedules": {
+    "BW1-R01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B01791P": 0,
+        "B02499P": 1296,
+        "B01793P": 1417
+      }
+    },
+    "BW1-R02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B01793P": 0,
+        "B01791P": 1650
+      }
+    },
+    "BW4-L01": {
+      "windows": [
+        {
+          "start": "10:00",
+          "end": "17:00",
+          "headwaySeconds": 52700
+        }
+      ],
+      "stopOffsets": {
+        "B00806P": 0,
+        "B00102P": 161,
+        "B03313P": 561,
+        "B05892P": 735,
+        "B05773P": 929,
+        "B01836P": 1382,
+        "B00611P": 1963,
+        "H00023P": 2274,
+        "B00378P": 2429,
+        "B00589P": 2623,
+        "B02863P": 3699,
+        "B02501P": 4255,
+        "B02701P": 4717,
+        "B02581P": 5045,
+        "B02475P": 5681,
+        "B02477P": 5883
+      }
+    },
+    "BW1-L02": {
+      "windows": [
+        {
+          "start": "10:00",
+          "end": "17:00",
+          "headwaySeconds": 52700
+        }
+      ],
+      "stopOffsets": {
+        "B01791P": 0,
+        "B02499P": 1297,
+        "B01793P": 1418
+      }
+    },
+    "BW2-L02": {
+      "windows": [
+        {
+          "start": "10:00",
+          "end": "17:00",
+          "headwaySeconds": 52700
+        }
+      ],
+      "stopOffsets": {
+        "B00806P": 0,
+        "B00102P": 131,
+        "B02755P": 206,
+        "B00323P": 559,
+        "B05815P": 801,
+        "B05442P": 1098,
+        "B01791P": 1439,
+        "B02475P": 1846,
+        "B02476P": 1962,
+        "B02477P": 2057
+      }
+    }
+  }
+}

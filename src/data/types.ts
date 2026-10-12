@@ -6,6 +6,13 @@
  * timestamp, version). The provider chain reads these files and produces
  * `ProviderQuery` results for the rest of the app.
  *
+ * Schedules are headway-based rather than explicit clock times. A route's
+ * schedule is a list of frequency windows (`start`, `end`, `headwaySeconds`)
+ * plus a per-stop travel offset. "Next arrival at stop X" is the soonest
+ * `window.start + n * headway + offset[X]` in the future. This is the shape
+ * GTFS `frequencies.txt` uses, and it keeps the Transjakarta feed (which
+ * would explode to ~30 MB as explicit times) at ~1 MB.
+ *
  * See `docs/data-format.md` for the human-readable spec and rationale.
  */
 
@@ -13,8 +20,12 @@ export type ModeId =
   | "mrt-jakarta"
   | "krl-commuter"
   | "transjakarta-brt"
-  | "transjakarta-non-brt"
+  | "transjakarta-angkutan-umum-integrasi"
   | "transjakarta-mikrotrans"
+  | "transjakarta-transjabodetabek"
+  | "transjakarta-rusun"
+  | "transjakarta-royaltrans"
+  | "transjakarta-bus-wisata"
   | "lrt-jabodebek"
   | "lrt-jakarta"
 
@@ -22,8 +33,12 @@ export const MODE_IDS: readonly ModeId[] = [
   "mrt-jakarta",
   "krl-commuter",
   "transjakarta-brt",
-  "transjakarta-non-brt",
+  "transjakarta-angkutan-umum-integrasi",
   "transjakarta-mikrotrans",
+  "transjakarta-transjabodetabek",
+  "transjakarta-rusun",
+  "transjakarta-royaltrans",
+  "transjakarta-bus-wisata",
   "lrt-jabodebek",
   "lrt-jakarta",
 ] as const
@@ -32,20 +47,18 @@ export type Locale = "en" | "id"
 
 export type Localized = Record<Locale, string>
 
-export type ServiceHours = {
-  /** "HH:MM" in 24h Jakarta time. Inclusive. */
-  start: string
-  /** "HH:MM" in 24h Jakarta time. May exceed 24:00 to model a window that
-   *  rolls past midnight (e.g. 24:30 = 00:30 the next day). A value of
-   *  exactly 24:00 means "24 hours" — the service is always running. */
-  end: string
-}
+/** Clock time as "HH:MM" in 24h Jakarta time. May exceed 24:00 to roll
+ *  past midnight (e.g. "24:30" = 00:30 the next day). */
+export type ClockTime = string
+
+/** Days of the week a route runs. 0 = Monday … 6 = Sunday.
+ *  `[0,1,2,3,4]` is weekdays, `[5,6]` is the weekend, all seven is daily. */
+export type ServiceDays = number[]
 
 export type Stop = {
   /** Stable across scrapes. Within a single `ModeBundle` this id is
    *  unique. Stops with the same `id` MAY appear in multiple bundles
-   *  of the same operator (e.g. a BRT shelter that doubles as a
-   *  Mikrotrans stop) — the chain unifies them at query time. */
+   *  of the same operator — the chain unifies them at query time. */
   id: string
   /** Official name in both languages. */
   name: Localized
@@ -58,61 +71,66 @@ export type Stop = {
 }
 
 export type Route = {
-  /** Unique within the mode. Stable across scrapes.
-   *  Convention: `<line-id>.<direction>` (e.g. `ns.northbound`). */
+  /** Unique within the mode. Stable across scrapes. For GTFS-derived
+   *  bundles this is the trip id (e.g. `1-R07`). */
   id: string
-  /** Display name in both languages, e.g. "North-South Line (Northbound)". */
+  /** Short public identifier shown on the vehicle, e.g. "9", "1A",
+   *  "JAK.79". For rail modes this is the line code, e.g. "NS". */
+  shortName: string
+  /** Display name in both languages, e.g. "Kali Besar Barat - Blok M". */
   name: Localized
   /** Destination shown on the front of the vehicle, in both languages.
    *  Used as the card's "what's coming" line. */
   headsign: Localized
-  /** Optional UI color (line color in operator branding). */
+  /** Optional UI color (line color in operator branding, hex without #). */
   color?: string
-  /** Optional per-route service window. Overrides the mode-level
-   *  `serviceHours` for this route. Use this for routes that run a
-   *  different window from the rest of the mode (e.g. a 24h BRT
-   *  corridor: `{ start: "00:00", end: "24:00" }`). If omitted, the
-   *  route inherits the mode-level service hours. */
-  serviceHours?: ServiceHours
+  /** Days this route runs. See `ServiceDays`. */
+  serviceDays: ServiceDays
 }
 
-/** Clock time as "HH:MM" in 24h Jakarta time. May exceed 24:00 to roll
- *  past midnight. Sorted ascending within a route. */
-export type ClockTime = string
+/** A window during which vehicles depart the route's first stop every
+ *  `headwaySeconds`, from `start` (inclusive) to `end` (inclusive). */
+export type FrequencyWindow = {
+  start: ClockTime
+  end: ClockTime
+  headwaySeconds: number
+}
+
+export type Schedule = {
+  /** Ordered ascending by `start`. A route typically has one window;
+   *  peak/off-peak routes have several. */
+  windows: FrequencyWindow[]
+  /** Seconds from the route's first-stop departure to the arrival at
+   *  each stop. `stopOffsets[firstStopId] === 0`. Missing entries mean
+   *  the route does not serve that stop. */
+  stopOffsets: Record<string, number>
+}
 
 export type ModeBundle = {
   mode: ModeId
   /** The operator this sub-service belongs to. Defaults to `mode`
    *  (i.e. the operator IS the sub-service, as for MRT/LRT/KRL). For
-   *  Transjakarta, multiple sub-services (`transjakarta-brt`,
-   *  `transjakarta-mikrotrans`) share the operator `"transjakarta"`.
+   *  Transjakarta, several sub-services (`transjakarta-brt`,
+   *  `transjakarta-mikrotrans`, …) share the operator `"transjakarta"`.
    *  Used by the UI to group sub-services under their operator. */
   operator?: string
-  /** Human-readable sub-service name, in both languages. */
+  /** Human-readable sub-service name, in both languages. For GTFS-derived
+   *  bundles this is the `route_desc` value (e.g. "BRT", "Mikrotrans"). */
   name: Localized
-  /** Sub-service-level daily service window. The default for any route
-   *  in this mode that doesn't set its own `serviceHours`. The static
-   *  data currently assumes the same window every day (no weekday/
-   *  weekend split). */
-  serviceHours: ServiceHours
   stops: Stop[]
   routes: Route[]
-  /** Indexed for fast lookup. `timetables[routeId][stopId]` is the
-   *  sorted list of arrival times for that (route, stop). */
-  timetables: {
-    [routeId: string]: {
-      [stopId: string]: ClockTime[]
-    }
-  }
+  /** Indexed by route id. `schedules[routeId]` is the headway + per-stop
+   *  offset data the provider turns into "next arrival" for a stop. */
+  schedules: Record<string, Schedule>
 }
 
 export type BundleMeta = {
   /** Schema version. Bumped when the shape changes in a non-backward-
    *  compatible way. */
-  version: 1
+  version: 2
   /** ISO 8601 timestamp of the most recent successful scrape. */
   dataLastUpdated: string
-  /** Operator names + source URLs, for the "about this data" panel. */
+  /** Source URL per mode, for the "about this data" panel. */
   sources: {
     mode: ModeId
     operator: string

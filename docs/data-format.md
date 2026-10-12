@@ -1,127 +1,138 @@
 # Static-JSON data format
 
-One file per mode, all under `src/data/`. The shape is described in
-`src/data/types.ts`; this doc is the rationale and the human-readable
-spec. The vocabulary (`Mode`, `Route`, `Stop`, `Arrival`, etc.) is
-defined in `CONTEXT.md`.
+One file per mode/sub-service, all under `src/data/`. The shape is
+described in `src/data/types.ts`; this doc is the rationale and the
+human-readable spec. The vocabulary (`Mode`, `Sub-service`, `Route`,
+`Stop`, `Arrival`, `Frequency window`, …) is defined in `CONTEXT.md`.
 
 ## File layout
 
 ```
 src/data/
-├── _meta.json          # bundle metadata (timestamp, version, sources)
-├── mrt-jakarta.json    # one file per mode
+├── _meta.json                                # bundle metadata
+├── mrt-jakarta.json                          # rail (hand-curated)
 ├── krl-commuter.json
-├── transjakarta.json
 ├── lrt-jabodebek.json
-└── lrt-jakarta.json
+├── lrt-jakarta.json
+├── transjakarta-brt.json                     # GTFS-derived (one per route_desc)
+├── transjakarta-angkutan-umum-integrasi.json
+├── transjakarta-mikrotrans.json
+├── transjakarta-transjabodetabek.json
+├── transjakarta-rusun.json
+├── transjakarta-royaltrans.json
+└── transjakarta-bus-wisata.json
 ```
 
 Each `<mode>.json` is a `ModeBundle`. `_meta.json` is a `BundleMeta`.
+
+## Schedules are headway-based, not explicit times
+
+A route does NOT carry a list of clock times. It carries a list of
+**frequency windows** and a per-stop **travel offset**:
+
+```jsonc
+"schedules": {
+  "1-R07": {
+    "windows": [
+      { "start": "05:00", "end": "09:00", "headwaySeconds": 300 },
+      { "start": "09:00", "end": "17:00", "headwaySeconds": 600 }
+    ],
+    "stopOffsets": { "H00173P": 0, "H00060P": 173, "B06942P": 1695 }
+  }
+}
+```
+
+"Next arrival at stop X" = the soonest
+`window.start + n * headwaySeconds + stopOffsets[X]` in the future, on a
+service day the route runs.
+
+This is the shape GTFS `frequencies.txt` + `stop_times.txt` give us.
+Converting the Transjakarta feed to explicit clock times would produce
+~3 million entries (~30 MB); the headway shape is ~26,000 offsets
+(~1 MB, ~350 KB gzipped). It also matches how the operator actually
+runs the service (headway-based, not a printed timetable).
 
 ## Per-mode shape (`ModeBundle`)
 
 ```jsonc
 {
-  "mode": "mrt-jakarta",
-  "name": { "en": "MRT Jakarta", "id": "MRT Jakarta" },
-  "serviceHours": { "start": "05:00", "end": "24:30" },
+  "mode": "transjakarta-brt",
+  "operator": "transjakarta",
+  "name": { "en": "BRT", "id": "BRT" },   // the operator's route_desc
   "stops": [
-    {
-      "id": "mrt-ldb",
-      "name": { "en": "Lebak Bulus", "id": "Lebak Bulus" },
-      "code": "LBB",
-      "lat": -6.2885,
-      "lon": 106.7745
-    }
+    { "id": "H00014P", "name": { "en": "Blok M", "id": "Blok M" },
+      "lat": -6.244, "lon": 106.8 }
   ],
   "routes": [
-    {
-      "id": "ns.southbound",
-      "name": {
-        "en": "North-South Line (Southbound)",
-        "id": "Lin Utara-Selatan (Menuju Lebak Bulus)"
-      },
-      "headsign": { "en": "Lebak Bulus", "id": "Lebak Bulus" },
-      "color": "#E2231A"
-    }
+    { "id": "1-R07", "shortName": "1",
+      "name": { "en": "Blok M - Kali Besar Barat", "id": "Blok M - Kali Besar Barat" },
+      "headsign": { "en": "Kali Besar Barat", "id": "Kali Besar Barat" },
+      "color": "#D65E62", "serviceDays": [0,1,2,3,4,5,6] }
   ],
-  "timetables": {
-    "ns.southbound": {
-      "mrt-ldb":  ["05:00", "05:05", "05:10"],
-      "mrt-fkb":  ["05:03", "05:08", "05:13"]
-    }
-  }
+  "schedules": { "1-R07": { "windows": [...], "stopOffsets": {...} } }
 }
 ```
 
 ## Conventions
 
-- **Route id** is `<line>.<direction>` (e.g. `ns.southbound`). A
-  physical "line" is split into two routes — one per direction — because
-  they have different timetables at each stop.
-- **Stop id** is unique within the mode. Convention: `<mode-prefix>-<slug>`
-  (e.g. `mrt-ldb`).
-- **Clock times** are `"HH:MM"` in 24-hour Jakarta time (WIB, UTC+7). They
-  are stored in **local Jakarta time** because that is what the operators
-  publish. The app converts the user's "now" to Jakarta time before
-  comparing.
-- **Rolling past midnight.** Service hours may end after `24:00` (e.g.
-  `24:30` = `00:30` the next day). A departure at `25:10` means `01:10`
-  the next day. This is the cleanest way to model the common
-  late-night-into-early-morning gap.
-- **Sorted ascending** within a `(route, stop)`. The static-JSON provider
-  relies on this to binary-search the next arrival.
-- **No weekday/weekend split** in the MVP. We model a single weekly
-  schedule per (route, stop). Operators that publish different weekend
-  timetables (most of them) need a future schema bump — see
-  `## Open questions` below.
+- **Route id** is the GTFS trip id for Transjakarta (e.g. `1-R07`,
+  `JAK.74-R01`); a rail line+direction for the hand-curated modes
+  (e.g. `ns.northbound`).
+- **`shortName`** is the public identifier on the vehicle: `9`, `1A`,
+  `JAK.79`. The card shows `shortName → headsign`.
+- **`serviceDays`** is a list of 0–6 (0 = Monday). `[0,1,2,3,4]` is
+  weekdays, `[5,6]` the weekend, all seven is daily.
+- **Clock times** are 24-hour Jakarta time (`Asia/Jakarta`, UTC+7).
+  Values may exceed `24:00` to roll past midnight (`"24:30"` = `00:30`
+  the next day). Window `start` is inclusive, `end` inclusive of the
+  last departure at or before it.
+- **`stopOffsets`** is seconds from the route's first-stop departure to
+  the arrival at each stop. The first stop is `0`. A missing stop id
+  means the route does not serve that stop.
+- **`windows`** are ordered ascending by `start`. Most routes have one;
+  peak/off-peak routes have several.
+- **Stops** are clustered boarding locations. The Transjakarta importer
+  merges GTFS platforms by `parent_station`, then by base name within
+  120 m. A route's `stopOffsets` reference cluster ids, so consecutive
+  duplicates (two platforms of the same cluster) are collapsed.
 
 ## `_meta.json`
 
 ```jsonc
 {
-  "version": 1,
+  "version": 2,
   "dataLastUpdated": "2026-07-12T10:00:00Z",
   "sources": [
-    {
-      "mode": "mrt-jakarta",
-      "operator": "PT MRT Jakarta",
-      "sourceUrl": "https://www.jakartamrt.co.id/id/ jadwal-operasi"
-    }
+    { "mode": "transjakarta-brt", "operator": "transjakarta",
+      "sourceUrl": "https://gtfs.transjakarta.co.id/files/file_gtfs.zip" }
   ]
 }
 ```
 
-The `dataLastUpdated` is what the footer shows. The `sources` array is
-shown in the "About this data" panel so the user can verify provenance.
+`dataLastUpdated` is what the footer shows. The `sources` array is for
+an "about this data" panel.
 
-## Provider contract
+## Where the data comes from
 
-The static-JSON provider reads a `ModeBundle` and answers:
+- **Transjakarta** — `scripts/import-gtfs-transjakarta.ts` downloads the
+  official GTFS feed, maps `route_desc` → sub-service, and writes the
+  seven `transjakarta-*.json` bundles. See ADR-0005.
+- **MRT / KRL / LRT** — hand-curated `scripts/gen-*-data.ts` scripts
+  (no GTFS feed available). They emit the same shape.
 
-- `listStops(mode)` → all stops in the mode with lat/lon
-- `getNextArrivals(mode, stopId, now)` → the soonest future arrival for
-  that stop across all routes serving it, plus the per-route breakdown
-- `getServiceStatus(mode, now)` → `running` / `beforeHours` / `afterHours`
-
-A live provider (GTFS, third-party) returns the same shape but may return
-later data; the chain prefers live over static. See
-`docs/adr/0001-pluggable-provider-chain.md`.
+`pnpm scrape-data` runs both and bumps `_meta.json`; the weekly CI
+workflow calls it.
 
 ## Open questions
 
-- **Weekday vs weekend.** Most operators run different timetables on
-  weekends (often with the first train later and headways wider). Not
-  modeled yet. When needed, add `timetables.weekday` and
-  `timetables.weekend` keys; bump `version` to 2.
-- **Per-route service hours.** Some operators have routes that end
-  earlier than the mode-level window (e.g. a commuter branch that
-  stops running at 22:00). Not modeled; the static data assumes every
-  route in a mode shares the window. When needed, add an optional
-  `serviceHours` field to `Route` and have the provider prefer it
-  over the mode-level one.
-- **Stops the last train skips.** KRL's last few trains on a line don't
-  stop at every station. Not modeled; the static data assumes the full
-  timetable applies to every stop. The right fix is a per-stop flag
-  on the late-night services — out of scope for the MVP.
+- **Service day across midnight.** A Friday-only trip whose window wraps
+  past midnight (e.g. `22:00–24:30`) is treated as a Friday service even
+  when the user looks at it at `00:30` Saturday. The provider filters by
+  the *window instance's* day, so this mostly works, but the "current
+  service day" is derived from the wall clock rather than GTFS's
+  trip-start convention. Rare (most trips are daily).
+- **Cross-mode transfer pairs.** GTFS ships `transfers.txt`; we don't
+  surface it yet. A future "is this one station?" feature could use it.
+- **Fares / shapes / ticketing.** In the feed, not surfaced.
+- **GTFS-RT.** No public realtime feed; when one appears it becomes a
+  live provider in the chain (ADR-0001).

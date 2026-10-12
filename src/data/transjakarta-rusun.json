@@ -1,0 +1,4509 @@
+{
+  "mode": "transjakarta-rusun",
+  "operator": "transjakarta",
+  "name": {
+    "en": "Rusun",
+    "id": "Rusun"
+  },
+  "stops": [
+    {
+      "id": "B03286P",
+      "name": {
+        "en": "Rusun Pesakih",
+        "id": "Rusun Pesakih"
+      },
+      "lat": -6.161468,
+      "lon": 106.71698
+    },
+    {
+      "id": "B08404P",
+      "name": {
+        "en": "Rusun Daan Mogot",
+        "id": "Rusun Daan Mogot"
+      },
+      "lat": -6.160795,
+      "lon": 106.716741
+    },
+    {
+      "id": "B02379P",
+      "name": {
+        "en": "Masjid Raya KH Hasyim Asyari",
+        "id": "Masjid Raya KH Hasyim Asyari"
+      },
+      "lat": -6.159272,
+      "lon": 106.71708
+    },
+    {
+      "id": "B07684P",
+      "name": {
+        "en": "Jembatan Pesakih Semanan",
+        "id": "Jembatan Pesakih Semanan"
+      },
+      "lat": -6.155824,
+      "lon": 106.716
+    },
+    {
+      "id": "H00169P",
+      "name": {
+        "en": "Pesakih",
+        "id": "Pesakih"
+      },
+      "lat": -6.154803,
+      "lon": 106.71527
+    },
+    {
+      "id": "B02833P",
+      "name": {
+        "en": "Pintu 2 Jembatan Semanan Raya",
+        "id": "Pintu 2 Jembatan Semanan Raya"
+      },
+      "lat": -6.155916,
+      "lon": 106.70954
+    },
+    {
+      "id": "H00094P",
+      "name": {
+        "en": "Kalideres",
+        "id": "Kalideres"
+      },
+      "lat": -6.154412,
+      "lon": 106.7055
+    },
+    {
+      "id": "B01332P",
+      "name": {
+        "en": "Jln. Madrasah Daan Mogot",
+        "id": "Jln. Madrasah Daan Mogot"
+      },
+      "lat": -6.155691,
+      "lon": 106.70774
+    },
+    {
+      "id": "B02760P",
+      "name": {
+        "en": "Pertamina Kalideres Daan Mogot",
+        "id": "Pertamina Kalideres Daan Mogot"
+      },
+      "lat": -6.15571,
+      "lon": 106.70927
+    },
+    {
+      "id": "B07685P",
+      "name": {
+        "en": "Sbr. Masjid Raya KH Hasyim Asyari",
+        "id": "Sbr. Masjid Raya KH Hasyim Asyari"
+      },
+      "lat": -6.1591254,
+      "lon": 106.717238
+    },
+    {
+      "id": "B08405P",
+      "name": {
+        "en": "Sbr. Rusun Daan Mogot",
+        "id": "Sbr. Rusun Daan Mogot"
+      },
+      "lat": -6.160819,
+      "lon": 106.716897
+    },
+    {
+      "id": "B03272P",
+      "name": {
+        "en": "Rusun Flamboyan",
+        "id": "Rusun Flamboyan"
+      },
+      "lat": -6.131366,
+      "lon": 106.72427
+    },
+    {
+      "id": "B07532P",
+      "name": {
+        "en": "SPBU Gg. Swadaya III",
+        "id": "SPBU Gg. Swadaya III"
+      },
+      "lat": -6.130437,
+      "lon": 106.729783
+    },
+    {
+      "id": "B06302P",
+      "name": {
+        "en": "Jln. Kencana Timur",
+        "id": "Jln. Kencana Timur"
+      },
+      "lat": -6.127454,
+      "lon": 106.729619
+    },
+    {
+      "id": "B06299P",
+      "name": {
+        "en": "Jln. Kayu Besar Dalam",
+        "id": "Jln. Kayu Besar Dalam"
+      },
+      "lat": -6.122739,
+      "lon": 106.73129
+    },
+    {
+      "id": "B07686P",
+      "name": {
+        "en": "SMKS 1 Citra Adhi Pratama",
+        "id": "SMKS 1 Citra Adhi Pratama"
+      },
+      "lat": -6.123564,
+      "lon": 106.730882
+    },
+    {
+      "id": "B07687P",
+      "name": {
+        "en": "Golf Lake Residence",
+        "id": "Golf Lake Residence"
+      },
+      "lat": -6.1276508,
+      "lon": 106.73039
+    },
+    {
+      "id": "B04902P",
+      "name": {
+        "en": "Simpang Kapuk Cengkareng",
+        "id": "Simpang Kapuk Cengkareng"
+      },
+      "lat": -6.133709,
+      "lon": 106.730451
+    },
+    {
+      "id": "B03206P",
+      "name": {
+        "en": "RSUD Boulevard Raya",
+        "id": "RSUD Boulevard Raya"
+      },
+      "lat": -6.13781,
+      "lon": 106.7304
+    },
+    {
+      "id": "B02194P",
+      "name": {
+        "en": "Mall Taman Palem",
+        "id": "Mall Taman Palem"
+      },
+      "lat": -6.139245,
+      "lon": 106.73032
+    },
+    {
+      "id": "B02195P",
+      "name": {
+        "en": "Mall Taman Palem",
+        "id": "Mall Taman Palem"
+      },
+      "lat": -6.140548,
+      "lon": 106.73011
+    },
+    {
+      "id": "B05838P",
+      "name": {
+        "en": "Univ. Satyagama",
+        "id": "Univ. Satyagama"
+      },
+      "lat": -6.143228,
+      "lon": 106.7295
+    },
+    {
+      "id": "B05317P",
+      "name": {
+        "en": "SMKN",
+        "id": "SMKN"
+      },
+      "lat": -6.144079,
+      "lon": 106.72937
+    },
+    {
+      "id": "B02900P",
+      "name": {
+        "en": "Polsek Cengkareng",
+        "id": "Polsek Cengkareng"
+      },
+      "lat": -6.146466,
+      "lon": 106.72881
+    },
+    {
+      "id": "B03343P",
+      "name": {
+        "en": "SDN Cengkareng Timur",
+        "id": "SDN Cengkareng Timur"
+      },
+      "lat": -6.149212,
+      "lon": 106.72804
+    },
+    {
+      "id": "B03009P",
+      "name": {
+        "en": "Puri Agung",
+        "id": "Puri Agung"
+      },
+      "lat": -6.150977,
+      "lon": 106.72798
+    },
+    {
+      "id": "B03073P",
+      "name": {
+        "en": "Ramayana Cengkareng",
+        "id": "Ramayana Cengkareng"
+      },
+      "lat": -6.153197,
+      "lon": 106.72803
+    },
+    {
+      "id": "B04136P",
+      "name": {
+        "en": "Sbr. Ps. Cengkareng",
+        "id": "Sbr. Ps. Cengkareng"
+      },
+      "lat": -6.151851,
+      "lon": 106.72708
+    },
+    {
+      "id": "B04610P",
+      "name": {
+        "en": "Sekolah Al Huda",
+        "id": "Sekolah Al Huda"
+      },
+      "lat": -6.149731,
+      "lon": 106.72736
+    },
+    {
+      "id": "B00192P",
+      "name": {
+        "en": "BSI Cengkareng",
+        "id": "BSI Cengkareng"
+      },
+      "lat": -6.147973,
+      "lon": 106.72781
+    },
+    {
+      "id": "B03041P",
+      "name": {
+        "en": "Puskesmas Cengkareng",
+        "id": "Puskesmas Cengkareng"
+      },
+      "lat": -6.144546,
+      "lon": 106.72866
+    },
+    {
+      "id": "B05632P",
+      "name": {
+        "en": "Taman Palem Lestari",
+        "id": "Taman Palem Lestari"
+      },
+      "lat": -6.139986,
+      "lon": 106.72956
+    },
+    {
+      "id": "B02808P",
+      "name": {
+        "en": "Perumahan KFT",
+        "id": "Perumahan KFT"
+      },
+      "lat": -6.134665,
+      "lon": 106.729819
+    },
+    {
+      "id": "B03295P",
+      "name": {
+        "en": "Rusun Tambora",
+        "id": "Rusun Tambora"
+      },
+      "lat": -6.147327,
+      "lon": 106.798676
+    },
+    {
+      "id": "H00085P",
+      "name": {
+        "en": "Jembatan Besi",
+        "id": "Jembatan Besi"
+      },
+      "lat": -6.152005,
+      "lon": 106.7949
+    },
+    {
+      "id": "H00197S",
+      "name": {
+        "en": "Kali Grogol Arah Selatan",
+        "id": "Kali Grogol Arah Selatan"
+      },
+      "lat": -6.159755,
+      "lon": 106.791453
+    },
+    {
+      "id": "H00138S",
+      "name": {
+        "en": "Kali Grogol Arah Utara",
+        "id": "Kali Grogol Arah Utara"
+      },
+      "lat": -6.16106,
+      "lon": 106.790684
+    },
+    {
+      "id": "H00086P",
+      "name": {
+        "en": "Jembatan Dua",
+        "id": "Jembatan Dua"
+      },
+      "lat": -6.143279,
+      "lon": 106.79352
+    },
+    {
+      "id": "H00089P",
+      "name": {
+        "en": "Jembatan Tiga",
+        "id": "Jembatan Tiga"
+      },
+      "lat": -6.133383,
+      "lon": 106.79267
+    },
+    {
+      "id": "B07553P",
+      "name": {
+        "en": "Penjaringan",
+        "id": "Penjaringan"
+      },
+      "lat": -6.126314,
+      "lon": 106.791937
+    },
+    {
+      "id": "H00174P",
+      "name": {
+        "en": "Pluit",
+        "id": "Pluit"
+      },
+      "lat": -6.115795,
+      "lon": 106.79037
+    },
+    {
+      "id": "B03282P",
+      "name": {
+        "en": "Rusun Marunda",
+        "id": "Rusun Marunda"
+      },
+      "lat": -6.097099,
+      "lon": 106.96231
+    },
+    {
+      "id": "B03284P",
+      "name": {
+        "en": "Rusun Marunda",
+        "id": "Rusun Marunda"
+      },
+      "lat": -6.098204,
+      "lon": 106.96232
+    },
+    {
+      "id": "B05078P",
+      "name": {
+        "en": "Simpang Pitungan",
+        "id": "Simpang Pitungan"
+      },
+      "lat": -6.100212,
+      "lon": 106.9606
+    },
+    {
+      "id": "B06039P",
+      "name": {
+        "en": "STIP",
+        "id": "STIP"
+      },
+      "lat": -6.104402,
+      "lon": 106.95904
+    },
+    {
+      "id": "B00137P",
+      "name": {
+        "en": "Bidara",
+        "id": "Bidara"
+      },
+      "lat": -6.106097,
+      "lon": 106.9595
+    },
+    {
+      "id": "B06789P",
+      "name": {
+        "en": "Jl. Marunda Makmur I",
+        "id": "Jl. Marunda Makmur I"
+      },
+      "lat": -6.107259,
+      "lon": 106.959837
+    },
+    {
+      "id": "B05158P",
+      "name": {
+        "en": "Simpang STIP",
+        "id": "Simpang STIP"
+      },
+      "lat": -6.10795,
+      "lon": 106.95998
+    },
+    {
+      "id": "B05039P",
+      "name": {
+        "en": "Simpang Ps. Bebek",
+        "id": "Simpang Ps. Bebek"
+      },
+      "lat": -6.11034,
+      "lon": 106.94875
+    },
+    {
+      "id": "B01855P",
+      "name": {
+        "en": "KBN Marunda",
+        "id": "KBN Marunda"
+      },
+      "lat": -6.110057,
+      "lon": 106.94448
+    },
+    {
+      "id": "B07449P",
+      "name": {
+        "en": "Jln. Komplek Pelindo II",
+        "id": "Jln. Komplek Pelindo II"
+      },
+      "lat": -6.11072,
+      "lon": 106.937034
+    },
+    {
+      "id": "B06245P",
+      "name": {
+        "en": "Sbr. Jln. Kebantenan V",
+        "id": "Sbr. Jln. Kebantenan V"
+      },
+      "lat": -6.111703,
+      "lon": 106.93356
+    },
+    {
+      "id": "B06246P",
+      "name": {
+        "en": "Sbr. Gg. Nusantara",
+        "id": "Sbr. Gg. Nusantara"
+      },
+      "lat": -6.11347,
+      "lon": 106.93004
+    },
+    {
+      "id": "B01858P",
+      "name": {
+        "en": "Kebantenan",
+        "id": "Kebantenan"
+      },
+      "lat": -6.114554,
+      "lon": 106.9264
+    },
+    {
+      "id": "B06234P",
+      "name": {
+        "en": "Jln. Angin Sejuk I",
+        "id": "Jln. Angin Sejuk I"
+      },
+      "lat": -6.112834,
+      "lon": 106.92369
+    },
+    {
+      "id": "B06235P",
+      "name": {
+        "en": "Jln. Angin Mamiri",
+        "id": "Jln. Angin Mamiri"
+      },
+      "lat": -6.10912,
+      "lon": 106.92259
+    },
+    {
+      "id": "B06162P",
+      "name": {
+        "en": "Jln. Dewa Ruci",
+        "id": "Jln. Dewa Ruci"
+      },
+      "lat": -6.108278,
+      "lon": 106.92123
+    },
+    {
+      "id": "B06163P",
+      "name": {
+        "en": "Pure Dalam",
+        "id": "Pure Dalam"
+      },
+      "lat": -6.108391,
+      "lon": 106.92016
+    },
+    {
+      "id": "B06257P",
+      "name": {
+        "en": "Jln. Kramat Jaya",
+        "id": "Jln. Kramat Jaya"
+      },
+      "lat": -6.10836,
+      "lon": 106.9171
+    },
+    {
+      "id": "B06164P",
+      "name": {
+        "en": "Jln. B Lagoa Terusan",
+        "id": "Jln. B Lagoa Terusan"
+      },
+      "lat": -6.108628,
+      "lon": 106.91505
+    },
+    {
+      "id": "B06258P",
+      "name": {
+        "en": "Jln. A Lagoa",
+        "id": "Jln. A Lagoa"
+      },
+      "lat": -6.10907,
+      "lon": 106.90983
+    },
+    {
+      "id": "B06165P",
+      "name": {
+        "en": "Jln. Cilincing Raya",
+        "id": "Jln. Cilincing Raya"
+      },
+      "lat": -6.108981,
+      "lon": 106.90852
+    },
+    {
+      "id": "B04964P",
+      "name": {
+        "en": "Simpang Lagoa Ciampea",
+        "id": "Simpang Lagoa Ciampea"
+      },
+      "lat": -6.108978,
+      "lon": 106.9077
+    },
+    {
+      "id": "B02761P",
+      "name": {
+        "en": "Pertamina Kilang Minyak",
+        "id": "Pertamina Kilang Minyak"
+      },
+      "lat": -6.108789,
+      "lon": 106.90537
+    },
+    {
+      "id": "B02253P",
+      "name": {
+        "en": "Masjid Al Mukarromah Jampea",
+        "id": "Masjid Al Mukarromah Jampea"
+      },
+      "lat": -6.108361,
+      "lon": 106.90098
+    },
+    {
+      "id": "B03213P",
+      "name": {
+        "en": "RSUD Koja",
+        "id": "RSUD Koja"
+      },
+      "lat": -6.108205,
+      "lon": 106.89982
+    },
+    {
+      "id": "B01325P",
+      "name": {
+        "en": "Jln. Lorong",
+        "id": "Jln. Lorong"
+      },
+      "lat": -6.108141,
+      "lon": 106.89932
+    },
+    {
+      "id": "B01324P",
+      "name": {
+        "en": "Jln. Lorong",
+        "id": "Jln. Lorong"
+      },
+      "lat": -6.107881,
+      "lon": 106.89701
+    },
+    {
+      "id": "B01327P",
+      "name": {
+        "en": "Jln. Lorong",
+        "id": "Jln. Lorong"
+      },
+      "lat": -6.107701,
+      "lon": 106.89492
+    },
+    {
+      "id": "B00338P",
+      "name": {
+        "en": "Enggano",
+        "id": "Enggano"
+      },
+      "lat": -6.110031,
+      "lon": 106.89246
+    },
+    {
+      "id": "B02949P",
+      "name": {
+        "en": "Port Medical Center",
+        "id": "Port Medical Center"
+      },
+      "lat": -6.110114,
+      "lon": 106.88939
+    },
+    {
+      "id": "B01056P",
+      "name": {
+        "en": "Jln. Elpa Putih II",
+        "id": "Jln. Elpa Putih II"
+      },
+      "lat": -6.110053,
+      "lon": 106.88721
+    },
+    {
+      "id": "B02993P",
+      "name": {
+        "en": "PTT",
+        "id": "PTT"
+      },
+      "lat": -6.109953,
+      "lon": 106.88381
+    },
+    {
+      "id": "B05728P",
+      "name": {
+        "en": "Term. Tj. Priok",
+        "id": "Term. Tj. Priok"
+      },
+      "lat": -6.1098,
+      "lon": 106.88118
+    },
+    {
+      "id": "B03291P",
+      "name": {
+        "en": "Rusun Rawa Bebek",
+        "id": "Rusun Rawa Bebek"
+      },
+      "lat": -6.196241,
+      "lon": 106.9658
+    },
+    {
+      "id": "B07582P",
+      "name": {
+        "en": "Sbr. TK Nurul Ihsan Raya Pulo Gebang",
+        "id": "Sbr. TK Nurul Ihsan Raya Pulo Gebang"
+      },
+      "lat": -6.21421256,
+      "lon": 106.95551991
+    },
+    {
+      "id": "B07583P",
+      "name": {
+        "en": "Gg. Asrama Palad",
+        "id": "Gg. Asrama Palad"
+      },
+      "lat": -6.21650571,
+      "lon": 106.95361018
+    },
+    {
+      "id": "B06944P",
+      "name": {
+        "en": "Stasiun Cakung",
+        "id": "Stasiun Cakung"
+      },
+      "lat": -6.218956,
+      "lon": 106.952637
+    },
+    {
+      "id": "B07454P",
+      "name": {
+        "en": "SMPN",
+        "id": "SMPN"
+      },
+      "lat": -6.21793,
+      "lon": 106.952403
+    },
+    {
+      "id": "B06945P",
+      "name": {
+        "en": "Universitas Gunadarma",
+        "id": "Universitas Gunadarma"
+      },
+      "lat": -6.213335,
+      "lon": 106.951255
+    },
+    {
+      "id": "H00259P",
+      "name": {
+        "en": "Walikota Jakarta Timur",
+        "id": "Walikota Jakarta Timur"
+      },
+      "lat": -6.21254,
+      "lon": 106.94537
+    },
+    {
+      "id": "H00163P",
+      "name": {
+        "en": "Penggilingan",
+        "id": "Penggilingan"
+      },
+      "lat": -6.214132,
+      "lon": 106.93961
+    },
+    {
+      "id": "H00168P",
+      "name": {
+        "en": "Flyover Pondok Kopi",
+        "id": "Flyover Pondok Kopi"
+      },
+      "lat": -6.216689,
+      "lon": 106.93054
+    },
+    {
+      "id": "H00055P",
+      "name": {
+        "en": "Simpang Buaran",
+        "id": "Simpang Buaran"
+      },
+      "lat": -6.215982,
+      "lon": 106.92438
+    },
+    {
+      "id": "H00017P",
+      "name": {
+        "en": "Buaran",
+        "id": "Buaran"
+      },
+      "lat": -6.215132,
+      "lon": 106.91768
+    },
+    {
+      "id": "H00097P",
+      "name": {
+        "en": "Kampung Sumur",
+        "id": "Kampung Sumur"
+      },
+      "lat": -6.214412,
+      "lon": 106.91189
+    },
+    {
+      "id": "H00054P",
+      "name": {
+        "en": "Klender",
+        "id": "Klender"
+      },
+      "lat": -6.213596,
+      "lon": 106.90306
+    },
+    {
+      "id": "H00226P",
+      "name": {
+        "en": "Stasiun Klender",
+        "id": "Stasiun Klender"
+      },
+      "lat": -6.213532,
+      "lon": 106.89866
+    },
+    {
+      "id": "B07791P",
+      "name": {
+        "en": "Cipinang",
+        "id": "Cipinang"
+      },
+      "lat": -6.213631,
+      "lon": 106.889877
+    },
+    {
+      "id": "H00076P",
+      "name": {
+        "en": "Flyover Cipinang",
+        "id": "Flyover Cipinang"
+      },
+      "lat": -6.214632,
+      "lon": 106.88227
+    },
+    {
+      "id": "H00145P",
+      "name": {
+        "en": "Pasar Enjo",
+        "id": "Pasar Enjo"
+      },
+      "lat": -6.214881,
+      "lon": 106.87819
+    },
+    {
+      "id": "H00037C",
+      "name": {
+        "en": "Flyover Jatinegara",
+        "id": "Flyover Jatinegara"
+      },
+      "lat": -6.215139,
+      "lon": 106.874152
+    },
+    {
+      "id": "B08461P",
+      "name": {
+        "en": "Stasiun Jatinegara",
+        "id": "Stasiun Jatinegara"
+      },
+      "lat": -6.215562,
+      "lon": 106.868028
+    },
+    {
+      "id": "B02240P",
+      "name": {
+        "en": "Masjid Al Hidayah",
+        "id": "Masjid Al Hidayah"
+      },
+      "lat": -6.216385,
+      "lon": 106.86296
+    },
+    {
+      "id": "B02272P",
+      "name": {
+        "en": "Masjid As Sudairi",
+        "id": "Masjid As Sudairi"
+      },
+      "lat": -6.220626,
+      "lon": 106.8591
+    },
+    {
+      "id": "B02282P",
+      "name": {
+        "en": "Masjid Attahiriyah",
+        "id": "Masjid Attahiriyah"
+      },
+      "lat": -6.225242,
+      "lon": 106.86019
+    },
+    {
+      "id": "B01805P",
+      "name": {
+        "en": "Kampung Melayu Kecil",
+        "id": "Kampung Melayu Kecil"
+      },
+      "lat": -6.22499,
+      "lon": 106.86306
+    },
+    {
+      "id": "B03274P",
+      "name": {
+        "en": "Rusun Jatinegara Barat",
+        "id": "Rusun Jatinegara Barat"
+      },
+      "lat": -6.223016,
+      "lon": 106.86585
+    },
+    {
+      "id": "B03142P",
+      "name": {
+        "en": "RS Hermina",
+        "id": "RS Hermina"
+      },
+      "lat": -6.22085,
+      "lon": 106.86512
+    },
+    {
+      "id": "B03310P",
+      "name": {
+        "en": "Santa Maria",
+        "id": "Santa Maria"
+      },
+      "lat": -6.21939,
+      "lon": 106.86445
+    },
+    {
+      "id": "B00205P",
+      "name": {
+        "en": "Bukit Duri",
+        "id": "Bukit Duri"
+      },
+      "lat": -6.21551,
+      "lon": 106.86293
+    },
+    {
+      "id": "B05350P",
+      "name": {
+        "en": "SDN 03 Bali Mester",
+        "id": "SDN 03 Bali Mester"
+      },
+      "lat": -6.214718,
+      "lon": 106.86485
+    },
+    {
+      "id": "B07676P",
+      "name": {
+        "en": "Simpang Tiga Pulo Gebang Raya",
+        "id": "Simpang Tiga Pulo Gebang Raya"
+      },
+      "lat": -6.206982,
+      "lon": 106.95468
+    },
+    {
+      "id": "B07677P",
+      "name": {
+        "en": "Gg. H. Rahman Pulo Gebang",
+        "id": "Gg. H. Rahman Pulo Gebang"
+      },
+      "lat": -6.208816,
+      "lon": 106.957002
+    },
+    {
+      "id": "B07678P",
+      "name": {
+        "en": "Simpang Banjir Kanal Timur",
+        "id": "Simpang Banjir Kanal Timur"
+      },
+      "lat": -6.212364,
+      "lon": 106.955977
+    },
+    {
+      "id": "B03299P",
+      "name": {
+        "en": "Rusun Waduk Pluit",
+        "id": "Rusun Waduk Pluit"
+      },
+      "lat": -6.111456,
+      "lon": 106.80022
+    },
+    {
+      "id": "B06292P",
+      "name": {
+        "en": "Gg. Elektro",
+        "id": "Gg. Elektro"
+      },
+      "lat": -6.114359,
+      "lon": 106.80286
+    },
+    {
+      "id": "B06294P",
+      "name": {
+        "en": "Gg. Marlina",
+        "id": "Gg. Marlina"
+      },
+      "lat": -6.117402,
+      "lon": 106.80334
+    },
+    {
+      "id": "B06314P",
+      "name": {
+        "en": "Sbr. Gg. VIII Muara Baru",
+        "id": "Sbr. Gg. VIII Muara Baru"
+      },
+      "lat": -6.122885,
+      "lon": 106.80408
+    },
+    {
+      "id": "B02361P",
+      "name": {
+        "en": "Masjid Luar Batang",
+        "id": "Masjid Luar Batang"
+      },
+      "lat": -6.126266,
+      "lon": 106.8044
+    },
+    {
+      "id": "B05028P",
+      "name": {
+        "en": "Simpang Pakin",
+        "id": "Simpang Pakin"
+      },
+      "lat": -6.128288,
+      "lon": 106.80562
+    },
+    {
+      "id": "B05405P",
+      "name": {
+        "en": "SPBU Gedong Panjang",
+        "id": "SPBU Gedong Panjang"
+      },
+      "lat": -6.130757,
+      "lon": 106.80557
+    },
+    {
+      "id": "H00065P",
+      "name": {
+        "en": "Gedong Panjang",
+        "id": "Gedong Panjang"
+      },
+      "lat": -6.132617,
+      "lon": 106.80596
+    },
+    {
+      "id": "B06046P",
+      "name": {
+        "en": "Bandengan Selatan",
+        "id": "Bandengan Selatan"
+      },
+      "lat": -6.137076,
+      "lon": 106.79632
+    },
+    {
+      "id": "B01773P",
+      "name": {
+        "en": "Jembatan Tiga",
+        "id": "Jembatan Tiga"
+      },
+      "lat": -6.133861,
+      "lon": 106.792932
+    },
+    {
+      "id": "B02888P",
+      "name": {
+        "en": "Pluit Karang Karya Timur",
+        "id": "Pluit Karang Karya Timur"
+      },
+      "lat": -6.13055,
+      "lon": 106.792273
+    },
+    {
+      "id": "B00030P",
+      "name": {
+        "en": "Al Mukhlisin",
+        "id": "Al Mukhlisin"
+      },
+      "lat": -6.128569,
+      "lon": 106.792084
+    },
+    {
+      "id": "B00080P",
+      "name": {
+        "en": "Aston Pluit",
+        "id": "Aston Pluit"
+      },
+      "lat": -6.124693,
+      "lon": 106.79511
+    },
+    {
+      "id": "B06659P",
+      "name": {
+        "en": "Polsek Penjaringan",
+        "id": "Polsek Penjaringan"
+      },
+      "lat": -6.125179,
+      "lon": 106.80118
+    },
+    {
+      "id": "B03407P",
+      "name": {
+        "en": "SDN Penjaringan",
+        "id": "SDN Penjaringan"
+      },
+      "lat": -6.12527,
+      "lon": 106.80272
+    },
+    {
+      "id": "B06295P",
+      "name": {
+        "en": "Gg. VIII Muara Baru",
+        "id": "Gg. VIII Muara Baru"
+      },
+      "lat": -6.122869,
+      "lon": 106.80402
+    },
+    {
+      "id": "B06313P",
+      "name": {
+        "en": "Sbr. Gg. Marlina",
+        "id": "Sbr. Gg. Marlina"
+      },
+      "lat": -6.117521,
+      "lon": 106.80326
+    },
+    {
+      "id": "B06312P",
+      "name": {
+        "en": "Sbr. Gg. Elektro",
+        "id": "Sbr. Gg. Elektro"
+      },
+      "lat": -6.114391,
+      "lon": 106.80278
+    },
+    {
+      "id": "B03277P",
+      "name": {
+        "en": "Rusun Kapuk Muara",
+        "id": "Rusun Kapuk Muara"
+      },
+      "lat": -6.135667,
+      "lon": 106.76299
+    },
+    {
+      "id": "B07688P",
+      "name": {
+        "en": "SDN Kapuk Muara",
+        "id": "SDN Kapuk Muara"
+      },
+      "lat": -6.137923,
+      "lon": 106.76348
+    },
+    {
+      "id": "B07689P",
+      "name": {
+        "en": "Jln. Kapuk Utara I",
+        "id": "Jln. Kapuk Utara I"
+      },
+      "lat": -6.140187,
+      "lon": 106.767293
+    },
+    {
+      "id": "B07690P",
+      "name": {
+        "en": "Jln. Swadaya 4 Kapuk",
+        "id": "Jln. Swadaya 4 Kapuk"
+      },
+      "lat": -6.14101,
+      "lon": 106.770916
+    },
+    {
+      "id": "B07691P",
+      "name": {
+        "en": "Sbr. Masjid Al Musyarofah Kapuk",
+        "id": "Sbr. Masjid Al Musyarofah Kapuk"
+      },
+      "lat": -6.14131,
+      "lon": 106.773849
+    },
+    {
+      "id": "B07692P",
+      "name": {
+        "en": "Jln. C. Teluk Gong",
+        "id": "Jln. C. Teluk Gong"
+      },
+      "lat": -6.1385027,
+      "lon": 106.778072
+    },
+    {
+      "id": "B07603P",
+      "name": {
+        "en": "Pasar Teluk Gong",
+        "id": "Pasar Teluk Gong"
+      },
+      "lat": -6.138233,
+      "lon": 106.78167
+    },
+    {
+      "id": "B07535P",
+      "name": {
+        "en": "Sbr. Duta Indah Square",
+        "id": "Sbr. Duta Indah Square"
+      },
+      "lat": -6.137948,
+      "lon": 106.783643
+    },
+    {
+      "id": "B07604P",
+      "name": {
+        "en": "Sbr. Polsek Teluk Intan",
+        "id": "Sbr. Polsek Teluk Intan"
+      },
+      "lat": -6.13811,
+      "lon": 106.786287
+    },
+    {
+      "id": "B07536P",
+      "name": {
+        "en": "Sbr. Simpang Bidara Raya",
+        "id": "Sbr. Simpang Bidara Raya"
+      },
+      "lat": -6.137511,
+      "lon": 106.788113
+    },
+    {
+      "id": "B07605P",
+      "name": {
+        "en": "Sbr. Simpang Terusan Bandengan",
+        "id": "Sbr. Simpang Terusan Bandengan"
+      },
+      "lat": -6.137152,
+      "lon": 106.791888
+    },
+    {
+      "id": "B01507P",
+      "name": {
+        "en": "Jln. Pluit Mas Selatan",
+        "id": "Jln. Pluit Mas Selatan"
+      },
+      "lat": -6.135231,
+      "lon": 106.792691
+    },
+    {
+      "id": "B07541P",
+      "name": {
+        "en": "Penjaringan",
+        "id": "Penjaringan"
+      },
+      "lat": -6.127555,
+      "lon": 106.792365
+    },
+    {
+      "id": "B05674P",
+      "name": {
+        "en": "Tanah Pasir",
+        "id": "Tanah Pasir"
+      },
+      "lat": -6.130454,
+      "lon": 106.792621
+    },
+    {
+      "id": "B07537P",
+      "name": {
+        "en": "Simpang Terusan Bandengan",
+        "id": "Simpang Terusan Bandengan"
+      },
+      "lat": -6.13747,
+      "lon": 106.792031
+    },
+    {
+      "id": "B07538P",
+      "name": {
+        "en": "Simpang Bidara Raya",
+        "id": "Simpang Bidara Raya"
+      },
+      "lat": -6.137765,
+      "lon": 106.788171
+    },
+    {
+      "id": "B07598P",
+      "name": {
+        "en": "Polsek Teluk Intan",
+        "id": "Polsek Teluk Intan"
+      },
+      "lat": -6.138351,
+      "lon": 106.786122
+    },
+    {
+      "id": "B07539P",
+      "name": {
+        "en": "Duta Indah Square",
+        "id": "Duta Indah Square"
+      },
+      "lat": -6.138075,
+      "lon": 106.783452
+    },
+    {
+      "id": "B07694P",
+      "name": {
+        "en": "Sbr. Jln. C. Teluk Gong",
+        "id": "Sbr. Jln. C. Teluk Gong"
+      },
+      "lat": -6.1386097,
+      "lon": 106.778357
+    },
+    {
+      "id": "B07695P",
+      "name": {
+        "en": "Masjid Al Musyarofah Kapuk",
+        "id": "Masjid Al Musyarofah Kapuk"
+      },
+      "lat": -6.1414989,
+      "lon": 106.774219
+    },
+    {
+      "id": "B07696P",
+      "name": {
+        "en": "Sbr. Jln. Swadaya 4 Kapuk",
+        "id": "Sbr. Jln. Swadaya 4 Kapuk"
+      },
+      "lat": -6.1411866,
+      "lon": 106.770708
+    },
+    {
+      "id": "B07697P",
+      "name": {
+        "en": "Sbr. Jln. Kapuk Utara I",
+        "id": "Sbr. Jln. Kapuk Utara I"
+      },
+      "lat": -6.1404129,
+      "lon": 106.767273
+    },
+    {
+      "id": "B07698P",
+      "name": {
+        "en": "Sbr. SDN Muara Kapuk",
+        "id": "Sbr. SDN Muara Kapuk"
+      },
+      "lat": -6.1383262,
+      "lon": 106.763188
+    },
+    {
+      "id": "B03285P",
+      "name": {
+        "en": "Rusun Penjaringan",
+        "id": "Rusun Penjaringan"
+      },
+      "lat": -6.130702,
+      "lon": 106.79487
+    },
+    {
+      "id": "B06790P",
+      "name": {
+        "en": "Jl. Marunda Makmur II",
+        "id": "Jl. Marunda Makmur II"
+      },
+      "lat": -6.10721,
+      "lon": 106.9599
+    },
+    {
+      "id": "B02748P",
+      "name": {
+        "en": "Permai Koja",
+        "id": "Permai Koja"
+      },
+      "lat": -6.113894,
+      "lon": 106.89287
+    },
+    {
+      "id": "B02898P",
+      "name": {
+        "en": "Polres Jakut",
+        "id": "Polres Jakut"
+      },
+      "lat": -6.116415,
+      "lon": 106.89341
+    },
+    {
+      "id": "B05675P",
+      "name": {
+        "en": "Tanah Pasir Gedong Panjang",
+        "id": "Tanah Pasir Gedong Panjang"
+      },
+      "lat": -6.129596,
+      "lon": 106.805057
+    },
+    {
+      "id": "B05080P",
+      "name": {
+        "en": "Simpang Pluit Raya",
+        "id": "Simpang Pluit Raya"
+      },
+      "lat": -6.127123,
+      "lon": 106.80441
+    },
+    {
+      "id": "B06658P",
+      "name": {
+        "en": "Kel. Penjaringan",
+        "id": "Kel. Penjaringan"
+      },
+      "lat": -6.125396,
+      "lon": 106.80071
+    },
+    {
+      "id": "B03166P",
+      "name": {
+        "en": "RS Pluit",
+        "id": "RS Pluit"
+      },
+      "lat": -6.125386,
+      "lon": 106.79987
+    },
+    {
+      "id": "B05873P",
+      "name": {
+        "en": "Kantor Walikota Jakut",
+        "id": "Kantor Walikota Jakut"
+      },
+      "lat": -6.11906,
+      "lon": 106.89304
+    },
+    {
+      "id": "B07135P",
+      "name": {
+        "en": "Plasa Telkom Jakut",
+        "id": "Plasa Telkom Jakut"
+      },
+      "lat": -6.117759,
+      "lon": 106.892984
+    },
+    {
+      "id": "B07136P",
+      "name": {
+        "en": "Kantor Camat Tj. Priok",
+        "id": "Kantor Camat Tj. Priok"
+      },
+      "lat": -6.116895,
+      "lon": 106.892946
+    },
+    {
+      "id": "B07137P",
+      "name": {
+        "en": "Sbr. Gereja Santo Fransiskus Xaverius",
+        "id": "Sbr. Gereja Santo Fransiskus Xaverius"
+      },
+      "lat": -6.115887,
+      "lon": 106.892918
+    },
+    {
+      "id": "B02953P",
+      "name": {
+        "en": "Pos 9 Pelabuhan Jict",
+        "id": "Pos 9 Pelabuhan Jict"
+      },
+      "lat": -6.107294,
+      "lon": 106.8957
+    },
+    {
+      "id": "B00717P",
+      "name": {
+        "en": "Gubah Al Haddad",
+        "id": "Gubah Al Haddad"
+      },
+      "lat": -6.107712,
+      "lon": 106.89961
+    },
+    {
+      "id": "B06160P",
+      "name": {
+        "en": "Pertamina Term. Priok",
+        "id": "Pertamina Term. Priok"
+      },
+      "lat": -6.107837,
+      "lon": 106.90132
+    },
+    {
+      "id": "B06237P",
+      "name": {
+        "en": "Pertamina Marine III",
+        "id": "Pertamina Marine III"
+      },
+      "lat": -6.108387,
+      "lon": 106.90567
+    },
+    {
+      "id": "B06238P",
+      "name": {
+        "en": "Bogasari",
+        "id": "Bogasari"
+      },
+      "lat": -6.108568,
+      "lon": 106.90968
+    },
+    {
+      "id": "B06240P",
+      "name": {
+        "en": "Jln. Kalibaru Barat IV",
+        "id": "Jln. Kalibaru Barat IV"
+      },
+      "lat": -6.108031,
+      "lon": 106.91856
+    },
+    {
+      "id": "B06161P",
+      "name": {
+        "en": "Tanah Merdeka",
+        "id": "Tanah Merdeka"
+      },
+      "lat": -6.108023,
+      "lon": 106.92116
+    },
+    {
+      "id": "B06199P",
+      "name": {
+        "en": "Dopusbekbar TNI",
+        "id": "Dopusbekbar TNI"
+      },
+      "lat": -6.1087,
+      "lon": 106.92296
+    },
+    {
+      "id": "B06200P",
+      "name": {
+        "en": "SMAN",
+        "id": "SMAN"
+      },
+      "lat": -6.111643,
+      "lon": 106.92374
+    },
+    {
+      "id": "B02170P",
+      "name": {
+        "en": "Madya Kebantenan",
+        "id": "Madya Kebantenan"
+      },
+      "lat": -6.114349,
+      "lon": 106.926264
+    },
+    {
+      "id": "B06248P",
+      "name": {
+        "en": "Gg. Nusantara",
+        "id": "Gg. Nusantara"
+      },
+      "lat": -6.113296,
+      "lon": 106.92993
+    },
+    {
+      "id": "B06249P",
+      "name": {
+        "en": "Jln. Kebantenan V",
+        "id": "Jln. Kebantenan V"
+      },
+      "lat": -6.111599,
+      "lon": 106.93334
+    },
+    {
+      "id": "B06250P",
+      "name": {
+        "en": "Jln. Pedongkelan Raya",
+        "id": "Jln. Pedongkelan Raya"
+      },
+      "lat": -6.110917,
+      "lon": 106.9353
+    },
+    {
+      "id": "B07450P",
+      "name": {
+        "en": "Sbr. Jln. Komplek Pelindo II",
+        "id": "Sbr. Jln. Komplek Pelindo II"
+      },
+      "lat": -6.110541,
+      "lon": 106.93687
+    },
+    {
+      "id": "B04697P",
+      "name": {
+        "en": "Simpang Akses Pitungan",
+        "id": "Simpang Akses Pitungan"
+      },
+      "lat": -6.107847,
+      "lon": 106.95986
+    },
+    {
+      "id": "B03265P",
+      "name": {
+        "en": "Rumah Sipitung",
+        "id": "Rumah Sipitung"
+      },
+      "lat": -6.100075,
+      "lon": 106.96054
+    },
+    {
+      "id": "B03267P",
+      "name": {
+        "en": "Rusun Cakung Barat Albo",
+        "id": "Rusun Cakung Barat Albo"
+      },
+      "lat": -6.16751,
+      "lon": 106.93243
+    },
+    {
+      "id": "B07567P",
+      "name": {
+        "en": "Sbr. Jln. Rusunawa Cakung Barat",
+        "id": "Sbr. Jln. Rusunawa Cakung Barat"
+      },
+      "lat": -6.16842232,
+      "lon": 106.93446457
+    },
+    {
+      "id": "B07723P",
+      "name": {
+        "en": "Sbr. Masjid Jami Al-Mujahidin",
+        "id": "Sbr. Masjid Jami Al-Mujahidin"
+      },
+      "lat": -6.170508,
+      "lon": 106.934868
+    },
+    {
+      "id": "B03298P",
+      "name": {
+        "en": "Rusun Tipar Cakung",
+        "id": "Rusun Tipar Cakung"
+      },
+      "lat": -6.171493,
+      "lon": 106.93731
+    },
+    {
+      "id": "B07727P",
+      "name": {
+        "en": "RPTRA Rusun Tipar Cakung",
+        "id": "RPTRA Rusun Tipar Cakung"
+      },
+      "lat": -6.169219,
+      "lon": 106.938691
+    },
+    {
+      "id": "B07719P",
+      "name": {
+        "en": "Sbr. Rusun Tipar Cakung",
+        "id": "Sbr. Rusun Tipar Cakung"
+      },
+      "lat": -6.17159,
+      "lon": 106.937391
+    },
+    {
+      "id": "B07570P",
+      "name": {
+        "en": "Komplek Rusun Griya Tipar Cakung",
+        "id": "Komplek Rusun Griya Tipar Cakung"
+      },
+      "lat": -6.17179299,
+      "lon": 106.93571448
+    },
+    {
+      "id": "B07568P",
+      "name": {
+        "en": "Sbr. Musholla Nurul Islam Tipar Cakung",
+        "id": "Sbr. Musholla Nurul Islam Tipar Cakung"
+      },
+      "lat": -6.173173,
+      "lon": 106.936233
+    },
+    {
+      "id": "B07721P",
+      "name": {
+        "en": "Sbr. Kantor Lurah Cakung Barat",
+        "id": "Sbr. Kantor Lurah Cakung Barat"
+      },
+      "lat": -6.174014,
+      "lon": 106.93354
+    },
+    {
+      "id": "B07724P",
+      "name": {
+        "en": "RPTRA Rusun Cakung Barat",
+        "id": "RPTRA Rusun Cakung Barat"
+      },
+      "lat": -6.172817,
+      "lon": 106.93299
+    },
+    {
+      "id": "B07726P",
+      "name": {
+        "en": "Cakung Barat Tower",
+        "id": "Cakung Barat Tower"
+      },
+      "lat": -6.169922,
+      "lon": 106.932786
+    },
+    {
+      "id": "B07725P",
+      "name": {
+        "en": "Sbr. RPTRA Rusun Cakung Barat",
+        "id": "Sbr. RPTRA Rusun Cakung Barat"
+      },
+      "lat": -6.172759,
+      "lon": 106.933033
+    },
+    {
+      "id": "B07720P",
+      "name": {
+        "en": "Kantor Lurah Cakung Barat",
+        "id": "Kantor Lurah Cakung Barat"
+      },
+      "lat": -6.173953,
+      "lon": 106.933672
+    },
+    {
+      "id": "B06182P",
+      "name": {
+        "en": "Sbr. SMK Nurul Huda",
+        "id": "Sbr. SMK Nurul Huda"
+      },
+      "lat": -6.176843,
+      "lon": 106.93604
+    },
+    {
+      "id": "B07268P",
+      "name": {
+        "en": "Ps. Cakung",
+        "id": "Ps. Cakung"
+      },
+      "lat": -6.182424,
+      "lon": 106.935415
+    },
+    {
+      "id": "B03090P",
+      "name": {
+        "en": "Raya Penggilingan",
+        "id": "Raya Penggilingan"
+      },
+      "lat": -6.183068,
+      "lon": 106.93194
+    },
+    {
+      "id": "B07452P",
+      "name": {
+        "en": "Cakung United Tractors",
+        "id": "Cakung United Tractors"
+      },
+      "lat": -6.183102,
+      "lon": 106.929355
+    },
+    {
+      "id": "B07270P",
+      "name": {
+        "en": "Tipar Cakung",
+        "id": "Tipar Cakung"
+      },
+      "lat": -6.183262,
+      "lon": 106.924819
+    },
+    {
+      "id": "B00788P",
+      "name": {
+        "en": "IGI",
+        "id": "IGI"
+      },
+      "lat": -6.182981,
+      "lon": 106.91917
+    },
+    {
+      "id": "B06721P",
+      "name": {
+        "en": "PTC Pulo Gadung",
+        "id": "PTC Pulo Gadung"
+      },
+      "lat": -6.182782,
+      "lon": 106.916384
+    },
+    {
+      "id": "B06722P",
+      "name": {
+        "en": "Makam Wakaf",
+        "id": "Makam Wakaf"
+      },
+      "lat": -6.182589,
+      "lon": 106.911403
+    },
+    {
+      "id": "B02997P",
+      "name": {
+        "en": "Term. Pulo Gadung",
+        "id": "Term. Pulo Gadung"
+      },
+      "lat": -6.183245,
+      "lon": 106.90868
+    },
+    {
+      "id": "B05875P",
+      "name": {
+        "en": "Warung Jengkol",
+        "id": "Warung Jengkol"
+      },
+      "lat": -6.182362,
+      "lon": 106.9113
+    },
+    {
+      "id": "B01277P",
+      "name": {
+        "en": "Jln. Kesadaran Pool Bus",
+        "id": "Jln. Kesadaran Pool Bus"
+      },
+      "lat": -6.182475,
+      "lon": 106.91309
+    },
+    {
+      "id": "B01278P",
+      "name": {
+        "en": "Jln. Kesadaran Pool Bus",
+        "id": "Jln. Kesadaran Pool Bus"
+      },
+      "lat": -6.182447,
+      "lon": 106.91465
+    },
+    {
+      "id": "B06723P",
+      "name": {
+        "en": "Sbr. PTC Pulo Gadung",
+        "id": "Sbr. PTC Pulo Gadung"
+      },
+      "lat": -6.182581,
+      "lon": 106.916037
+    },
+    {
+      "id": "B06708P",
+      "name": {
+        "en": "Sbr. IGI",
+        "id": "Sbr. IGI"
+      },
+      "lat": -6.182757,
+      "lon": 106.918795
+    },
+    {
+      "id": "B06707P",
+      "name": {
+        "en": "Jln. Gg. Swadaya IV",
+        "id": "Jln. Gg. Swadaya IV"
+      },
+      "lat": -6.183073,
+      "lon": 106.923302
+    },
+    {
+      "id": "B06188P",
+      "name": {
+        "en": "SMK Nurul Huda",
+        "id": "SMK Nurul Huda"
+      },
+      "lat": -6.17684,
+      "lon": 106.93592
+    },
+    {
+      "id": "B07557P",
+      "name": {
+        "en": "Musholla Nurul Islam Tipar Cakung",
+        "id": "Musholla Nurul Islam Tipar Cakung"
+      },
+      "lat": -6.173191,
+      "lon": 106.936107
+    },
+    {
+      "id": "B07571P",
+      "name": {
+        "en": "Sbr. Komplek Rusun Griya Tipar Cakung",
+        "id": "Sbr. Komplek Rusun Griya Tipar Cakung"
+      },
+      "lat": -6.1718409,
+      "lon": 106.935596
+    },
+    {
+      "id": "B07722P",
+      "name": {
+        "en": "Masjid Jami Al-Mujahidin",
+        "id": "Masjid Jami Al-Mujahidin"
+      },
+      "lat": -6.170408,
+      "lon": 106.934758
+    },
+    {
+      "id": "B07558P",
+      "name": {
+        "en": "Jln. Rusunawa Cakung Barat",
+        "id": "Jln. Rusunawa Cakung Barat"
+      },
+      "lat": -6.16836899,
+      "lon": 106.93433046
+    },
+    {
+      "id": "B03236P",
+      "name": {
+        "en": "Ruko Enggano",
+        "id": "Ruko Enggano"
+      },
+      "lat": -6.10982,
+      "lon": 106.88493
+    },
+    {
+      "id": "B04231P",
+      "name": {
+        "en": "Sbr. Port Medical Center",
+        "id": "Sbr. Port Medical Center"
+      },
+      "lat": -6.109966,
+      "lon": 106.88934
+    },
+    {
+      "id": "B03275P",
+      "name": {
+        "en": "Rusun Jatinegara Kaum",
+        "id": "Rusun Jatinegara Kaum"
+      },
+      "lat": -6.211814,
+      "lon": 106.899422
+    },
+    {
+      "id": "B03276P",
+      "name": {
+        "en": "Rusun Jatinegara Kaum Depan",
+        "id": "Rusun Jatinegara Kaum Depan"
+      },
+      "lat": -6.212768,
+      "lon": 106.89945
+    },
+    {
+      "id": "B02319P",
+      "name": {
+        "en": "Masjid Jami Al Makmur Klender",
+        "id": "Masjid Jami Al Makmur Klender"
+      },
+      "lat": -6.212322,
+      "lon": 106.90082
+    },
+    {
+      "id": "B00364P",
+      "name": {
+        "en": "Flyover Ps. Klender",
+        "id": "Flyover Ps. Klender"
+      },
+      "lat": -6.211058,
+      "lon": 106.90153
+    },
+    {
+      "id": "B05671P",
+      "name": {
+        "en": "Tanah Koja",
+        "id": "Tanah Koja"
+      },
+      "lat": -6.209364,
+      "lon": 106.90161
+    },
+    {
+      "id": "B00866P",
+      "name": {
+        "en": "Jln. Arus Jati",
+        "id": "Jln. Arus Jati"
+      },
+      "lat": -6.208011,
+      "lon": 106.90193
+    },
+    {
+      "id": "B02942P",
+      "name": {
+        "en": "Pool Hiba Utama",
+        "id": "Pool Hiba Utama"
+      },
+      "lat": -6.206384,
+      "lon": 106.90269
+    },
+    {
+      "id": "B05798P",
+      "name": {
+        "en": "Transjakarta Pool Klender",
+        "id": "Transjakarta Pool Klender"
+      },
+      "lat": -6.205191,
+      "lon": 106.90301
+    },
+    {
+      "id": "B02943P",
+      "name": {
+        "en": "Pool Mayasari Bakti",
+        "id": "Pool Mayasari Bakti"
+      },
+      "lat": -6.202095,
+      "lon": 106.90445
+    },
+    {
+      "id": "B02946P",
+      "name": {
+        "en": "Pool PPD Kec. Pulo Gadung",
+        "id": "Pool PPD Kec. Pulo Gadung"
+      },
+      "lat": -6.199649,
+      "lon": 106.90477
+    },
+    {
+      "id": "B03325P",
+      "name": {
+        "en": "SD Jatinegara Kaum",
+        "id": "SD Jatinegara Kaum"
+      },
+      "lat": -6.19781,
+      "lon": 106.90496
+    },
+    {
+      "id": "B02274P",
+      "name": {
+        "en": "Masjid Assuada",
+        "id": "Masjid Assuada"
+      },
+      "lat": -6.194327,
+      "lon": 106.90544
+    },
+    {
+      "id": "B01779P",
+      "name": {
+        "en": "Jiep",
+        "id": "Jiep"
+      },
+      "lat": -6.192554,
+      "lon": 106.90569
+    },
+    {
+      "id": "B02848P",
+      "name": {
+        "en": "Pintu Kawasan",
+        "id": "Pintu Kawasan"
+      },
+      "lat": -6.189631,
+      "lon": 106.90646
+    },
+    {
+      "id": "B02673P",
+      "name": {
+        "en": "Ps. Pulo Gadung",
+        "id": "Ps. Pulo Gadung"
+      },
+      "lat": -6.187336,
+      "lon": 106.90597
+    },
+    {
+      "id": "B02856P",
+      "name": {
+        "en": "PKB Pulo Gadung",
+        "id": "PKB Pulo Gadung"
+      },
+      "lat": -6.185733,
+      "lon": 106.90638
+    },
+    {
+      "id": "B02999P",
+      "name": {
+        "en": "Pulo Gadung",
+        "id": "Pulo Gadung"
+      },
+      "lat": -6.184383,
+      "lon": 106.90798
+    },
+    {
+      "id": "B00564P",
+      "name": {
+        "en": "Gg. Suzuki",
+        "id": "Gg. Suzuki"
+      },
+      "lat": -6.184571,
+      "lon": 106.90797
+    },
+    {
+      "id": "B00041P",
+      "name": {
+        "en": "Ananda Pulo Gadung",
+        "id": "Ananda Pulo Gadung"
+      },
+      "lat": -6.185254,
+      "lon": 106.90716
+    },
+    {
+      "id": "B01778P",
+      "name": {
+        "en": "JIEP",
+        "id": "JIEP"
+      },
+      "lat": -6.192968,
+      "lon": 106.90579
+    },
+    {
+      "id": "B03040P",
+      "name": {
+        "en": "Puskesmas Cakung",
+        "id": "Puskesmas Cakung"
+      },
+      "lat": -6.198025,
+      "lon": 106.90511
+    },
+    {
+      "id": "B01730P",
+      "name": {
+        "en": "Jatinegara Kaum Raya Bekasi",
+        "id": "Jatinegara Kaum Raya Bekasi"
+      },
+      "lat": -6.203351,
+      "lon": 106.90407
+    },
+    {
+      "id": "B01620P",
+      "name": {
+        "en": "Jln. Swadaya Pln",
+        "id": "Jln. Swadaya Pln"
+      },
+      "lat": -6.20965,
+      "lon": 106.90171
+    },
+    {
+      "id": "B02633P",
+      "name": {
+        "en": "Ps. Klender",
+        "id": "Ps. Klender"
+      },
+      "lat": -6.212603,
+      "lon": 106.901141
+    },
+    {
+      "id": "B05460P",
+      "name": {
+        "en": "St. Klender Muka",
+        "id": "St. Klender Muka"
+      },
+      "lat": -6.212928,
+      "lon": 106.89948
+    },
+    {
+      "id": "B01470P",
+      "name": {
+        "en": "Jln. Pendidikan Jatinegara Kaum",
+        "id": "Jln. Pendidikan Jatinegara Kaum"
+      },
+      "lat": -6.212717,
+      "lon": 106.8977
+    },
+    {
+      "id": "B01691P",
+      "name": {
+        "en": "Jln. Tubagus Baddarudin",
+        "id": "Jln. Tubagus Baddarudin"
+      },
+      "lat": -6.21249,
+      "lon": 106.89767
+    },
+    {
+      "id": "B03290P",
+      "name": {
+        "en": "Rusun Pulo Gebang",
+        "id": "Rusun Pulo Gebang"
+      },
+      "lat": -6.201478,
+      "lon": 106.94975
+    },
+    {
+      "id": "B07589P",
+      "name": {
+        "en": "Sbr. SDN Pulogebang",
+        "id": "Sbr. SDN Pulogebang"
+      },
+      "lat": -6.20361599,
+      "lon": 106.9557935
+    },
+    {
+      "id": "B03091P",
+      "name": {
+        "en": "Raya Pulo Gebang Akses St. Cakung",
+        "id": "Raya Pulo Gebang Akses St. Cakung"
+      },
+      "lat": -6.216671,
+      "lon": 106.95301
+    },
+    {
+      "id": "B06667P",
+      "name": {
+        "en": "Kodim 0505",
+        "id": "Kodim 0505"
+      },
+      "lat": -6.211958,
+      "lon": 106.94722
+    },
+    {
+      "id": "B06664P",
+      "name": {
+        "en": "Pengadilan Negeri Jaktim",
+        "id": "Pengadilan Negeri Jaktim"
+      },
+      "lat": -6.212604,
+      "lon": 106.94082
+    },
+    {
+      "id": "B06946P",
+      "name": {
+        "en": "St. Klender Baru",
+        "id": "St. Klender Baru"
+      },
+      "lat": -6.217782,
+      "lon": 106.93957
+    },
+    {
+      "id": "B07455P",
+      "name": {
+        "en": "Jln. Dr. Sumarno",
+        "id": "Jln. Dr. Sumarno"
+      },
+      "lat": -6.21232,
+      "lon": 106.943325
+    },
+    {
+      "id": "B07588P",
+      "name": {
+        "en": "SDN Pulogebang",
+        "id": "SDN Pulogebang"
+      },
+      "lat": -6.20358933,
+      "lon": 106.95568621
+    },
+    {
+      "id": "B07574P",
+      "name": {
+        "en": "Sbr. Sekolah PGRI Penggilingan",
+        "id": "Sbr. Sekolah PGRI Penggilingan"
+      },
+      "lat": -6.217208,
+      "lon": 106.934008
+    },
+    {
+      "id": "B07357P",
+      "name": {
+        "en": "Perumnas Klender",
+        "id": "Perumnas Klender"
+      },
+      "lat": -6.216652,
+      "lon": 106.9308
+    },
+    {
+      "id": "B03280P",
+      "name": {
+        "en": "Rusun Klender",
+        "id": "Rusun Klender"
+      },
+      "lat": -6.216567,
+      "lon": 106.92868
+    },
+    {
+      "id": "B06663P",
+      "name": {
+        "en": "Jln. I Gusti Ngurah Rai",
+        "id": "Jln. I Gusti Ngurah Rai"
+      },
+      "lat": -6.216178,
+      "lon": 106.92742
+    },
+    {
+      "id": "B00369P",
+      "name": {
+        "en": "Flyover Radin Inten",
+        "id": "Flyover Radin Inten"
+      },
+      "lat": -6.216112,
+      "lon": 106.92439
+    },
+    {
+      "id": "B00227P",
+      "name": {
+        "en": "Carrefour Buaran",
+        "id": "Carrefour Buaran"
+      },
+      "lat": -6.218653,
+      "lon": 106.9237
+    },
+    {
+      "id": "B05318P",
+      "name": {
+        "en": "SMKN",
+        "id": "SMKN"
+      },
+      "lat": -6.219401,
+      "lon": 106.92361
+    },
+    {
+      "id": "B00198P",
+      "name": {
+        "en": "Budhaya Santo Agustinus",
+        "id": "Budhaya Santo Agustinus"
+      },
+      "lat": -6.220866,
+      "lon": 106.92346
+    },
+    {
+      "id": "B06661P",
+      "name": {
+        "en": "Kasi Dikdas",
+        "id": "Kasi Dikdas"
+      },
+      "lat": -6.222363,
+      "lon": 106.92318
+    },
+    {
+      "id": "B00603P",
+      "name": {
+        "en": "Gedung Senam",
+        "id": "Gedung Senam"
+      },
+      "lat": -6.224141,
+      "lon": 106.92339
+    },
+    {
+      "id": "B05660P",
+      "name": {
+        "en": "Taman Ut Aheme",
+        "id": "Taman Ut Aheme"
+      },
+      "lat": -6.227704,
+      "lon": 106.92256
+    },
+    {
+      "id": "B02352P",
+      "name": {
+        "en": "Masjid Jami Nurul Ain",
+        "id": "Masjid Jami Nurul Ain"
+      },
+      "lat": -6.227717,
+      "lon": 106.91976
+    },
+    {
+      "id": "B04518P",
+      "name": {
+        "en": "Sbr. Swadaya Raya",
+        "id": "Sbr. Swadaya Raya"
+      },
+      "lat": -6.228578,
+      "lon": 106.91633
+    },
+    {
+      "id": "B01255P",
+      "name": {
+        "en": "Jln. Kel. Raya",
+        "id": "Jln. Kel. Raya"
+      },
+      "lat": -6.229105,
+      "lon": 106.91435
+    },
+    {
+      "id": "B02308P",
+      "name": {
+        "en": "Masjid Jami Al Barkah",
+        "id": "Masjid Jami Al Barkah"
+      },
+      "lat": -6.229411,
+      "lon": 106.91212
+    },
+    {
+      "id": "B04476P",
+      "name": {
+        "en": "Sbr. SMPN",
+        "id": "Sbr. SMPN"
+      },
+      "lat": -6.230919,
+      "lon": 106.90988
+    },
+    {
+      "id": "B03135P",
+      "name": {
+        "en": "RS Duren Sawit",
+        "id": "RS Duren Sawit"
+      },
+      "lat": -6.232262,
+      "lon": 106.91019
+    },
+    {
+      "id": "B00637P",
+      "name": {
+        "en": "Gereja Santa Anna",
+        "id": "Gereja Santa Anna"
+      },
+      "lat": -6.233953,
+      "lon": 106.90998
+    },
+    {
+      "id": "B01677P",
+      "name": {
+        "en": "Jln. Teluk Mandar",
+        "id": "Jln. Teluk Mandar"
+      },
+      "lat": -6.238715,
+      "lon": 106.90988
+    },
+    {
+      "id": "B03289P",
+      "name": {
+        "en": "Rusun Pondok Bambu",
+        "id": "Rusun Pondok Bambu"
+      },
+      "lat": -6.241583,
+      "lon": 106.91085
+    },
+    {
+      "id": "B00328P",
+      "name": {
+        "en": "Duren Sawit",
+        "id": "Duren Sawit"
+      },
+      "lat": -6.233341,
+      "lon": 106.91006
+    },
+    {
+      "id": "B00100P",
+      "name": {
+        "en": "Baladewa Residence",
+        "id": "Baladewa Residence"
+      },
+      "lat": -6.229648,
+      "lon": 106.91038
+    },
+    {
+      "id": "B01578P",
+      "name": {
+        "en": "Jln. Serdang",
+        "id": "Jln. Serdang"
+      },
+      "lat": -6.228906,
+      "lon": 106.91459
+    },
+    {
+      "id": "B01622P",
+      "name": {
+        "en": "Jln. Swadaya Raya",
+        "id": "Jln. Swadaya Raya"
+      },
+      "lat": -6.228145,
+      "lon": 106.917435
+    },
+    {
+      "id": "B01096P",
+      "name": {
+        "en": "Jln. H. Aman",
+        "id": "Jln. H. Aman"
+      },
+      "lat": -6.226789,
+      "lon": 106.92316
+    },
+    {
+      "id": "B05885P",
+      "name": {
+        "en": "Wisma Atlet Radin Inten",
+        "id": "Wisma Atlet Radin Inten"
+      },
+      "lat": -6.223513,
+      "lon": 106.92322
+    },
+    {
+      "id": "B00306P",
+      "name": {
+        "en": "Dinas Kebersihan Duren Sawit",
+        "id": "Dinas Kebersihan Duren Sawit"
+      },
+      "lat": -6.219815,
+      "lon": 106.92338
+    },
+    {
+      "id": "B00195P",
+      "name": {
+        "en": "Buaran Plaza",
+        "id": "Buaran Plaza"
+      },
+      "lat": -6.217983,
+      "lon": 106.9235
+    },
+    {
+      "id": "B05581P",
+      "name": {
+        "en": "Taman Buaran Indah",
+        "id": "Taman Buaran Indah"
+      },
+      "lat": -6.216979,
+      "lon": 106.92356
+    },
+    {
+      "id": "B01803P",
+      "name": {
+        "en": "Kampung Jembatan Ngurah Rai",
+        "id": "Kampung Jembatan Ngurah Rai"
+      },
+      "lat": -6.216438,
+      "lon": 106.92909
+    },
+    {
+      "id": "B04648P",
+      "name": {
+        "en": "Sekolah PGRI Penggilingan",
+        "id": "Sekolah PGRI Penggilingan"
+      },
+      "lat": -6.216995,
+      "lon": 106.933775
+    },
+    {
+      "id": "B03273P",
+      "name": {
+        "en": "Rusun Jati Rawasari",
+        "id": "Rusun Jati Rawasari"
+      },
+      "lat": -6.183517,
+      "lon": 106.86389
+    },
+    {
+      "id": "B03377P",
+      "name": {
+        "en": "SDN Johar Baru",
+        "id": "SDN Johar Baru"
+      },
+      "lat": -6.181262,
+      "lon": 106.86023
+    },
+    {
+      "id": "B07596P",
+      "name": {
+        "en": "Sbr. Ps. Gembrong Cempaka Baru",
+        "id": "Sbr. Ps. Gembrong Cempaka Baru"
+      },
+      "lat": -6.179937,
+      "lon": 106.859433
+    },
+    {
+      "id": "B07594P",
+      "name": {
+        "en": "Sbr. SDN Cempaka Putih Barat",
+        "id": "Sbr. SDN Cempaka Putih Barat"
+      },
+      "lat": -6.177401,
+      "lon": 106.858602
+    },
+    {
+      "id": "B07592P",
+      "name": {
+        "en": "Sbr. Gg. Adjid",
+        "id": "Sbr. Gg. Adjid"
+      },
+      "lat": -6.17452898,
+      "lon": 106.85779095
+    },
+    {
+      "id": "B01073P",
+      "name": {
+        "en": "Jln. Galur Jaya",
+        "id": "Jln. Galur Jaya"
+      },
+      "lat": -6.174642,
+      "lon": 106.85441
+    },
+    {
+      "id": "B06668P",
+      "name": {
+        "en": "Bengkel Jln. Letjen Suprapto",
+        "id": "Bengkel Jln. Letjen Suprapto"
+      },
+      "lat": -6.174721,
+      "lon": 106.85362
+    },
+    {
+      "id": "B00770P",
+      "name": {
+        "en": "Honda Letjen Suprapto",
+        "id": "Honda Letjen Suprapto"
+      },
+      "lat": -6.174933,
+      "lon": 106.84973
+    },
+    {
+      "id": "B03201P",
+      "name": {
+        "en": "RSPAD",
+        "id": "RSPAD"
+      },
+      "lat": -6.176162,
+      "lon": 106.83987
+    },
+    {
+      "id": "B00317P",
+      "name": {
+        "en": "Dittopad",
+        "id": "Dittopad"
+      },
+      "lat": -6.174759,
+      "lon": 106.84823
+    },
+    {
+      "id": "B00318P",
+      "name": {
+        "en": "Dittopad",
+        "id": "Dittopad"
+      },
+      "lat": -6.174618,
+      "lon": 106.85009
+    },
+    {
+      "id": "B05170P",
+      "name": {
+        "en": "Simpang Tanah Tinggi Timur",
+        "id": "Simpang Tanah Tinggi Timur"
+      },
+      "lat": -6.174437,
+      "lon": 106.85231
+    },
+    {
+      "id": "H00057P",
+      "name": {
+        "en": "Galur",
+        "id": "Galur"
+      },
+      "lat": -6.174388,
+      "lon": 106.85485
+    },
+    {
+      "id": "H00194P",
+      "name": {
+        "en": "Rawa Selatan",
+        "id": "Rawa Selatan"
+      },
+      "lat": -6.173925,
+      "lon": 106.85809
+    },
+    {
+      "id": "B02059P",
+      "name": {
+        "en": "Komplek Pertokoan Cempaka Putih",
+        "id": "Komplek Pertokoan Cempaka Putih"
+      },
+      "lat": -6.173296,
+      "lon": 106.85976
+    },
+    {
+      "id": "B02594P",
+      "name": {
+        "en": "Ps. Cempaka Putih",
+        "id": "Ps. Cempaka Putih"
+      },
+      "lat": -6.172533,
+      "lon": 106.86244
+    },
+    {
+      "id": "B00687P",
+      "name": {
+        "en": "Grand Cempaka Hotel",
+        "id": "Grand Cempaka Hotel"
+      },
+      "lat": -6.173334,
+      "lon": 106.86075
+    },
+    {
+      "id": "B05696P",
+      "name": {
+        "en": "Telkomsel Cempaka Putih",
+        "id": "Telkomsel Cempaka Putih"
+      },
+      "lat": -6.173603,
+      "lon": 106.86006
+    },
+    {
+      "id": "B07591P",
+      "name": {
+        "en": "Gg. Adjid",
+        "id": "Gg. Adjid"
+      },
+      "lat": -6.17448098,
+      "lon": 106.85788214
+    },
+    {
+      "id": "B07593P",
+      "name": {
+        "en": "SDN Cempaka Putih Barat",
+        "id": "SDN Cempaka Putih Barat"
+      },
+      "lat": -6.177294,
+      "lon": 106.85868
+    },
+    {
+      "id": "B07595P",
+      "name": {
+        "en": "Ps. Gembrong Cempaka Baru",
+        "id": "Ps. Gembrong Cempaka Baru"
+      },
+      "lat": -6.180038,
+      "lon": 106.85958
+    },
+    {
+      "id": "B04344P",
+      "name": {
+        "en": "Sbr. SDN Johar Baru",
+        "id": "Sbr. SDN Johar Baru"
+      },
+      "lat": -6.181178,
+      "lon": 106.86028
+    },
+    {
+      "id": "B03268P",
+      "name": {
+        "en": "Rusun Cakung Km2",
+        "id": "Rusun Cakung Km2"
+      },
+      "lat": -6.18453,
+      "lon": 106.935452
+    },
+    {
+      "id": "B07453P",
+      "name": {
+        "en": "United Tractors",
+        "id": "United Tractors"
+      },
+      "lat": -6.18326,
+      "lon": 106.93243
+    },
+    {
+      "id": "B07679P",
+      "name": {
+        "en": "Sbr. United Tractors Belakang",
+        "id": "Sbr. United Tractors Belakang"
+      },
+      "lat": -6.18722,
+      "lon": 106.933342
+    },
+    {
+      "id": "B02947P",
+      "name": {
+        "en": "Pool Taksi",
+        "id": "Pool Taksi"
+      },
+      "lat": -6.188631,
+      "lon": 106.93426
+    },
+    {
+      "id": "B01807P",
+      "name": {
+        "en": "Kampung Padaengan",
+        "id": "Kampung Padaengan"
+      },
+      "lat": -6.189361,
+      "lon": 106.93472
+    },
+    {
+      "id": "B00823P",
+      "name": {
+        "en": "Jagal",
+        "id": "Jagal"
+      },
+      "lat": -6.190849,
+      "lon": 106.93465
+    },
+    {
+      "id": "B00032P",
+      "name": {
+        "en": "Al Wathoniyah",
+        "id": "Al Wathoniyah"
+      },
+      "lat": -6.192036,
+      "lon": 106.9353
+    },
+    {
+      "id": "B05588P",
+      "name": {
+        "en": "Taman Elok",
+        "id": "Taman Elok"
+      },
+      "lat": -6.195743,
+      "lon": 106.93526
+    },
+    {
+      "id": "B02801P",
+      "name": {
+        "en": "Perum Tpi",
+        "id": "Perum Tpi"
+      },
+      "lat": -6.197379,
+      "lon": 106.93513
+    },
+    {
+      "id": "B00396P",
+      "name": {
+        "en": "Gg. Aim",
+        "id": "Gg. Aim"
+      },
+      "lat": -6.200344,
+      "lon": 106.9351
+    },
+    {
+      "id": "B00555P",
+      "name": {
+        "en": "Gg. Sawo",
+        "id": "Gg. Sawo"
+      },
+      "lat": -6.20176,
+      "lon": 106.93513
+    },
+    {
+      "id": "B07699P",
+      "name": {
+        "en": "Rusun PIK Penggilingan",
+        "id": "Rusun PIK Penggilingan"
+      },
+      "lat": -6.205682,
+      "lon": 106.929107
+    },
+    {
+      "id": "B02851P",
+      "name": {
+        "en": "Pintu Masuk PIK",
+        "id": "Pintu Masuk PIK"
+      },
+      "lat": -6.203692,
+      "lon": 106.935101
+    },
+    {
+      "id": "B07700P",
+      "name": {
+        "en": "Sbr. SMK Ristek Kikin",
+        "id": "Sbr. SMK Ristek Kikin"
+      },
+      "lat": -6.206863,
+      "lon": 106.935245
+    },
+    {
+      "id": "B04898P",
+      "name": {
+        "en": "Simpang Kampung Jembatan",
+        "id": "Simpang Kampung Jembatan"
+      },
+      "lat": -6.208642,
+      "lon": 106.93576
+    },
+    {
+      "id": "B00082P",
+      "name": {
+        "en": "At Thahiriah",
+        "id": "At Thahiriah"
+      },
+      "lat": -6.210032,
+      "lon": 106.93803
+    },
+    {
+      "id": "B05201P",
+      "name": {
+        "en": "Simpang Tiga",
+        "id": "Simpang Tiga"
+      },
+      "lat": -6.210708,
+      "lon": 106.93903
+    },
+    {
+      "id": "B05300P",
+      "name": {
+        "en": "SMK Ristek Kikin",
+        "id": "SMK Ristek Kikin"
+      },
+      "lat": -6.206887,
+      "lon": 106.93519
+    },
+    {
+      "id": "B05566P",
+      "name": {
+        "en": "Suzuki",
+        "id": "Suzuki"
+      },
+      "lat": -6.193509,
+      "lon": 106.93555
+    },
+    {
+      "id": "B07701P",
+      "name": {
+        "en": "United Tractors Belakang",
+        "id": "United Tractors Belakang"
+      },
+      "lat": -6.187249,
+      "lon": 106.93321
+    },
+    {
+      "id": "B03270P",
+      "name": {
+        "en": "Rusun Cipinang Besar Selatan",
+        "id": "Rusun Cipinang Besar Selatan"
+      },
+      "lat": -6.231625,
+      "lon": 106.88288
+    },
+    {
+      "id": "B05785P",
+      "name": {
+        "en": "TPU Kb. Nanas",
+        "id": "TPU Kb. Nanas"
+      },
+      "lat": -6.23219,
+      "lon": 106.88051
+    },
+    {
+      "id": "B05536P",
+      "name": {
+        "en": "STMT Trisakti",
+        "id": "STMT Trisakti"
+      },
+      "lat": -6.231933,
+      "lon": 106.87782
+    },
+    {
+      "id": "B02723P",
+      "name": {
+        "en": "Penas Kalimalang",
+        "id": "Penas Kalimalang"
+      },
+      "lat": -6.239263,
+      "lon": 106.877862
+    },
+    {
+      "id": "B06573P",
+      "name": {
+        "en": "SPBU Jln. DI Panjaitan",
+        "id": "SPBU Jln. DI Panjaitan"
+      },
+      "lat": -6.233702,
+      "lon": 106.8766
+    },
+    {
+      "id": "B00265P",
+      "name": {
+        "en": "Cipinang Kb. Nanas",
+        "id": "Cipinang Kb. Nanas"
+      },
+      "lat": -6.231595,
+      "lon": 106.87615
+    },
+    {
+      "id": "B01940P",
+      "name": {
+        "en": "Kel. Pulo Gebang",
+        "id": "Kel. Pulo Gebang"
+      },
+      "lat": -6.215805,
+      "lon": 106.9546
+    },
+    {
+      "id": "B05926P",
+      "name": {
+        "en": "Yayasan Nurul Ihsan Pulo Gebang",
+        "id": "Yayasan Nurul Ihsan Pulo Gebang"
+      },
+      "lat": -6.215076,
+      "lon": 106.95527
+    },
+    {
+      "id": "B05757P",
+      "name": {
+        "en": "TK Nurul Ihsan Raya Pulo Gebang",
+        "id": "TK Nurul Ihsan Raya Pulo Gebang"
+      },
+      "lat": -6.214198,
+      "lon": 106.95546
+    }
+  ],
+  "routes": [
+    {
+      "id": "3A-L03",
+      "shortName": "3A",
+      "name": {
+        "en": "Rusun Pesakih - Kalideres",
+        "id": "Rusun Pesakih - Kalideres"
+      },
+      "headsign": {
+        "en": "Kalideres dan Rusun Pesakih",
+        "id": "Kalideres dan Rusun Pesakih"
+      },
+      "color": "#FDECB4",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "3A-L01",
+      "shortName": "3A",
+      "name": {
+        "en": "Rusun Pesakih - Kalideres",
+        "id": "Rusun Pesakih - Kalideres"
+      },
+      "headsign": {
+        "en": "Kalideres dan Rusun Pesakih",
+        "id": "Kalideres dan Rusun Pesakih"
+      },
+      "color": "#FDECB4",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "3B-R05",
+      "shortName": "3B",
+      "name": {
+        "en": "Rusun Flamboyan - Cengkareng",
+        "id": "Rusun Flamboyan - Cengkareng"
+      },
+      "headsign": {
+        "en": "Cengkareng",
+        "id": "Cengkareng"
+      },
+      "color": "#FDECB4",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "3B-R04",
+      "shortName": "3B",
+      "name": {
+        "en": "Rusun Flamboyan - Cengkareng",
+        "id": "Rusun Flamboyan - Cengkareng"
+      },
+      "headsign": {
+        "en": "Rusun Flamboyan",
+        "id": "Rusun Flamboyan"
+      },
+      "color": "#FDECB4",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "9F-L01",
+      "shortName": "9F",
+      "name": {
+        "en": "Rusun Tambora - Pluit",
+        "id": "Rusun Tambora - Pluit"
+      },
+      "headsign": {
+        "en": "Pluit dan Rusun Tambora",
+        "id": "Pluit dan Rusun Tambora"
+      },
+      "color": "#85A4A2",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "10A-R01",
+      "shortName": "10A",
+      "name": {
+        "en": "Rusun Marunda - Tanjung Priok",
+        "id": "Rusun Marunda - Tanjung Priok"
+      },
+      "headsign": {
+        "en": "Tanjung Priok",
+        "id": "Tanjung Priok"
+      },
+      "color": "#9B7172",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "11M-L03",
+      "shortName": "11M",
+      "name": {
+        "en": "Rusun Rawa Bebek - Bukit Duri",
+        "id": "Rusun Rawa Bebek - Bukit Duri"
+      },
+      "headsign": {
+        "en": "Bukit Duri dan Rusun Rawa Bebek",
+        "id": "Bukit Duri dan Rusun Rawa Bebek"
+      },
+      "color": "#717092",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "9F-R01",
+      "shortName": "9F",
+      "name": {
+        "en": "Rusun Tambora - Pluit",
+        "id": "Rusun Tambora - Pluit"
+      },
+      "headsign": {
+        "en": "Pluit",
+        "id": "Pluit"
+      },
+      "color": "#85A4A2",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "9F-R02",
+      "shortName": "9F",
+      "name": {
+        "en": "Rusun Tambora - Pluit",
+        "id": "Rusun Tambora - Pluit"
+      },
+      "headsign": {
+        "en": "Rusun Tambora",
+        "id": "Rusun Tambora"
+      },
+      "color": "#85A4A2",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "3B-L03",
+      "shortName": "3B",
+      "name": {
+        "en": "Rusun Flamboyan - Cengkareng",
+        "id": "Rusun Flamboyan - Cengkareng"
+      },
+      "headsign": {
+        "en": "Cengkareng dan Rusun Flamboyan",
+        "id": "Cengkareng dan Rusun Flamboyan"
+      },
+      "color": "#FDECB4",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "3B-L02",
+      "shortName": "3B",
+      "name": {
+        "en": "Rusun Flamboyan - Cengkareng",
+        "id": "Rusun Flamboyan - Cengkareng"
+      },
+      "headsign": {
+        "en": "Cengkareng dan Rusun Flamboyan",
+        "id": "Cengkareng dan Rusun Flamboyan"
+      },
+      "color": "#FDECB4",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "12C-L01",
+      "shortName": "12C",
+      "name": {
+        "en": "Rusun Waduk Pluit - Penjaringan",
+        "id": "Rusun Waduk Pluit - Penjaringan"
+      },
+      "headsign": {
+        "en": "Penjaringan dan Rusun Waduk Pluit",
+        "id": "Penjaringan dan Rusun Waduk Pluit"
+      },
+      "color": "#A8BFA8",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "3C-L02",
+      "shortName": "3C",
+      "name": {
+        "en": "Rusun Kapuk Muara - Penjaringan",
+        "id": "Rusun Kapuk Muara - Penjaringan"
+      },
+      "headsign": {
+        "en": "Penjaringan dan Rusun Kapuk Muara",
+        "id": "Penjaringan dan Rusun Kapuk Muara"
+      },
+      "color": "#FDECB4",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "12H-L02",
+      "shortName": "12H",
+      "name": {
+        "en": "Rusun Penjaringan - Penjaringan",
+        "id": "Rusun Penjaringan - Penjaringan"
+      },
+      "headsign": {
+        "en": "Penjaringan dan Rusun Penjaringan",
+        "id": "Penjaringan dan Rusun Penjaringan"
+      },
+      "color": "#A8BFA8",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "12F-L02",
+      "shortName": "12F",
+      "name": {
+        "en": "Rusun Marunda - Rusun Waduk Pluit",
+        "id": "Rusun Marunda - Rusun Waduk Pluit"
+      },
+      "headsign": {
+        "en": "Rusun Waduk Pluit dan Rusun Marunda",
+        "id": "Rusun Waduk Pluit dan Rusun Marunda"
+      },
+      "color": "#A8BFA8",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "2F-L04",
+      "shortName": "2F",
+      "name": {
+        "en": "Rusun Cakung Barat - Pulo Gadung",
+        "id": "Rusun Cakung Barat - Pulo Gadung"
+      },
+      "headsign": {
+        "en": "Pulo Gadung dan Rusun Cakung Barat",
+        "id": "Pulo Gadung dan Rusun Cakung Barat"
+      },
+      "color": "#78809C",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "10A-L02",
+      "shortName": "10A",
+      "name": {
+        "en": "Rusun Marunda - Tanjung Priok",
+        "id": "Rusun Marunda - Tanjung Priok"
+      },
+      "headsign": {
+        "en": "Tanjung Priok dan Rusun Marunda",
+        "id": "Tanjung Priok dan Rusun Marunda"
+      },
+      "color": "#9B7172",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "4E-L02",
+      "shortName": "4E",
+      "name": {
+        "en": "Rusun Jatinegara Kaum - Pulo Gadung",
+        "id": "Rusun Jatinegara Kaum - Pulo Gadung"
+      },
+      "headsign": {
+        "en": "Pulo Gadung dan Rusun Jatinegara Kaum",
+        "id": "Pulo Gadung dan Rusun Jatinegara Kaum"
+      },
+      "color": "#5C5062",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "12C-R02",
+      "shortName": "12C",
+      "name": {
+        "en": "Rusun Waduk Pluit - Penjaringan",
+        "id": "Rusun Waduk Pluit - Penjaringan"
+      },
+      "headsign": {
+        "en": "Rusun Waduk Pluit",
+        "id": "Rusun Waduk Pluit"
+      },
+      "color": "#A8BFA8",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "11C-L03",
+      "shortName": "11C",
+      "name": {
+        "en": "Rusun Pulo Gebang - Penggilingan",
+        "id": "Rusun Pulo Gebang - Penggilingan"
+      },
+      "headsign": {
+        "en": "Penggilingan dan Rusun Pulo Gebang",
+        "id": "Penggilingan dan Rusun Pulo Gebang"
+      },
+      "color": "#717092",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "11P-R02",
+      "shortName": "11P",
+      "name": {
+        "en": "Rusun Pondok Bambu - Walikota Jakarta Timur",
+        "id": "Rusun Pondok Bambu - Walikota Jakarta Timur"
+      },
+      "headsign": {
+        "en": "Rusun Pondok Bambu",
+        "id": "Rusun Pondok Bambu"
+      },
+      "color": "#717092",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "11P-R01",
+      "shortName": "11P",
+      "name": {
+        "en": "Rusun Pondok Bambu - Walikota Jakarta Timur",
+        "id": "Rusun Pondok Bambu - Walikota Jakarta Timur"
+      },
+      "headsign": {
+        "en": "Walikota Jakarta Timur",
+        "id": "Walikota Jakarta Timur"
+      },
+      "color": "#717092",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "2H-L03",
+      "shortName": "2H",
+      "name": {
+        "en": "Rusun Jati Rawasari - Senen",
+        "id": "Rusun Jati Rawasari - Senen"
+      },
+      "headsign": {
+        "en": "Senen dan Rusun Jati Rawasari",
+        "id": "Senen dan Rusun Jati Rawasari"
+      },
+      "color": "#78809C",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "12C-R01",
+      "shortName": "12C",
+      "name": {
+        "en": "Rusun Waduk Pluit - Penjaringan",
+        "id": "Rusun Waduk Pluit - Penjaringan"
+      },
+      "headsign": {
+        "en": "Penjaringan",
+        "id": "Penjaringan"
+      },
+      "color": "#A8BFA8",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "11R-L01",
+      "shortName": "11R",
+      "name": {
+        "en": "Rusun Cakung KM 2 - Penggilingan via Rusun PIK",
+        "id": "Rusun Cakung KM 2 - Penggilingan via Rusun PIK"
+      },
+      "headsign": {
+        "en": "Penggilingan dan Rusun Cakung KM 2",
+        "id": "Penggilingan dan Rusun Cakung KM 2"
+      },
+      "color": "#717092",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "10B-R01",
+      "shortName": "10B",
+      "name": {
+        "en": "Rusun Cipinang Besar Selatan - Halim",
+        "id": "Rusun Cipinang Besar Selatan - Halim"
+      },
+      "headsign": {
+        "en": "Halim",
+        "id": "Halim"
+      },
+      "color": "#9B7172",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "10B-L01",
+      "shortName": "10B",
+      "name": {
+        "en": "Rusun Cipinang Besar Selatan - Halim",
+        "id": "Rusun Cipinang Besar Selatan - Halim"
+      },
+      "headsign": {
+        "en": "Halim dan Rusun Cipinang Besar Selatan",
+        "id": "Halim dan Rusun Cipinang Besar Selatan"
+      },
+      "color": "#9B7172",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "10B-R02",
+      "shortName": "10B",
+      "name": {
+        "en": "Rusun Cipinang Besar Selatan - Halim",
+        "id": "Rusun Cipinang Besar Selatan - Halim"
+      },
+      "headsign": {
+        "en": "Rusun Cipinang Besar Selatan",
+        "id": "Rusun Cipinang Besar Selatan"
+      },
+      "color": "#9B7172",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "11B-R01",
+      "shortName": "11B",
+      "name": {
+        "en": "Rusun Rawa Bebek - Penggilingan",
+        "id": "Rusun Rawa Bebek - Penggilingan"
+      },
+      "headsign": {
+        "en": "Penggilingan",
+        "id": "Penggilingan"
+      },
+      "color": "#717092",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "11B-R02",
+      "shortName": "11B",
+      "name": {
+        "en": "Rusun Rawa Bebek - Penggilingan",
+        "id": "Rusun Rawa Bebek - Penggilingan"
+      },
+      "headsign": {
+        "en": "Rusun Rawa Bebek",
+        "id": "Rusun Rawa Bebek"
+      },
+      "color": "#717092",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "schedules": {
+    "3A-L03": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 600
+        }
+      ],
+      "stopOffsets": {
+        "B03286P": 0,
+        "B08404P": 62,
+        "B02379P": 121,
+        "B07684P": 249,
+        "H00169P": 306,
+        "B02833P": 496,
+        "H00094P": 665,
+        "B01332P": 786,
+        "B02760P": 843,
+        "B07685P": 1310,
+        "B08405P": 1377
+      }
+    },
+    "3A-L01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03286P": 0,
+        "B08404P": 62,
+        "B02379P": 122,
+        "B07684P": 250,
+        "H00169P": 307,
+        "B02833P": 497,
+        "H00094P": 666,
+        "B01332P": 787,
+        "B02760P": 844,
+        "B08405P": 1357
+      }
+    },
+    "3B-R05": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03272P": 0,
+        "B07532P": 370,
+        "B06302P": 471,
+        "B06299P": 669,
+        "B07686P": 708,
+        "B07687P": 867,
+        "B04902P": 1067,
+        "B03206P": 1203,
+        "B02194P": 1257,
+        "B02195P": 1307,
+        "B05838P": 1401,
+        "B05317P": 1437,
+        "B02900P": 1522,
+        "B03343P": 1620,
+        "B03009P": 1684,
+        "B03073P": 1762
+      }
+    },
+    "3B-R04": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03073P": 0,
+        "B04136P": 116,
+        "B04610P": 193,
+        "B00192P": 259,
+        "B03041P": 378,
+        "B05632P": 535,
+        "B02808P": 696,
+        "B03272P": 1025
+      }
+    },
+    "9F-L01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 3600
+        }
+      ],
+      "stopOffsets": {
+        "B03295P": 0,
+        "H00085P": 270,
+        "H00197S": 580,
+        "H00138S": 684,
+        "H00086P": 1302,
+        "H00089P": 1618,
+        "B07553P": 1846,
+        "H00174P": 2588
+      }
+    },
+    "10A-R01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03282P": 0,
+        "B03284P": 180,
+        "B05078P": 287,
+        "B06039P": 470,
+        "B00137P": 525,
+        "B06789P": 572,
+        "B05158P": 604,
+        "B05039P": 969,
+        "B01855P": 1108,
+        "B07449P": 1348,
+        "B06245P": 1469,
+        "B06246P": 1599,
+        "B01858P": 1726,
+        "B06234P": 1865,
+        "B06235P": 2000,
+        "B06162P": 2074,
+        "B06163P": 2116,
+        "B06257P": 2220,
+        "B06164P": 2293,
+        "B06258P": 2463,
+        "B06165P": 2513,
+        "B04964P": 2548,
+        "B02761P": 2634,
+        "B02253P": 2779,
+        "B03213P": 2824,
+        "B01325P": 2849,
+        "B01324P": 2930,
+        "B01327P": 2987,
+        "B00338P": 3162,
+        "B02949P": 3266,
+        "B01056P": 3342,
+        "B02993P": 3456,
+        "B05728P": 3557
+      }
+    },
+    "11M-L03": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 360
+        }
+      ],
+      "stopOffsets": {
+        "B03291P": 0,
+        "B07582P": 749,
+        "B07583P": 855,
+        "B06944P": 966,
+        "B07454P": 1006,
+        "B06945P": 1164,
+        "H00259P": 1397,
+        "H00163P": 1621,
+        "H00168P": 1997,
+        "H00055P": 2196,
+        "H00017P": 2414,
+        "H00097P": 2603,
+        "H00054P": 2883,
+        "H00226P": 3028,
+        "B07791P": 3306,
+        "H00076P": 3551,
+        "H00145P": 3687,
+        "H00037C": 3839,
+        "B08461P": 4017,
+        "B02240P": 4718,
+        "B02272P": 4931,
+        "B02282P": 5112,
+        "B01805P": 5210,
+        "B03274P": 5369,
+        "B03142P": 5449,
+        "B03310P": 5508,
+        "B00205P": 5654,
+        "B05350P": 5849,
+        "B07676P": 8933,
+        "B07677P": 9067,
+        "B07678P": 9193
+      }
+    },
+    "9F-R01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 3600
+        }
+      ],
+      "stopOffsets": {
+        "B03295P": 0,
+        "H00085P": 270,
+        "H00197S": 581,
+        "H00138S": 683,
+        "H00086P": 1301,
+        "H00089P": 1616,
+        "B07553P": 1844,
+        "H00174P": 2586
+      }
+    },
+    "9F-R02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 3600
+        }
+      ],
+      "stopOffsets": {
+        "H00174P": 0,
+        "B07553P": 490,
+        "H00089P": 718,
+        "H00086P": 1034,
+        "B03295P": 1397
+      }
+    },
+    "3B-L03": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03272P": 0,
+        "B07532P": 370,
+        "B06302P": 471,
+        "B06299P": 669,
+        "B07686P": 708,
+        "B07687P": 867,
+        "B04902P": 1067,
+        "B03206P": 1202,
+        "B02194P": 1256,
+        "B02195P": 1306,
+        "B05838P": 1400,
+        "B05317P": 1436,
+        "B02900P": 1521,
+        "B03343P": 1618,
+        "B03009P": 1682,
+        "B03073P": 1760,
+        "B04136P": 1869,
+        "B04610P": 1946,
+        "B00192P": 2012,
+        "B03041P": 2131,
+        "B05632P": 2285,
+        "B02808P": 2461
+      }
+    },
+    "3B-L02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03272P": 0,
+        "B06302P": 482,
+        "B06299P": 680,
+        "B04902P": 1035,
+        "B03206P": 1170,
+        "B02194P": 1224,
+        "B02195P": 1274,
+        "B05838P": 1368,
+        "B05317P": 1404,
+        "B02900P": 1489,
+        "B03343P": 1586,
+        "B03009P": 1650,
+        "B03073P": 1728,
+        "B04136P": 1837,
+        "B04610P": 1914,
+        "B00192P": 1980,
+        "B03041P": 2099,
+        "B05632P": 2253,
+        "B02808P": 2429
+      }
+    },
+    "12C-L01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 420
+        }
+      ],
+      "stopOffsets": {
+        "B03299P": 0,
+        "B06292P": 170,
+        "B06294P": 278,
+        "B06314P": 460,
+        "B02361P": 577,
+        "B05028P": 676,
+        "B05405P": 739,
+        "H00065P": 806,
+        "B06046P": 1252,
+        "B01773P": 1491,
+        "B02888P": 1587,
+        "B00030P": 1658,
+        "B07553P": 1747,
+        "B00080P": 1876,
+        "B06659P": 2074,
+        "B03407P": 2125,
+        "B06295P": 2245,
+        "B06313P": 2421,
+        "B06312P": 2528
+      }
+    },
+    "3C-L02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 3600
+        }
+      ],
+      "stopOffsets": {
+        "B03277P": 0,
+        "B07688P": 99,
+        "B07689P": 275,
+        "B07690P": 400,
+        "B07691P": 501,
+        "B07692P": 723,
+        "B07603P": 849,
+        "B07535P": 914,
+        "B07604P": 1010,
+        "B07536P": 1080,
+        "B07605P": 1205,
+        "B01507P": 1303,
+        "B07553P": 1588,
+        "B07541P": 1704,
+        "B05674P": 1803,
+        "B01773P": 1918,
+        "B07537P": 2073,
+        "B07538P": 2202,
+        "B07598P": 2279,
+        "B07539P": 2375,
+        "B07694P": 2552,
+        "B07695P": 2762,
+        "B07696P": 2879,
+        "B07697P": 2996,
+        "B07698P": 3160
+      }
+    },
+    "12H-L02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 3600
+        }
+      ],
+      "stopOffsets": {
+        "B03285P": 0,
+        "B05674P": 109,
+        "B01773P": 224,
+        "B01507P": 418,
+        "B02888P": 582,
+        "B00030P": 653,
+        "B07553P": 732,
+        "B07541P": 857
+      }
+    },
+    "12F-L02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 3600
+        }
+      ],
+      "stopOffsets": {
+        "B03282P": 0,
+        "B03284P": 181,
+        "B05078P": 288,
+        "B06039P": 471,
+        "B00137P": 526,
+        "B06790P": 572,
+        "B05158P": 605,
+        "B05039P": 970,
+        "B01855P": 1109,
+        "B07449P": 1349,
+        "B06245P": 1470,
+        "B06246P": 1600,
+        "B01858P": 1727,
+        "B06234P": 1866,
+        "B06235P": 1998,
+        "B06162P": 2066,
+        "B06163P": 2110,
+        "B06257P": 2214,
+        "B06164P": 2287,
+        "B06258P": 2457,
+        "B06165P": 2507,
+        "B04964P": 2542,
+        "B02761P": 2623,
+        "B02253P": 2768,
+        "B03213P": 2813,
+        "B01325P": 2838,
+        "B01324P": 2919,
+        "B01327P": 2976,
+        "B02748P": 3242,
+        "B02898P": 3333,
+        "B05675P": 6693,
+        "B05080P": 6781,
+        "B03407P": 6889,
+        "B06658P": 6961,
+        "B03166P": 6996,
+        "B06659P": 7088,
+        "B06295P": 7259,
+        "B06313P": 7435,
+        "B06312P": 7542,
+        "B03299P": 7708,
+        "B06292P": 7876,
+        "B06294P": 7980,
+        "B06314P": 8161,
+        "B02361P": 8278,
+        "B05028P": 8377,
+        "B05405P": 8440,
+        "B05873P": 11635,
+        "B07135P": 11685,
+        "B07136P": 11722,
+        "B07137P": 11763,
+        "B02953P": 12116,
+        "B00717P": 12246,
+        "B06160P": 12308,
+        "B06237P": 12455,
+        "B06238P": 12588,
+        "B06240P": 12872,
+        "B06161P": 12962,
+        "B06199P": 13036,
+        "B06200P": 13139,
+        "B02170P": 13295,
+        "B06248P": 13425,
+        "B06249P": 13555,
+        "B06250P": 13631,
+        "B07450P": 13690,
+        "B04697P": 14436,
+        "B06789P": 14469,
+        "B03265P": 14755
+      }
+    },
+    "2F-L04": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 360
+        }
+      ],
+      "stopOffsets": {
+        "B03267P": 0,
+        "B07567P": 95,
+        "B07723P": 171,
+        "B03298P": 282,
+        "B07727P": 408,
+        "B07719P": 567,
+        "B07570P": 638,
+        "B07568P": 692,
+        "B07721P": 836,
+        "B07724P": 892,
+        "B07726P": 1057,
+        "B07725P": 1201,
+        "B07720P": 1262,
+        "B06182P": 1424,
+        "B07268P": 1628,
+        "B03090P": 1925,
+        "B07452P": 2011,
+        "B07270P": 2153,
+        "B00788P": 2348,
+        "B06721P": 2443,
+        "B06722P": 2607,
+        "B02997P": 2753,
+        "B05875P": 2867,
+        "B01277P": 2935,
+        "B01278P": 2992,
+        "B06723P": 3044,
+        "B06708P": 3138,
+        "B06707P": 3286,
+        "B06188P": 3854,
+        "B07557P": 4589,
+        "B07571P": 4644,
+        "B07722P": 5113,
+        "B07558P": 5187
+      }
+    },
+    "10A-L02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 2180
+        }
+      ],
+      "stopOffsets": {
+        "B03282P": 0,
+        "B03284P": 181,
+        "B05078P": 288,
+        "B06039P": 471,
+        "B00137P": 526,
+        "B06790P": 572,
+        "B05158P": 605,
+        "B05039P": 970,
+        "B01855P": 1109,
+        "B07449P": 1349,
+        "B06245P": 1470,
+        "B06246P": 1600,
+        "B01858P": 1727,
+        "B06234P": 1866,
+        "B06235P": 2001,
+        "B06162P": 2075,
+        "B06163P": 2117,
+        "B06257P": 2221,
+        "B06164P": 2294,
+        "B06258P": 2464,
+        "B06165P": 2514,
+        "B04964P": 2549,
+        "B02761P": 2635,
+        "B02253P": 2780,
+        "B03213P": 2825,
+        "B01325P": 2850,
+        "B01324P": 2931,
+        "B01327P": 2988,
+        "B00338P": 3163,
+        "B02949P": 3267,
+        "B01056P": 3343,
+        "B02993P": 3457,
+        "B05728P": 3558,
+        "B03236P": 3692,
+        "B04231P": 3837,
+        "B02953P": 4125,
+        "B00717P": 4255,
+        "B06160P": 4317,
+        "B06237P": 4464,
+        "B06238P": 4597,
+        "B06240P": 4884,
+        "B06161P": 4975,
+        "B06199P": 5049,
+        "B06200P": 5152,
+        "B02170P": 5308,
+        "B06248P": 5438,
+        "B06249P": 5568,
+        "B06250P": 5644,
+        "B07450P": 5703,
+        "B04697P": 6449,
+        "B06789P": 6482,
+        "B03265P": 6768
+      }
+    },
+    "4E-L02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03275P": 0,
+        "B03276P": 48,
+        "B02319P": 108,
+        "B00364P": 148,
+        "B05671P": 223,
+        "B00866P": 275,
+        "B02942P": 348,
+        "B05798P": 392,
+        "B02943P": 507,
+        "B02946P": 593,
+        "B03325P": 660,
+        "B02274P": 778,
+        "B01779P": 843,
+        "B02848P": 946,
+        "B02673P": 1023,
+        "B02856P": 1095,
+        "B02999P": 1170,
+        "B02997P": 1357,
+        "B00564P": 1418,
+        "B00041P": 1461,
+        "B01778P": 1749,
+        "B03040P": 1916,
+        "B01730P": 2094,
+        "B01620P": 2321,
+        "B02633P": 2432,
+        "B05460P": 2494,
+        "B01470P": 2559,
+        "B01691P": 2626
+      }
+    },
+    "12C-R02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1860
+        }
+      ],
+      "stopOffsets": {
+        "B07553P": 0,
+        "B00080P": 130,
+        "B06659P": 328,
+        "B03407P": 379,
+        "B06295P": 499,
+        "B06313P": 675,
+        "B06312P": 782,
+        "B03299P": 950
+      }
+    },
+    "11C-L03": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1380
+        }
+      ],
+      "stopOffsets": {
+        "B03290P": 0,
+        "B07589P": 254,
+        "B07676P": 378,
+        "B03091P": 757,
+        "B06944P": 853,
+        "B07454P": 893,
+        "B06945P": 1051,
+        "B06667P": 1227,
+        "H00259P": 1312,
+        "B06664P": 1441,
+        "H00163P": 1535,
+        "B06946P": 1628,
+        "B07455P": 1926,
+        "B07588P": 2481
+      }
+    },
+    "11P-R02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "H00259P": 0,
+        "B06667P": 75,
+        "B06664P": 537,
+        "H00163P": 629,
+        "B07574P": 890,
+        "B07357P": 1007,
+        "B03280P": 1074,
+        "B06663P": 1122,
+        "B00369P": 1226,
+        "B00227P": 1327,
+        "B05318P": 1360,
+        "B00198P": 1415,
+        "B06661P": 1462,
+        "B00603P": 1535,
+        "B05660P": 1674,
+        "B02352P": 1780,
+        "B04518P": 1887,
+        "B01255P": 1959,
+        "B02308P": 2040,
+        "B04476P": 2162,
+        "B03135P": 2219,
+        "B00637P": 2282,
+        "B01677P": 2444,
+        "B03289P": 2564
+      }
+    },
+    "11P-R01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03289P": 0,
+        "B01677P": 129,
+        "B00637P": 285,
+        "B00328P": 317,
+        "B00100P": 475,
+        "B02308P": 538,
+        "B01578P": 625,
+        "B01622P": 703,
+        "B02352P": 806,
+        "B01096P": 943,
+        "B05885P": 1054,
+        "B06661P": 1101,
+        "B00306P": 1192,
+        "B00195P": 1258,
+        "B05581P": 1298,
+        "B00369P": 1355,
+        "B06663P": 1467,
+        "B01803P": 1528,
+        "B07357P": 1590,
+        "B04648P": 1691,
+        "H00163P": 1952,
+        "B06664P": 2049,
+        "B07455P": 2148,
+        "H00259P": 2213
+      }
+    },
+    "2H-L03": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03273P": 0,
+        "B03377P": 196,
+        "B07596P": 257,
+        "B07594P": 349,
+        "B07592P": 450,
+        "B01073P": 579,
+        "B06668P": 614,
+        "B00770P": 743,
+        "B03201P": 1132,
+        "B00317P": 1603,
+        "B00318P": 1670,
+        "B05170P": 1748,
+        "H00057P": 1840,
+        "H00194P": 1933,
+        "B02059P": 2007,
+        "B02594P": 2288,
+        "B00687P": 2355,
+        "B05696P": 2387,
+        "B07591P": 2491,
+        "B07593P": 2591,
+        "B07595P": 2690,
+        "B04344P": 2748
+      }
+    },
+    "12C-R01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1860
+        }
+      ],
+      "stopOffsets": {
+        "B03299P": 0,
+        "B06292P": 170,
+        "B06294P": 278,
+        "B06314P": 460,
+        "B02361P": 577,
+        "B05028P": 676,
+        "H00065P": 796,
+        "B06046P": 1243,
+        "B01507P": 1425,
+        "B01773P": 1494,
+        "B07553P": 1730
+      }
+    },
+    "11R-L01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 3600
+        }
+      ],
+      "stopOffsets": {
+        "B03268P": 0,
+        "B07453P": 169,
+        "B07679P": 296,
+        "B02947P": 357,
+        "B01807P": 398,
+        "B00823P": 452,
+        "B00032P": 534,
+        "B05588P": 645,
+        "B02801P": 710,
+        "B00396P": 811,
+        "B00555P": 860,
+        "B07699P": 1182,
+        "B02851P": 1465,
+        "B07700P": 1568,
+        "B04898P": 1628,
+        "B00082P": 1726,
+        "B05201P": 1785,
+        "B06664P": 1850,
+        "H00259P": 2010,
+        "B06667P": 2079,
+        "H00163P": 2626,
+        "B06946P": 2728,
+        "B05300P": 3165,
+        "B05566P": 4162,
+        "B07701P": 4436,
+        "B03090P": 4603,
+        "B07452P": 4688,
+        "B07268P": 5098
+      }
+    },
+    "10B-R01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03270P": 0,
+        "B05785P": 130,
+        "B05536P": 216,
+        "B02723P": 475
+      }
+    },
+    "10B-L01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 600
+        }
+      ],
+      "stopOffsets": {
+        "B03270P": 0,
+        "B05785P": 130,
+        "B05536P": 216,
+        "B02723P": 476,
+        "B06573P": 718,
+        "B00265P": 793
+      }
+    },
+    "10B-R02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B02723P": 0,
+        "B06573P": 242,
+        "B00265P": 318,
+        "B05536P": 617,
+        "B05785P": 710,
+        "B03270P": 829
+      }
+    },
+    "11B-R01": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B03291P": 0,
+        "B07582P": 722,
+        "B07583P": 828,
+        "B06944P": 939,
+        "B07454P": 979,
+        "B06945P": 1137,
+        "B06667P": 1313,
+        "H00259P": 1398,
+        "B06664P": 1527,
+        "H00163P": 1621,
+        "B06946P": 1715
+      }
+    },
+    "11B-R02": {
+      "windows": [
+        {
+          "start": "05:00",
+          "end": "22:00",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "H00163P": 0,
+        "B06664P": 98,
+        "B07455P": 198,
+        "H00259P": 263,
+        "B06667P": 338,
+        "B03091P": 766,
+        "B01940P": 836,
+        "B05926P": 877,
+        "B05757P": 914,
+        "B03291P": 1635
+      }
+    }
+  }
+}

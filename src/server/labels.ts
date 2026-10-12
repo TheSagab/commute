@@ -1,12 +1,11 @@
 /**
- * Server-side label maps for the operator / sub-service names that
- * the i18n module exposes to the client. The server can't `useTranslate`
- * (no React context), so it ships both `en` and `id` strings and lets
- * the client pick the one matching the active locale.
+ * Server-side label map for the operator names. The server can't
+ * `useTranslate` (no React context), so it ships both `en` and `id`
+ * strings and lets the client pick the one matching the active locale.
  *
- * Keep in sync with `src/i18n/{en,id}.json` keys:
- *   `operator.<id>`       — operator.<id>
- *   `sub-service.<id>`    — sub-service.<id>
+ * Sub-service labels are NOT here — they come from the bundle's `name`
+ * field (the operator's own `route_desc`, e.g. "BRT", "Mikrotrans"), so
+ * adding a sub-service is a data change, not a code change.
  */
 
 import type { Localized } from "../data/types"
@@ -17,10 +16,4 @@ export const OPERATOR_LABELS: Record<string, Localized> = {
   "transjakarta": { en: "Transjakarta", id: "Transjakarta" },
   "lrt-jabodebek": { en: "LRT Jabodebek", id: "LRT Jabodebek" },
   "lrt-jakarta": { en: "LRT Jakarta", id: "LRT Jakarta" },
-}
-
-export const SUB_SERVICE_LABELS: Record<string, Localized> = {
-  "transjakarta-brt": { en: "BRT", id: "BRT" },
-  "transjakarta-non-brt": { en: "Non-BRT", id: "Non-BRT" },
-  "transjakarta-mikrotrans": { en: "Mikrotrans", id: "Mikrotrans" },
 }

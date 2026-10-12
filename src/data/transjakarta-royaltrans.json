@@ -1,0 +1,1918 @@
+{
+  "mode": "transjakarta-royaltrans",
+  "operator": "transjakarta",
+  "name": {
+    "en": "Royaltrans",
+    "id": "Royaltrans"
+  },
+  "stops": [
+    {
+      "id": "B00248P",
+      "name": {
+        "en": "Cibubur Junction",
+        "id": "Cibubur Junction"
+      },
+      "lat": -6.368735,
+      "lon": 106.89366
+    },
+    {
+      "id": "B05687P",
+      "name": {
+        "en": "Tegal Parang",
+        "id": "Tegal Parang"
+      },
+      "lat": -6.239791,
+      "lon": 106.83149
+    },
+    {
+      "id": "B02102P",
+      "name": {
+        "en": "Kuningan Barat",
+        "id": "Kuningan Barat"
+      },
+      "lat": -6.237361,
+      "lon": 106.82759
+    },
+    {
+      "id": "B02105P",
+      "name": {
+        "en": "Kuningan Timur",
+        "id": "Kuningan Timur"
+      },
+      "lat": -6.235912,
+      "lon": 106.82765
+    },
+    {
+      "id": "B02412P",
+      "name": {
+        "en": "Menara Karya",
+        "id": "Menara Karya"
+      },
+      "lat": -6.233275,
+      "lon": 106.831276
+    },
+    {
+      "id": "B01962P",
+      "name": {
+        "en": "Kemenkes",
+        "id": "Kemenkes"
+      },
+      "lat": -6.230706,
+      "lon": 106.83284
+    },
+    {
+      "id": "B01963P",
+      "name": {
+        "en": "Kemenkes",
+        "id": "Kemenkes"
+      },
+      "lat": -6.2287,
+      "lon": 106.83302
+    },
+    {
+      "id": "B00163P",
+      "name": {
+        "en": "BNI Syariah",
+        "id": "BNI Syariah"
+      },
+      "lat": -6.227256,
+      "lon": 106.83291
+    },
+    {
+      "id": "B01893P",
+      "name": {
+        "en": "Kedubes Malaysia",
+        "id": "Kedubes Malaysia"
+      },
+      "lat": -6.22384,
+      "lon": 106.83259
+    },
+    {
+      "id": "B00663P",
+      "name": {
+        "en": "GOR Sumantri",
+        "id": "GOR Sumantri"
+      },
+      "lat": -6.221038,
+      "lon": 106.83189
+    },
+    {
+      "id": "H00098P",
+      "name": {
+        "en": "Karet Kuningan",
+        "id": "Karet Kuningan"
+      },
+      "lat": -6.21667,
+      "lon": 106.830737
+    },
+    {
+      "id": "H00114P",
+      "name": {
+        "en": "Kuningan Madya",
+        "id": "Kuningan Madya"
+      },
+      "lat": -6.213414,
+      "lon": 106.830472
+    },
+    {
+      "id": "B02411P",
+      "name": {
+        "en": "Menara Duta",
+        "id": "Menara Duta"
+      },
+      "lat": -6.208617,
+      "lon": 106.82986
+    },
+    {
+      "id": "B04686P",
+      "name": {
+        "en": "Setiabudi Utara",
+        "id": "Setiabudi Utara"
+      },
+      "lat": -6.207513,
+      "lon": 106.8294
+    },
+    {
+      "id": "B05399P",
+      "name": {
+        "en": "South City Cinere",
+        "id": "South City Cinere"
+      },
+      "lat": -6.34504,
+      "lon": 106.767638
+    },
+    {
+      "id": "B06641P",
+      "name": {
+        "en": "Honda",
+        "id": "Honda"
+      },
+      "lat": -6.3466,
+      "lon": 106.7767
+    },
+    {
+      "id": "B06642P",
+      "name": {
+        "en": "Mega Cinere",
+        "id": "Mega Cinere"
+      },
+      "lat": -6.33334,
+      "lon": 106.78282
+    },
+    {
+      "id": "B07782P",
+      "name": {
+        "en": "Gerbang Tol Brigif",
+        "id": "Gerbang Tol Brigif"
+      },
+      "lat": -6.343523,
+      "lon": 106.79725
+    },
+    {
+      "id": "H00023P",
+      "name": {
+        "en": "Bundaran Senayan",
+        "id": "Bundaran Senayan"
+      },
+      "lat": -6.227869,
+      "lon": 106.80094
+    },
+    {
+      "id": "B00378P",
+      "name": {
+        "en": "FX Sudirman",
+        "id": "FX Sudirman"
+      },
+      "lat": -6.225532,
+      "lon": 106.8037
+    },
+    {
+      "id": "B00611P",
+      "name": {
+        "en": "Gelora Bung Karno",
+        "id": "Gelora Bung Karno"
+      },
+      "lat": -6.224126,
+      "lon": 106.80558
+    },
+    {
+      "id": "B00589P",
+      "name": {
+        "en": "GBK Pintu",
+        "id": "GBK Pintu"
+      },
+      "lat": -6.222095,
+      "lon": 106.80861
+    },
+    {
+      "id": "H00176P",
+      "name": {
+        "en": "Polda Metro Jaya",
+        "id": "Polda Metro Jaya"
+      },
+      "lat": -6.221094,
+      "lon": 106.81028
+    },
+    {
+      "id": "B02414P",
+      "name": {
+        "en": "Menara Mandiri",
+        "id": "Menara Mandiri"
+      },
+      "lat": -6.223667,
+      "lon": 106.8071
+    },
+    {
+      "id": "B05544P",
+      "name": {
+        "en": "Summitmas",
+        "id": "Summitmas"
+      },
+      "lat": -6.225826,
+      "lon": 106.80402
+    },
+    {
+      "id": "H00228P",
+      "name": {
+        "en": "Summarecon Bekasi",
+        "id": "Summarecon Bekasi"
+      },
+      "lat": -6.225566,
+      "lon": 107.00281
+    },
+    {
+      "id": "B03155P",
+      "name": {
+        "en": "RS Mitra Keluarga",
+        "id": "RS Mitra Keluarga"
+      },
+      "lat": -6.24088,
+      "lon": 106.99285
+    },
+    {
+      "id": "B07339P",
+      "name": {
+        "en": "Scientia Square Park",
+        "id": "Scientia Square Park"
+      },
+      "lat": -6.257678,
+      "lon": 106.616805
+    },
+    {
+      "id": "B07353P",
+      "name": {
+        "en": "Greenwich Park",
+        "id": "Greenwich Park"
+      },
+      "lat": -6.27724,
+      "lon": 106.635259
+    },
+    {
+      "id": "B07348P",
+      "name": {
+        "en": "FBL",
+        "id": "FBL"
+      },
+      "lat": -6.291133,
+      "lon": 106.63978
+    },
+    {
+      "id": "B05492P",
+      "name": {
+        "en": "St. MRT Lebak Bulus",
+        "id": "St. MRT Lebak Bulus"
+      },
+      "lat": -6.289421,
+      "lon": 106.77436
+    },
+    {
+      "id": "B05488P",
+      "name": {
+        "en": "St. MRT Fatmawati",
+        "id": "St. MRT Fatmawati"
+      },
+      "lat": -6.292526,
+      "lon": 106.794354
+    },
+    {
+      "id": "B03177P",
+      "name": {
+        "en": "RS Siloam",
+        "id": "RS Siloam"
+      },
+      "lat": -6.292071,
+      "lon": 106.78467
+    },
+    {
+      "id": "B05701P",
+      "name": {
+        "en": "Term. BSD",
+        "id": "Term. BSD"
+      },
+      "lat": -6.306375,
+      "lon": 106.68536
+    },
+    {
+      "id": "B00148P",
+      "name": {
+        "en": "Bintaro Xchange",
+        "id": "Bintaro Xchange"
+      },
+      "lat": -6.286813,
+      "lon": 106.72865
+    },
+    {
+      "id": "B06645P",
+      "name": {
+        "en": "Kantor Lurah Gandul",
+        "id": "Kantor Lurah Gandul"
+      },
+      "lat": -6.34007,
+      "lon": 106.79381
+    },
+    {
+      "id": "B03464P",
+      "name": {
+        "en": "Sbr. Bukit Cinere Indah",
+        "id": "Sbr. Bukit Cinere Indah"
+      },
+      "lat": -6.33992,
+      "lon": 106.78012
+    },
+    {
+      "id": "B07350P",
+      "name": {
+        "en": "Edutown",
+        "id": "Edutown"
+      },
+      "lat": -6.302423,
+      "lon": 106.641743
+    },
+    {
+      "id": "B07351P",
+      "name": {
+        "en": "Gramedia",
+        "id": "Gramedia"
+      },
+      "lat": -6.291251,
+      "lon": 106.639463
+    },
+    {
+      "id": "B07352P",
+      "name": {
+        "en": "Qbig",
+        "id": "Qbig"
+      },
+      "lat": -6.284613,
+      "lon": 106.638391
+    },
+    {
+      "id": "B07354P",
+      "name": {
+        "en": "Cluster Catalina",
+        "id": "Cluster Catalina"
+      },
+      "lat": -6.270784,
+      "lon": 106.631102
+    },
+    {
+      "id": "B07355P",
+      "name": {
+        "en": "Sbr. Omaha Village",
+        "id": "Sbr. Omaha Village"
+      },
+      "lat": -6.260572,
+      "lon": 106.630333
+    },
+    {
+      "id": "B07356P",
+      "name": {
+        "en": "Menteng Village",
+        "id": "Menteng Village"
+      },
+      "lat": -6.258212,
+      "lon": 106.62506
+    },
+    {
+      "id": "B00102P",
+      "name": {
+        "en": "Balai Kota",
+        "id": "Balai Kota"
+      },
+      "lat": -6.180598,
+      "lon": 106.82847
+    },
+    {
+      "id": "B05890P",
+      "name": {
+        "en": "Wisma Mandiri",
+        "id": "Wisma Mandiri"
+      },
+      "lat": -6.18333,
+      "lon": 106.82382
+    },
+    {
+      "id": "B03313P",
+      "name": {
+        "en": "MH Thamrin",
+        "id": "MH Thamrin"
+      },
+      "lat": -6.188238,
+      "lon": 106.82277
+    },
+    {
+      "id": "B05892P",
+      "name": {
+        "en": "Wisma Nusantara",
+        "id": "Wisma Nusantara"
+      },
+      "lat": -6.193425,
+      "lon": 106.82319
+    },
+    {
+      "id": "B00214P",
+      "name": {
+        "en": "Bumiputera",
+        "id": "Bumiputera"
+      },
+      "lat": -6.206839,
+      "lon": 106.82234
+    },
+    {
+      "id": "B00244P",
+      "name": {
+        "en": "Chase Plaza",
+        "id": "Chase Plaza"
+      },
+      "lat": -6.210571,
+      "lon": 106.82129
+    },
+    {
+      "id": "B01836P",
+      "name": {
+        "en": "Karet Sudirman",
+        "id": "Karet Sudirman"
+      },
+      "lat": -6.212197,
+      "lon": 106.81995
+    },
+    {
+      "id": "B02013P",
+      "name": {
+        "en": "Komdak",
+        "id": "Komdak"
+      },
+      "lat": -6.222333,
+      "lon": 106.81407
+    },
+    {
+      "id": "B03097P",
+      "name": {
+        "en": "Rest Area TMII",
+        "id": "Rest Area TMII"
+      },
+      "lat": -6.29467,
+      "lon": 106.8812
+    },
+    {
+      "id": "B03094P",
+      "name": {
+        "en": "Rest Area Cibubur",
+        "id": "Rest Area Cibubur"
+      },
+      "lat": -6.339993,
+      "lon": 106.89078
+    },
+    {
+      "id": "B00226P",
+      "name": {
+        "en": "Buperta Cibubur",
+        "id": "Buperta Cibubur"
+      },
+      "lat": -6.369608,
+      "lon": 106.896189
+    },
+    {
+      "id": "B00126P",
+      "name": {
+        "en": "Benhil PAM Jaya",
+        "id": "Benhil PAM Jaya"
+      },
+      "lat": -6.216775,
+      "lon": 106.8154
+    },
+    {
+      "id": "B00694P",
+      "name": {
+        "en": "Grand Sahid",
+        "id": "Grand Sahid"
+      },
+      "lat": -6.210975,
+      "lon": 106.82059
+    },
+    {
+      "id": "B02408P",
+      "name": {
+        "en": "Menara Astra",
+        "id": "Menara Astra"
+      },
+      "lat": -6.207361,
+      "lon": 106.8219
+    },
+    {
+      "id": "H00047P",
+      "name": {
+        "en": "Dukuh Atas",
+        "id": "Dukuh Atas"
+      },
+      "lat": -6.205702,
+      "lon": 106.82223
+    },
+    {
+      "id": "B05502P",
+      "name": {
+        "en": "St. Sudirman",
+        "id": "St. Sudirman"
+      },
+      "lat": -6.201883,
+      "lon": 106.82277
+    },
+    {
+      "id": "B05773P",
+      "name": {
+        "en": "Tosari",
+        "id": "Tosari"
+      },
+      "lat": -6.198915,
+      "lon": 106.82295
+    },
+    {
+      "id": "B02863P",
+      "name": {
+        "en": "Plaza Indonesia",
+        "id": "Plaza Indonesia"
+      },
+      "lat": -6.193733,
+      "lon": 106.8228
+    },
+    {
+      "id": "B02420P",
+      "name": {
+        "en": "Menara Thamrin",
+        "id": "Menara Thamrin"
+      },
+      "lat": -6.185275,
+      "lon": 106.82291
+    },
+    {
+      "id": "B00113P",
+      "name": {
+        "en": "Bank Indonesia",
+        "id": "Bank Indonesia"
+      },
+      "lat": -6.182667,
+      "lon": 106.82275
+    },
+    {
+      "id": "B00806P",
+      "name": {
+        "en": "IRTI",
+        "id": "IRTI"
+      },
+      "lat": -6.1803,
+      "lon": 106.82618
+    },
+    {
+      "id": "B00313P",
+      "name": {
+        "en": "Wisma Danantara",
+        "id": "Wisma Danantara"
+      },
+      "lat": -6.223916,
+      "lon": 106.815096
+    },
+    {
+      "id": "B07957P",
+      "name": {
+        "en": "Sbr. Kementerian PUPR",
+        "id": "Sbr. Kementerian PUPR"
+      },
+      "lat": -6.236633,
+      "lon": 106.801954
+    },
+    {
+      "id": "B08540P",
+      "name": {
+        "en": "Blok M Jalur",
+        "id": "Blok M Jalur"
+      },
+      "lat": -6.243426,
+      "lon": 106.80188
+    },
+    {
+      "id": "B01971P",
+      "name": {
+        "en": "Kementerian PUPR",
+        "id": "Kementerian PUPR"
+      },
+      "lat": -6.236169,
+      "lon": 106.80156
+    },
+    {
+      "id": "B02192P",
+      "name": {
+        "en": "Mall Metropolitan",
+        "id": "Mall Metropolitan"
+      },
+      "lat": -6.247861,
+      "lon": 106.99215
+    },
+    {
+      "id": "B01853P",
+      "name": {
+        "en": "Kayuringin",
+        "id": "Kayuringin"
+      },
+      "lat": -6.245825,
+      "lon": 106.99277
+    },
+    {
+      "id": "B00108P",
+      "name": {
+        "en": "Bandar Djakarta Bekasi",
+        "id": "Bandar Djakarta Bekasi"
+      },
+      "lat": -6.227085,
+      "lon": 106.99683
+    },
+    {
+      "id": "B00795P",
+      "name": {
+        "en": "Setiabudi Integritas",
+        "id": "Setiabudi Integritas"
+      },
+      "lat": -6.210363,
+      "lon": 106.83059
+    },
+    {
+      "id": "B07233P",
+      "name": {
+        "en": "Pusat Edukasi Anti Korupsi KPK",
+        "id": "Pusat Edukasi Anti Korupsi KPK"
+      },
+      "lat": -6.21177,
+      "lon": 106.83069
+    },
+    {
+      "id": "B08610P",
+      "name": {
+        "en": "Tugu Insurance",
+        "id": "Tugu Insurance"
+      },
+      "lat": -6.215254,
+      "lon": 106.830852
+    },
+    {
+      "id": "B00389P",
+      "name": {
+        "en": "Epicentrum Selatan",
+        "id": "Epicentrum Selatan"
+      },
+      "lat": -6.22414,
+      "lon": 106.83303
+    },
+    {
+      "id": "B00064P",
+      "name": {
+        "en": "Kuningan",
+        "id": "Kuningan"
+      },
+      "lat": -6.227471,
+      "lon": 106.83328
+    },
+    {
+      "id": "B00596P",
+      "name": {
+        "en": "Patra Kuningan",
+        "id": "Patra Kuningan"
+      },
+      "lat": -6.231311,
+      "lon": 106.83301
+    },
+    {
+      "id": "H00154P",
+      "name": {
+        "en": "Patra Kuningan",
+        "id": "Patra Kuningan"
+      },
+      "lat": -6.232677,
+      "lon": 106.832087
+    },
+    {
+      "id": "B07770P",
+      "name": {
+        "en": "Sbr. Grand Lovina Residence",
+        "id": "Sbr. Grand Lovina Residence"
+      },
+      "lat": -6.337589,
+      "lon": 106.792229
+    },
+    {
+      "id": "B07771P",
+      "name": {
+        "en": "Sbr. Bumi Pusaka Cinere",
+        "id": "Sbr. Bumi Pusaka Cinere"
+      },
+      "lat": -6.336036,
+      "lon": 106.789723
+    },
+    {
+      "id": "B07773P",
+      "name": {
+        "en": "Jln. Bumi Daya Raya",
+        "id": "Jln. Bumi Daya Raya"
+      },
+      "lat": -6.334768,
+      "lon": 106.787005
+    },
+    {
+      "id": "B06646P",
+      "name": {
+        "en": "Jln. Cinere Raya",
+        "id": "Jln. Cinere Raya"
+      },
+      "lat": -6.33358,
+      "lon": 106.78281
+    },
+    {
+      "id": "B07775P",
+      "name": {
+        "en": "SDN Cinere 01",
+        "id": "SDN Cinere 01"
+      },
+      "lat": -6.336166,
+      "lon": 106.78188
+    },
+    {
+      "id": "B07777P",
+      "name": {
+        "en": "Jln. H. Jaeran Cinere",
+        "id": "Jln. H. Jaeran Cinere"
+      },
+      "lat": -6.338835,
+      "lon": 106.780685
+    },
+    {
+      "id": "B07779P",
+      "name": {
+        "en": "Polsek Cinere",
+        "id": "Polsek Cinere"
+      },
+      "lat": -6.341315,
+      "lon": 106.779586
+    },
+    {
+      "id": "B06073P",
+      "name": {
+        "en": "SPBU Limo Cinere",
+        "id": "SPBU Limo Cinere"
+      },
+      "lat": -6.343161,
+      "lon": 106.77878
+    },
+    {
+      "id": "B07781P",
+      "name": {
+        "en": "Gerbang South City Cinere",
+        "id": "Gerbang South City Cinere"
+      },
+      "lat": -6.346676,
+      "lon": 106.776872
+    },
+    {
+      "id": "B02756P",
+      "name": {
+        "en": "Perpustakaan Jakarta | Nyi Ageng Serang",
+        "id": "Perpustakaan Jakarta | Nyi Ageng Serang"
+      },
+      "lat": -6.222302,
+      "lon": 106.83261
+    },
+    {
+      "id": "B05698P",
+      "name": {
+        "en": "Kuningan Timur",
+        "id": "Kuningan Timur"
+      },
+      "lat": -6.235112,
+      "lon": 106.82885
+    },
+    {
+      "id": "B00209P",
+      "name": {
+        "en": "Bulog",
+        "id": "Bulog"
+      },
+      "lat": -6.237665,
+      "lon": 106.82917
+    },
+    {
+      "id": "B05688P",
+      "name": {
+        "en": "Tegal Parang",
+        "id": "Tegal Parang"
+      },
+      "lat": -6.238571,
+      "lon": 106.83054
+    }
+  ],
+  "routes": [
+    {
+      "id": "6P-R01",
+      "shortName": "6P",
+      "name": {
+        "en": "Cibubur - Kuningan",
+        "id": "Cibubur - Kuningan"
+      },
+      "headsign": {
+        "en": "Kuningan",
+        "id": "Kuningan"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "D32-R01",
+      "shortName": "D32",
+      "name": {
+        "en": "Cinere - Bundaran Senayan",
+        "id": "Cinere - Bundaran Senayan"
+      },
+      "headsign": {
+        "en": "Bundaran Senayan",
+        "id": "Bundaran Senayan"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "D31-R03",
+      "shortName": "D31",
+      "name": {
+        "en": "Cinere - Kuningan",
+        "id": "Cinere - Kuningan"
+      },
+      "headsign": {
+        "en": "Kuningan",
+        "id": "Kuningan"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "B14-R01",
+      "shortName": "B14",
+      "name": {
+        "en": "Bekasi Barat - Kuningan",
+        "id": "Bekasi Barat - Kuningan"
+      },
+      "headsign": {
+        "en": "Kuningan",
+        "id": "Kuningan"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "S14-R01",
+      "shortName": "S14",
+      "name": {
+        "en": "Summarecon Serpong - Lebak Bulus",
+        "id": "Summarecon Serpong - Lebak Bulus"
+      },
+      "headsign": {
+        "en": "Lebak Bulus",
+        "id": "Lebak Bulus"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "S12-R06",
+      "shortName": "S12",
+      "name": {
+        "en": "Term. BSD - Fatmawati",
+        "id": "Term. BSD - Fatmawati"
+      },
+      "headsign": {
+        "en": "Terminal BSD",
+        "id": "Terminal BSD"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "S31-R02",
+      "shortName": "S31",
+      "name": {
+        "en": "Bintaro - Fatmawati",
+        "id": "Bintaro - Fatmawati"
+      },
+      "headsign": {
+        "en": "Bintaro",
+        "id": "Bintaro"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "D32-R02",
+      "shortName": "D32",
+      "name": {
+        "en": "Cinere - Bundaran Senayan",
+        "id": "Cinere - Bundaran Senayan"
+      },
+      "headsign": {
+        "en": "Cinere",
+        "id": "Cinere"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "S14-R02",
+      "shortName": "S14",
+      "name": {
+        "en": "Summarecon Serpong - Lebak Bulus",
+        "id": "Summarecon Serpong - Lebak Bulus"
+      },
+      "headsign": {
+        "en": "Summarecon Serpong",
+        "id": "Summarecon Serpong"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "1T-R04",
+      "shortName": "1T",
+      "name": {
+        "en": "Cibubur - Balai Kota",
+        "id": "Cibubur - Balai Kota"
+      },
+      "headsign": {
+        "en": "Cibubur",
+        "id": "Cibubur"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "S12-R05",
+      "shortName": "S12",
+      "name": {
+        "en": "Term. BSD - Fatmawati",
+        "id": "Term. BSD - Fatmawati"
+      },
+      "headsign": {
+        "en": "Fatmawati",
+        "id": "Fatmawati"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "S31-R01",
+      "shortName": "S31",
+      "name": {
+        "en": "Bintaro - Fatmawati",
+        "id": "Bintaro - Fatmawati"
+      },
+      "headsign": {
+        "en": "Fatmawati",
+        "id": "Fatmawati"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "1T-R03",
+      "shortName": "1T",
+      "name": {
+        "en": "Cibubur - Balai Kota",
+        "id": "Cibubur - Balai Kota"
+      },
+      "headsign": {
+        "en": "Balai Kota",
+        "id": "Balai Kota"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "1K-R01",
+      "shortName": "1K",
+      "name": {
+        "en": "Cibubur Junction - Blok M",
+        "id": "Cibubur Junction - Blok M"
+      },
+      "headsign": {
+        "en": "Blok M",
+        "id": "Blok M"
+      },
+      "color": "#9c4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "1K-R02",
+      "shortName": "1K",
+      "name": {
+        "en": "Cibubur Junction - Blok M",
+        "id": "Cibubur Junction - Blok M"
+      },
+      "headsign": {
+        "en": "Cibubur",
+        "id": "Cibubur"
+      },
+      "color": "#9c4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "B13-R01",
+      "shortName": "B13",
+      "name": {
+        "en": "Summarecon Bekasi - Blok M",
+        "id": "Summarecon Bekasi - Blok M"
+      },
+      "headsign": {
+        "en": "Blok M",
+        "id": "Blok M"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "B13-R02",
+      "shortName": "B13",
+      "name": {
+        "en": "Summarecon Bekasi - Blok M",
+        "id": "Summarecon Bekasi - Blok M"
+      },
+      "headsign": {
+        "en": "Bekasi Barat",
+        "id": "Bekasi Barat"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "D31-R02",
+      "shortName": "D31",
+      "name": {
+        "en": "Cinere - Kuningan",
+        "id": "Cinere - Kuningan"
+      },
+      "headsign": {
+        "en": "Cinere",
+        "id": "Cinere"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "6P-R02",
+      "shortName": "6P",
+      "name": {
+        "en": "Cibubur - Kuningan",
+        "id": "Cibubur - Kuningan"
+      },
+      "headsign": {
+        "en": "Cibubur",
+        "id": "Cibubur"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "B14-R02",
+      "shortName": "B14",
+      "name": {
+        "en": "Bekasi Barat - Kuningan",
+        "id": "Bekasi Barat - Kuningan"
+      },
+      "headsign": {
+        "en": "Bekasi Barat",
+        "id": "Bekasi Barat"
+      },
+      "color": "#9C4782",
+      "serviceDays": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "schedules": {
+    "6P-R01": {
+      "windows": [
+        {
+          "start": "06:00",
+          "end": "07:00",
+          "headwaySeconds": 1800
+        },
+        {
+          "start": "07:00",
+          "end": "08:20",
+          "headwaySeconds": 2400
+        },
+        {
+          "start": "08:20",
+          "end": "09:00",
+          "headwaySeconds": 1800
+        }
+      ],
+      "stopOffsets": {
+        "B00248P": 0,
+        "B05687P": 3600,
+        "B02102P": 4200,
+        "B02105P": 4440,
+        "B02412P": 4560,
+        "B01962P": 4800,
+        "B01963P": 4860,
+        "B00163P": 4920,
+        "B01893P": 4980,
+        "B00663P": 5040,
+        "H00098P": 5100,
+        "H00114P": 5160,
+        "B02411P": 5280,
+        "B04686P": 5400
+      }
+    },
+    "D32-R01": {
+      "windows": [
+        {
+          "start": "06:15",
+          "end": "07:00",
+          "headwaySeconds": 2100
+        }
+      ],
+      "stopOffsets": {
+        "B05399P": 0,
+        "B06641P": 300,
+        "B06642P": 900,
+        "B07782P": 1800,
+        "H00023P": 4500,
+        "B00378P": 4560,
+        "B00611P": 4620,
+        "B00589P": 4680,
+        "H00176P": 4860,
+        "B02414P": 4920,
+        "B05544P": 5700
+      }
+    },
+    "D31-R03": {
+      "windows": [
+        {
+          "start": "05:55",
+          "end": "07:10",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "07:10",
+          "end": "08:25",
+          "headwaySeconds": 4500
+        },
+        {
+          "start": "08:25",
+          "end": "08:50",
+          "headwaySeconds": 1500
+        },
+        {
+          "start": "08:50",
+          "end": "09:10",
+          "headwaySeconds": 600
+        }
+      ],
+      "stopOffsets": {
+        "B05399P": 0,
+        "B06641P": 300,
+        "B06642P": 840,
+        "B07782P": 1740,
+        "B02412P": 4560,
+        "B01962P": 4740,
+        "B01963P": 4800,
+        "B00163P": 4920,
+        "B01893P": 4980,
+        "B00663P": 5100,
+        "H00098P": 5160,
+        "H00114P": 5280,
+        "B02411P": 5400
+      }
+    },
+    "B14-R01": {
+      "windows": [
+        {
+          "start": "06:00",
+          "end": "07:00",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "07:00",
+          "end": "08:05",
+          "headwaySeconds": 3900
+        },
+        {
+          "start": "08:05",
+          "end": "09:15",
+          "headwaySeconds": 900
+        }
+      ],
+      "stopOffsets": {
+        "H00228P": 0,
+        "B03155P": 600,
+        "B02105P": 4200,
+        "B02412P": 4320,
+        "B01963P": 4500,
+        "B00163P": 4560,
+        "B01893P": 4620,
+        "B00663P": 4680,
+        "H00098P": 4740,
+        "H00114P": 4800,
+        "B02411P": 4920
+      }
+    },
+    "S14-R01": {
+      "windows": [
+        {
+          "start": "06:00",
+          "end": "06:30",
+          "headwaySeconds": 1800
+        },
+        {
+          "start": "08:15",
+          "end": "09:00",
+          "headwaySeconds": 2700
+        },
+        {
+          "start": "19:05",
+          "end": "19:35",
+          "headwaySeconds": 1800
+        }
+      ],
+      "stopOffsets": {
+        "B07339P": 0,
+        "B07353P": 900,
+        "B07348P": 1500,
+        "B05492P": 5100
+      }
+    },
+    "S12-R06": {
+      "windows": [
+        {
+          "start": "05:30",
+          "end": "06:00",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "06:00",
+          "end": "07:10",
+          "headwaySeconds": 4200
+        },
+        {
+          "start": "07:10",
+          "end": "07:50",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "18:05",
+          "end": "18:40",
+          "headwaySeconds": 900
+        }
+      ],
+      "stopOffsets": {
+        "B05488P": 0,
+        "B03177P": 300,
+        "B05701P": 5239
+      }
+    },
+    "S31-R02": {
+      "windows": [
+        {
+          "start": "06:00",
+          "end": "06:15",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "06:15",
+          "end": "07:40",
+          "headwaySeconds": 5100
+        },
+        {
+          "start": "07:40",
+          "end": "08:00",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "17:55",
+          "end": "18:55",
+          "headwaySeconds": 900
+        }
+      ],
+      "stopOffsets": {
+        "B05488P": 0,
+        "B03177P": 300,
+        "B00148P": 3949
+      }
+    },
+    "D32-R02": {
+      "windows": [
+        {
+          "start": "17:15",
+          "end": "18:10",
+          "headwaySeconds": 2700
+        }
+      ],
+      "stopOffsets": {
+        "H00023P": 0,
+        "B00611P": 180,
+        "B00589P": 360,
+        "B07782P": 4260,
+        "B06645P": 4560,
+        "B03464P": 4860,
+        "B05399P": 5760
+      }
+    },
+    "S14-R02": {
+      "windows": [
+        {
+          "start": "07:25",
+          "end": "07:55",
+          "headwaySeconds": 1800
+        },
+        {
+          "start": "17:30",
+          "end": "18:00",
+          "headwaySeconds": 1800
+        },
+        {
+          "start": "20:00",
+          "end": "20:30",
+          "headwaySeconds": 1800
+        }
+      ],
+      "stopOffsets": {
+        "B05492P": 0,
+        "B07350P": 3000,
+        "B07351P": 39660,
+        "B07352P": 39960,
+        "B07353P": 40260,
+        "B07354P": 40560,
+        "B07355P": 40920,
+        "B07356P": 41100,
+        "B07339P": 41700
+      }
+    },
+    "1T-R04": {
+      "windows": [
+        {
+          "start": "16:15",
+          "end": "17:45",
+          "headwaySeconds": 600
+        },
+        {
+          "start": "17:45",
+          "end": "19:30",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "19:30",
+          "end": "20:20",
+          "headwaySeconds": 600
+        }
+      ],
+      "stopOffsets": {
+        "B00102P": 0,
+        "B05890P": 240,
+        "B03313P": 480,
+        "B05892P": 600,
+        "B00214P": 780,
+        "B00244P": 1020,
+        "B01836P": 1200,
+        "B02013P": 1500,
+        "B03097P": 5400,
+        "B03094P": 6300,
+        "B00226P": 6900,
+        "B00248P": 7500
+      }
+    },
+    "S12-R05": {
+      "windows": [
+        {
+          "start": "06:20",
+          "end": "06:55",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "17:00",
+          "end": "17:30",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "17:30",
+          "end": "19:10",
+          "headwaySeconds": 6000
+        },
+        {
+          "start": "19:10",
+          "end": "19:50",
+          "headwaySeconds": 900
+        }
+      ],
+      "stopOffsets": {
+        "B05701P": 0,
+        "B05488P": 5255
+      }
+    },
+    "S31-R01": {
+      "windows": [
+        {
+          "start": "06:50",
+          "end": "07:10",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "17:05",
+          "end": "17:20",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "17:20",
+          "end": "18:45",
+          "headwaySeconds": 5100
+        },
+        {
+          "start": "18:45",
+          "end": "19:05",
+          "headwaySeconds": 900
+        }
+      ],
+      "stopOffsets": {
+        "B00148P": 0,
+        "B05488P": 4463
+      }
+    },
+    "1T-R03": {
+      "windows": [
+        {
+          "start": "05:40",
+          "end": "06:10",
+          "headwaySeconds": 600
+        },
+        {
+          "start": "06:10",
+          "end": "07:00",
+          "headwaySeconds": 300
+        },
+        {
+          "start": "07:00",
+          "end": "07:35",
+          "headwaySeconds": 2100
+        },
+        {
+          "start": "07:35",
+          "end": "08:05",
+          "headwaySeconds": 600
+        },
+        {
+          "start": "08:05",
+          "end": "08:10",
+          "headwaySeconds": 300
+        },
+        {
+          "start": "08:10",
+          "end": "09:10",
+          "headwaySeconds": 600
+        }
+      ],
+      "stopOffsets": {
+        "B00248P": 0,
+        "B02013P": 2700,
+        "B00126P": 2880,
+        "B01836P": 2940,
+        "B00694P": 3060,
+        "B02408P": 3120,
+        "H00047P": 3180,
+        "B05502P": 3240,
+        "B05773P": 3360,
+        "B02863P": 3420,
+        "B03313P": 3480,
+        "B02420P": 3540,
+        "B00113P": 3600,
+        "B00806P": 3720,
+        "B00102P": 3900
+      }
+    },
+    "1K-R01": {
+      "windows": [
+        {
+          "start": "05:45",
+          "end": "06:15",
+          "headwaySeconds": 600
+        },
+        {
+          "start": "06:15",
+          "end": "06:50",
+          "headwaySeconds": 300
+        },
+        {
+          "start": "06:50",
+          "end": "07:40",
+          "headwaySeconds": 600
+        },
+        {
+          "start": "07:40",
+          "end": "08:05",
+          "headwaySeconds": 1500
+        },
+        {
+          "start": "08:05",
+          "end": "08:15",
+          "headwaySeconds": 600
+        },
+        {
+          "start": "08:15",
+          "end": "08:20",
+          "headwaySeconds": 300
+        },
+        {
+          "start": "08:20",
+          "end": "09:20",
+          "headwaySeconds": 600
+        }
+      ],
+      "stopOffsets": {
+        "B00248P": 0,
+        "B00313P": 2700,
+        "B02013P": 3300,
+        "H00176P": 3480,
+        "B05544P": 3600,
+        "H00023P": 3720,
+        "B07957P": 4620,
+        "B08540P": 4800
+      }
+    },
+    "1K-R02": {
+      "windows": [
+        {
+          "start": "16:15",
+          "end": "17:00",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "17:00",
+          "end": "18:00",
+          "headwaySeconds": 600
+        },
+        {
+          "start": "18:00",
+          "end": "18:15",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "18:15",
+          "end": "18:20",
+          "headwaySeconds": 300
+        },
+        {
+          "start": "18:20",
+          "end": "18:30",
+          "headwaySeconds": 600
+        },
+        {
+          "start": "18:30",
+          "end": "19:45",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "19:45",
+          "end": "20:15",
+          "headwaySeconds": 600
+        }
+      ],
+      "stopOffsets": {
+        "B08540P": 0,
+        "B01971P": 300,
+        "H00023P": 600,
+        "B00378P": 660,
+        "B00611P": 720,
+        "B00589P": 780,
+        "B03097P": 4380,
+        "B03094P": 5280,
+        "B00226P": 5880,
+        "B00248P": 6480
+      }
+    },
+    "B13-R01": {
+      "windows": [
+        {
+          "start": "06:00",
+          "end": "07:00",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "07:00",
+          "end": "07:50",
+          "headwaySeconds": 3000
+        },
+        {
+          "start": "07:50",
+          "end": "08:20",
+          "headwaySeconds": 1800
+        },
+        {
+          "start": "08:20",
+          "end": "09:15",
+          "headwaySeconds": 900
+        }
+      ],
+      "stopOffsets": {
+        "H00228P": 0,
+        "B03155P": 600,
+        "B02013P": 3600,
+        "H00176P": 3780,
+        "B05544P": 3840,
+        "H00023P": 3900,
+        "B07957P": 4800,
+        "B08540P": 5100
+      }
+    },
+    "B13-R02": {
+      "windows": [
+        {
+          "start": "16:00",
+          "end": "17:00",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "17:00",
+          "end": "18:55",
+          "headwaySeconds": 6900
+        },
+        {
+          "start": "18:55",
+          "end": "20:05",
+          "headwaySeconds": 900
+        }
+      ],
+      "stopOffsets": {
+        "B08540P": 0,
+        "B01971P": 300,
+        "H00023P": 600,
+        "B00378P": 660,
+        "B00611P": 720,
+        "B00589P": 780,
+        "B02013P": 1080,
+        "B02192P": 4680,
+        "B01853P": 5220,
+        "B03155P": 5280,
+        "B00108P": 5700
+      }
+    },
+    "D31-R02": {
+      "windows": [
+        {
+          "start": "16:25",
+          "end": "16:45",
+          "headwaySeconds": 1200
+        },
+        {
+          "start": "16:45",
+          "end": "18:35",
+          "headwaySeconds": 1500
+        }
+      ],
+      "stopOffsets": {
+        "B00795P": 0,
+        "B07233P": 60,
+        "B08610P": 180,
+        "H00098P": 420,
+        "B00663P": 540,
+        "B00389P": 660,
+        "B00064P": 780,
+        "B00596P": 900,
+        "H00154P": 1020,
+        "B07782P": 5520,
+        "B06645P": 5760,
+        "B07770P": 5820,
+        "B07771P": 5880,
+        "B07773P": 6000,
+        "B06646P": 6360,
+        "B07775P": 6480,
+        "B07777P": 6540,
+        "B03464P": 6660,
+        "B07779P": 6780,
+        "B06073P": 6900,
+        "B07781P": 7080,
+        "B05399P": 7320
+      }
+    },
+    "6P-R02": {
+      "windows": [
+        {
+          "start": "16:40",
+          "end": "17:20",
+          "headwaySeconds": 1200
+        },
+        {
+          "start": "17:20",
+          "end": "19:40",
+          "headwaySeconds": 8400
+        },
+        {
+          "start": "19:40",
+          "end": "20:30",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B00795P": 0,
+        "B07233P": 60,
+        "B08610P": 180,
+        "H00098P": 420,
+        "B00663P": 540,
+        "B02756P": 660,
+        "B00389P": 780,
+        "B00064P": 900,
+        "B00596P": 1020,
+        "H00154P": 1140,
+        "B05698P": 1260,
+        "B00209P": 1320,
+        "B05688P": 1380,
+        "B03097P": 3180,
+        "B03094P": 4140,
+        "B00226P": 4740,
+        "B00248P": 5640
+      }
+    },
+    "B14-R02": {
+      "windows": [
+        {
+          "start": "16:00",
+          "end": "17:00",
+          "headwaySeconds": 1200
+        },
+        {
+          "start": "17:00",
+          "end": "17:15",
+          "headwaySeconds": 900
+        },
+        {
+          "start": "17:15",
+          "end": "18:40",
+          "headwaySeconds": 5100
+        },
+        {
+          "start": "18:40",
+          "end": "20:10",
+          "headwaySeconds": 1200
+        }
+      ],
+      "stopOffsets": {
+        "B00795P": 0,
+        "B07233P": 60,
+        "B08610P": 180,
+        "H00098P": 420,
+        "B00663P": 540,
+        "B02756P": 660,
+        "B00389P": 780,
+        "B00064P": 900,
+        "B00596P": 1020,
+        "H00154P": 1140,
+        "B05698P": 1260,
+        "B00209P": 1320,
+        "B05688P": 1380,
+        "B02192P": 5760,
+        "B01853P": 6360,
+        "B03155P": 6960,
+        "B00108P": 7260,
+        "H00228P": 7860
+      }
+    }
+  }
+}

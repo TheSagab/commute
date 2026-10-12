@@ -2,14 +2,14 @@
  * Server-only data loaders for the bundled timetable.
  *
  * The JSON files under `src/data/` are imported eagerly — they're small
- * (~tens of KB per mode) and bundling them into the server bundle keeps
- * the data layer's hot path synchronous. We do NOT import these on the
- * client; the route loader streams them via a server function.
+ * enough to bundle into the server bundle, keeping the data layer's hot
+ * path synchronous. We do NOT import these on the client; the route
+ * loader streams them via a server function.
  *
  * Add a new mode by dropping a `<mode>.json` next to the existing ones
  * and adding the id to `MODE_IDS` in `./types.ts`. For sub-services
- * (e.g. Transjakarta BRT / Mikrotrans) set `operator` on the bundle
- * so callers can group them.
+ * (e.g. Transjakarta BRT / Mikrotrans) set `operator` on the bundle so
+ * callers can group them.
  */
 
 import { MODE_IDS, type ModeBundle, type ModeId } from "./types"
@@ -17,8 +17,12 @@ import { MODE_IDS, type ModeBundle, type ModeId } from "./types"
 import mrtJakarta from "./mrt-jakarta.json"
 import krlCommuter from "./krl-commuter.json"
 import transjakartaBrt from "./transjakarta-brt.json"
-import transjakartaNonBrt from "./transjakarta-non-brt.json"
+import transjakartaAui from "./transjakarta-angkutan-umum-integrasi.json"
 import transjakartaMikrotrans from "./transjakarta-mikrotrans.json"
+import transjakartaTransjabodetabek from "./transjakarta-transjabodetabek.json"
+import transjakartaRusun from "./transjakarta-rusun.json"
+import transjakartaRoyaltrans from "./transjakarta-royaltrans.json"
+import transjakartaBusWisata from "./transjakarta-bus-wisata.json"
 import lrtJabodebek from "./lrt-jabodebek.json"
 import lrtJakarta from "./lrt-jakarta.json"
 
@@ -29,8 +33,12 @@ const BUNDLES: Record<ModeId, ModeBundle> = {
   "mrt-jakarta": mrtJakarta as ModeBundle,
   "krl-commuter": krlCommuter as ModeBundle,
   "transjakarta-brt": transjakartaBrt as ModeBundle,
-  "transjakarta-non-brt": transjakartaNonBrt as ModeBundle,
+  "transjakarta-angkutan-umum-integrasi": transjakartaAui as ModeBundle,
   "transjakarta-mikrotrans": transjakartaMikrotrans as ModeBundle,
+  "transjakarta-transjabodetabek": transjakartaTransjabodetabek as ModeBundle,
+  "transjakarta-rusun": transjakartaRusun as ModeBundle,
+  "transjakarta-royaltrans": transjakartaRoyaltrans as ModeBundle,
+  "transjakarta-bus-wisata": transjakartaBusWisata as ModeBundle,
   "lrt-jabodebek": lrtJabodebek as ModeBundle,
   "lrt-jakarta": lrtJakarta as ModeBundle,
 }
